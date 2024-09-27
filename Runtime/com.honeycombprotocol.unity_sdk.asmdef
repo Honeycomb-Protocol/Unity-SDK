@@ -1,0 +1,14 @@
+{
+    "name": "com.honeycombprotocol.unity_sdk",
+    "rootNamespace": "HplEdgeClient",
+    "references": ["com.solana.unity_sdk"],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
