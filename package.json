@@ -1,0 +1,23 @@
+{
+  "name": "com.honeycombprotocol.unity_sdk",
+  "version": "0.0.1",
+  "unity": "2019.4",
+  "displayName": "Honeycomb Protocol Unity SDK",
+  "description": "Honeycomb Protocol Unity SDK is used to integrate Honeycomb Protocol's Onchain utilities into Unity applications",
+  "samples": [
+    {
+      "displayName": "Honeycomb Profiles",
+      "description": "Honeycomb Profiles implementation using this SDK",
+      "path": "Samples~/Profiles"
+    }
+  ],
+  "dependencies": {
+    "com.solana.unity_sdk": "1.2.5"
+  },
+  "documentationUrl": "https://docs.honeycombprotocol.com",
+  "author": {
+    "name": "Honeycomb Protocol",
+    "url": "https://www.honeycombprotocol.com/"
+  },
+  "license": "MIT"
+}
