@@ -13,9 +13,9 @@ namespace HplEdgeClient.Helpers
 
     public class TransactionHelper
     {
-        public List<Solana.Unity.Rpc.Models.Transaction> Transactions { get; set; } = new();
-        public string Blockhash { get; set; }
-        public int LastValidBlockHeight { get; set; }
+        public List<Solana.Unity.Rpc.Models.Transaction> Transactions = new();
+        public string Blockhash;
+        public int LastValidBlockHeight;
 
         public TransactionHelper(Transactions transactions)
         {

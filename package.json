@@ -12,7 +12,8 @@
     }
   ],
   "dependencies": {
-    "com.solana.unity_sdk": "1.2.5"
+    "com.solana.unity_sdk": "1.2.5",
+    "com.unity.nuget.newtonsoft-json": "3.0.2"
   },
   "documentationUrl": "https://docs.honeycombprotocol.com",
   "author": {

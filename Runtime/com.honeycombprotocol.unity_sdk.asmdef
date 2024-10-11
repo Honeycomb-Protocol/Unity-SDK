@@ -1,7 +1,7 @@
 {
     "name": "com.honeycombprotocol.unity_sdk",
     "rootNamespace": "HplEdgeClient",
-    "references": ["com.solana.unity_sdk"],
+    "references": ["com.solana.unity_sdk", "com.unity.nuget.newtonsoft-json"],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

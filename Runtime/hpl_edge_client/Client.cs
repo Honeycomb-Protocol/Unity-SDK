@@ -7,7 +7,7 @@ namespace HplEdgeClient.Client
 {
     public class HplClient
     {
-        public GraphQLClient graphQLClient { get; set; }
+        public GraphQLClient graphQLClient;
 
         public HplClient(string endpoint)
         {
