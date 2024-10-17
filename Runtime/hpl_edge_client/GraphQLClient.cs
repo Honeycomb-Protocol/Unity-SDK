@@ -11,6 +11,7 @@ using System;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections.Generic;
 
 namespace HplEdgeClient.Client
 {
@@ -113,10 +114,16 @@ namespace HplEdgeClient.Client
         //   Variables = variables
         // };
 
-        string jsonContent = JsonConvert.SerializeObject(fullQuery, new JsonSerializerSettings
+        var serializerSettings = new JsonSerializerSettings
         {
-          NullValueHandling = NullValueHandling.Ignore // Ignore null values in variables
-        });
+          NullValueHandling = NullValueHandling.Ignore,
+          Converters = new List<JsonConverter>
+          {
+            new Newtonsoft.Json.Converters.StringEnumConverter()
+          }
+        };
+
+        string jsonContent = JsonConvert.SerializeObject(fullQuery, serializerSettings);
         Debug.LogFormat("jsonContent, {0}", jsonContent);
 
         var httpReq = new HttpRequestMessage(HttpMethod.Post, url)

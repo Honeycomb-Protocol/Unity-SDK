@@ -3,1985 +3,1984 @@ using System.Collections.Generic;
 
 using HplEdgeClient.Enums;
 
-namespace HplEdgeClient.Types
-{
+namespace HplEdgeClient.Types {
   public class CharacterConfig
   {
     [JsonProperty("kind")]
-    public string Kind;
+    public string Kind { get; set; }
 
     [JsonProperty("criterias")]
-    public List<AssetCriteria> Criterias;
+    public List<AssetCriteria> Criterias { get; set; }
 
     [JsonProperty("assemblerConfig")]
-    public string AssemblerConfig;
+    public string AssemblerConfig { get; set; }
 
     [JsonProperty("name")]
-    public string Name;
+    public string Name { get; set; }
 
     [JsonProperty("symbol")]
-    public string Symbol;
+    public string Symbol { get; set; }
 
     [JsonProperty("description")]
-    public string Description;
+    public string Description { get; set; }
 
     [JsonProperty("creators")]
-    public List<NftCreator> Creators;
+    public List<NftCreator> Creators { get; set; }
 
     [JsonProperty("sellerFeeBasisPoints")]
-    public int SellerFeeBasisPoints;
+    public int SellerFeeBasisPoints { get; set; }
 
     [JsonProperty("collectionName")]
-    public string CollectionName;
+    public string CollectionName { get; set; }
 
     [JsonProperty("mintAs")]
-    public MintAs MintAs;
+    public MintAs MintAs { get; set; }
 
-    public CharacterConfig() { }
+    public CharacterConfig () {} 
 
   }
 
   public class MintAsParams
   {
     [JsonProperty("merkleTree")]
-    public string MerkleTree;
+    public string MerkleTree { get; set; }
 
-    public MintAsParams() { }
+    public MintAsParams () {} 
 
   }
 
   public class CharacterSourceParams
   {
     [JsonProperty("mint")]
-    public string Mint;
+    public string Mint { get; set; }
 
     [JsonProperty("criteria")]
-    public AssetCriteria Criteria;
+    public AssetCriteria Criteria { get; set; }
 
     [JsonProperty("kind")]
-    public SourceKind Kind;
+    public SourceKind Kind { get; set; }
 
     [JsonProperty("hash")]
-    public string Hash;
+    public string Hash { get; set; }
 
     [JsonProperty("uri")]
-    public string Uri;
+    public string Uri { get; set; }
 
     [JsonProperty("attributes")]
-    public object Attributes;
+    public object Attributes { get; set; }
 
     [JsonProperty("assemblerConfig")]
-    public string AssemblerConfig;
+    public string AssemblerConfig { get; set; }
 
-    public CharacterSourceParams() { }
+    public CharacterSourceParams () {} 
 
   }
 
   public class CharacterUsedByParams
   {
     [JsonProperty("pool")]
-    public string Pool;
+    public string Pool { get; set; }
 
     [JsonProperty("staker")]
-    public string Staker;
+    public string Staker { get; set; }
 
     [JsonProperty("stakedAt")]
-    public int StakedAt;
+    public int StakedAt { get; set; }
 
     [JsonProperty("claimedAt")]
-    public int ClaimedAt;
+    public int ClaimedAt { get; set; }
 
     [JsonProperty("missionId")]
-    public string MissionId;
+    public string MissionId { get; set; }
 
     [JsonProperty("participationId")]
-    public string ParticipationId;
+    public string ParticipationId { get; set; }
 
     [JsonProperty("rewards")]
-    public List<EarnedRewards> Rewards;
+    public List<EarnedRewards> Rewards { get; set; }
 
     [JsonProperty("endTime")]
-    public int EndTime;
+    public int EndTime { get; set; }
 
     [JsonProperty("id")]
-    public string Id;
+    public string Id { get; set; }
 
     [JsonProperty("role")]
-    public GuildRole Role;
+    public GuildRole Role { get; set; }
 
     [JsonProperty("order")]
-    public int Order;
+    public int Order { get; set; }
 
     [JsonProperty("mint")]
-    public string Mint;
+    public string Mint { get; set; }
 
     [JsonProperty("user")]
-    public string User;
+    public string User { get; set; }
 
     [JsonProperty("data")]
-    public object Data;
+    public object Data { get; set; }
 
-    public CharacterUsedByParams() { }
+    public CharacterUsedByParams () {} 
 
   }
 
   public class ServiceParams
   {
     [JsonProperty("assemblerId")]
-    public string AssemblerId;
+    public string AssemblerId { get; set; }
 
     [JsonProperty("assetManagerId")]
-    public string AssetManagerId;
+    public string AssetManagerId { get; set; }
 
     [JsonProperty("poolId")]
-    public string PoolId;
+    public string PoolId { get; set; }
 
     [JsonProperty("kitId")]
-    public string KitId;
+    public string KitId { get; set; }
 
-    public ServiceParams() { }
+    public ServiceParams () {} 
 
   }
 
   public class MissionRequirement
   {
     [JsonProperty("kind")]
-    public string Kind;
+    public string Kind { get; set; }
 
     [JsonProperty("params")]
-    public TimeRequirementParams Params;
+    public TimeRequirementParams Params { get; set; }
 
-    public MissionRequirement() { }
+    public MissionRequirement () {} 
 
   }
 
   public class RewardType
   {
     [JsonProperty("kind")]
-    public string Kind;
+    public string Kind { get; set; }
 
     [JsonProperty("params")]
-    public ResourceRewardTypeParams Params;
+    public ResourceRewardTypeParams Params { get; set; }
 
-    public RewardType() { }
+    public RewardType () {} 
 
   }
 
   public class MultiplierTypeParams
   {
     [JsonProperty("minDuration")]
-    public string MinDuration;
+    public string MinDuration { get; set; }
 
     [JsonProperty("minCount")]
-    public string MinCount;
+    public string MinCount { get; set; }
 
     [JsonProperty("creator")]
-    public string Creator;
+    public string Creator { get; set; }
 
     [JsonProperty("collection")]
-    public string Collection;
+    public string Collection { get; set; }
 
-    public MultiplierTypeParams() { }
+    public MultiplierTypeParams () {} 
 
   }
 
   public class OutputHolding
   {
     [JsonProperty("address")]
-    public string Address;
+    public string Address { get; set; }
 
     [JsonProperty("tree_id")]
-    public string Tree_id;
+    public string Tree_id { get; set; }
 
     [JsonProperty("leaf_idx")]
-    public string Leaf_idx;
+    public string Leaf_idx { get; set; }
 
     [JsonProperty("holder")]
-    public string Holder;
+    public string Holder { get; set; }
 
     [JsonProperty("balance")]
-    public string Balance;
+    public string Balance { get; set; }
 
     [JsonProperty("characteristics")]
-    public object Characteristics;
+    public object Characteristics { get; set; }
 
     [JsonProperty("proof")]
-    public Proof Proof;
+    public Proof Proof { get; set; }
 
     [JsonProperty("tree")]
-    public string Tree;
+    public string Tree { get; set; }
 
-    public OutputHolding() { }
+    public OutputHolding () {} 
 
   }
 
   public class ResourceKindParams
   {
     [JsonProperty("decimals")]
-    public int Decimals;
+    public int Decimals { get; set; }
 
     [JsonProperty("custody")]
-    public ResourceCustody Custody;
+    public ResourceCustody Custody { get; set; }
 
     [JsonProperty("characteristics")]
-    public List<string> Characteristics;
+    public List<string> Characteristics { get; set; }
 
-    public ResourceKindParams() { }
+    public ResourceKindParams () {} 
 
   }
 
   public class CharacterHistory
   {
     [JsonProperty("address")]
-    public string Address;
+    public string Address { get; set; }
 
     [JsonProperty("event")]
-    public string Event;
+    public string Event { get; set; }
 
     [JsonProperty("event_data")]
-    public object Event_data;
+    public object Event_data { get; set; }
 
     [JsonProperty("time")]
-    public string Time;
+    public string Time { get; set; }
 
-    public CharacterHistory() { }
+    public CharacterHistory () {} 
 
   }
 
   public class AssemblerConfig
   {
     [JsonProperty("address")]
-    public string Address;
+    public string Address { get; set; }
 
     [JsonProperty("program_id")]
-    public string Program_id;
+    public string Program_id { get; set; }
 
     [JsonProperty("discriminator")]
-    public string Discriminator;
+    public string Discriminator { get; set; }
 
     [JsonProperty("ticker")]
-    public string Ticker;
+    public string Ticker { get; set; }
 
     [JsonProperty("project")]
-    public string Project;
+    public string Project { get; set; }
 
     [JsonProperty("order")]
-    public List<string> Order;
+    public List<string> Order { get; set; }
 
     [JsonProperty("merkle_trees")]
-    public ControlledMerkleTrees Merkle_trees;
+    public ControlledMerkleTrees Merkle_trees { get; set; }
 
-    public AssemblerConfig() { }
+    public AssemblerConfig () {} 
 
   }
 
   public class CharacterTrait
   {
     [JsonProperty("address")]
-    public string Address;
+    public string Address { get; set; }
 
     [JsonProperty("tree_id")]
-    public string Tree_id;
+    public string Tree_id { get; set; }
 
     [JsonProperty("leaf_idx")]
-    public string Leaf_idx;
+    public string Leaf_idx { get; set; }
 
     [JsonProperty("label")]
-    public string Label;
+    public string Label { get; set; }
 
     [JsonProperty("name")]
-    public string Name;
+    public string Name { get; set; }
 
     [JsonProperty("uri")]
-    public string Uri;
+    public string Uri { get; set; }
 
     [JsonProperty("proof")]
-    public Proof Proof;
+    public Proof Proof { get; set; }
 
-    public CharacterTrait() { }
+    public CharacterTrait () {} 
 
   }
 
   public class CharacterModel
   {
     [JsonProperty("address")]
-    public string Address;
+    public string Address { get; set; }
 
     [JsonProperty("program_id")]
-    public string Program_id;
+    public string Program_id { get; set; }
 
     [JsonProperty("discriminator")]
-    public string Discriminator;
+    public string Discriminator { get; set; }
 
     [JsonProperty("bump")]
-    public int Bump;
+    public int Bump { get; set; }
 
     [JsonProperty("key")]
-    public string Key;
+    public string Key { get; set; }
 
     [JsonProperty("project")]
-    public string Project;
+    public string Project { get; set; }
 
     [JsonProperty("config")]
-    public CharacterConfig Config;
+    public CharacterConfig Config { get; set; }
 
     [JsonProperty("attributes")]
-    public object Attributes;
+    public object Attributes { get; set; }
 
     [JsonProperty("merkle_trees")]
-    public ControlledMerkleTrees Merkle_trees;
+    public ControlledMerkleTrees Merkle_trees { get; set; }
 
-    public CharacterModel() { }
+    public CharacterModel () {} 
 
   }
 
   public class CharacterConfigWrapped
   {
     [JsonProperty("kind")]
-    public string Kind;
+    public string Kind { get; set; }
 
     [JsonProperty("criterias")]
-    public List<AssetCriteria> Criterias;
+    public List<AssetCriteria> Criterias { get; set; }
 
-    public CharacterConfigWrapped() { }
+    public CharacterConfigWrapped () {} 
 
   }
 
   public class CharacterConfigAssembled
   {
     [JsonProperty("kind")]
-    public string Kind;
+    public string Kind { get; set; }
 
     [JsonProperty("assemblerConfig")]
-    public string AssemblerConfig;
+    public string AssemblerConfig { get; set; }
 
     [JsonProperty("name")]
-    public string Name;
+    public string Name { get; set; }
 
     [JsonProperty("symbol")]
-    public string Symbol;
+    public string Symbol { get; set; }
 
     [JsonProperty("description")]
-    public string Description;
+    public string Description { get; set; }
 
     [JsonProperty("creators")]
-    public List<NftCreator> Creators;
+    public List<NftCreator> Creators { get; set; }
 
     [JsonProperty("sellerFeeBasisPoints")]
-    public int SellerFeeBasisPoints;
+    public int SellerFeeBasisPoints { get; set; }
 
     [JsonProperty("collectionName")]
-    public string CollectionName;
+    public string CollectionName { get; set; }
 
     [JsonProperty("mintAs")]
-    public MintAs MintAs;
+    public MintAs MintAs { get; set; }
 
-    public CharacterConfigAssembled() { }
+    public CharacterConfigAssembled () {} 
 
   }
 
   public class NftCreator
   {
     [JsonProperty("address")]
-    public string Address;
+    public string Address { get; set; }
 
     [JsonProperty("share")]
-    public int Share;
+    public int Share { get; set; }
 
-    public NftCreator() { }
+    public NftCreator () {} 
 
   }
 
   public class MintAs
   {
     [JsonProperty("kind")]
-    public MintAsKind Kind;
+    public MintAsKind Kind { get; set; }
 
     [JsonProperty("params")]
-    public MintAsParams Params;
+    public MintAsParams Params { get; set; }
 
-    public MintAs() { }
+    public MintAs () {} 
 
   }
 
   public class MintAsParamsMplBubblegum
   {
     [JsonProperty("merkleTree")]
-    public string MerkleTree;
+    public string MerkleTree { get; set; }
 
-    public MintAsParamsMplBubblegum() { }
+    public MintAsParamsMplBubblegum () {} 
 
   }
 
   public class Character
   {
     [JsonProperty("address")]
-    public string Address;
+    public string Address { get; set; }
 
     [JsonProperty("tree_id")]
-    public string Tree_id;
+    public string Tree_id { get; set; }
 
     [JsonProperty("leaf_idx")]
-    public string Leaf_idx;
+    public string Leaf_idx { get; set; }
 
     [JsonProperty("owner")]
-    public string Owner;
+    public string Owner { get; set; }
 
     [JsonProperty("source")]
-    public CharacterSource Source;
+    public CharacterSource Source { get; set; }
 
     [JsonProperty("usedBy")]
-    public CharacterUsedBy UsedBy;
+    public CharacterUsedBy UsedBy { get; set; }
 
     [JsonProperty("proof")]
-    public Proof Proof;
+    public Proof Proof { get; set; }
 
     [JsonProperty("asset")]
-    public object Asset;
+    public object Asset { get; set; }
 
-    public Character() { }
+    public Character () {} 
 
   }
 
   public class CharacterSource
   {
     [JsonProperty("kind")]
-    public CharacterSourceKind Kind;
+    public CharacterSourceKind Kind { get; set; }
 
     [JsonProperty("params")]
-    public CharacterSourceParams Params;
+    public CharacterSourceParams Params { get; set; }
 
-    public CharacterSource() { }
+    public CharacterSource () {} 
 
   }
 
   public class Wrapped
   {
     [JsonProperty("mint")]
-    public string Mint;
+    public string Mint { get; set; }
 
     [JsonProperty("criteria")]
-    public AssetCriteria Criteria;
+    public AssetCriteria Criteria { get; set; }
 
     [JsonProperty("kind")]
-    public SourceKind Kind;
+    public SourceKind Kind { get; set; }
 
-    public Wrapped() { }
+    public Wrapped () {} 
 
   }
 
   public class AssetCriteria
   {
     [JsonProperty("kind")]
-    public AssetCriteriaKind Kind;
+    public AssetCriteriaKind Kind { get; set; }
 
     [JsonProperty("params")]
-    public string Params;
+    public string Params { get; set; }
 
-    public AssetCriteria() { }
+    public AssetCriteria () {} 
 
   }
 
   public class Assembled
   {
     [JsonProperty("hash")]
-    public string Hash;
+    public string Hash { get; set; }
 
     [JsonProperty("mint")]
-    public string Mint;
+    public string Mint { get; set; }
 
     [JsonProperty("uri")]
-    public string Uri;
+    public string Uri { get; set; }
 
     [JsonProperty("attributes")]
-    public object Attributes;
+    public object Attributes { get; set; }
 
     [JsonProperty("assemblerConfig")]
-    public string AssemblerConfig;
+    public string AssemblerConfig { get; set; }
 
-    public Assembled() { }
+    public Assembled () {} 
 
   }
 
   public class CharacterUsedBy
   {
     [JsonProperty("kind")]
-    public string Kind;
+    public string Kind { get; set; }
 
     [JsonProperty("params")]
-    public CharacterUsedByParams Params;
+    public CharacterUsedByParams Params { get; set; }
 
-    public CharacterUsedBy() { }
+    public CharacterUsedBy () {} 
 
   }
 
   public class UsedByStaking
   {
     [JsonProperty("pool")]
-    public string Pool;
+    public string Pool { get; set; }
 
     [JsonProperty("staker")]
-    public string Staker;
+    public string Staker { get; set; }
 
     [JsonProperty("stakedAt")]
-    public int StakedAt;
+    public int StakedAt { get; set; }
 
     [JsonProperty("claimedAt")]
-    public int ClaimedAt;
+    public int ClaimedAt { get; set; }
 
-    public UsedByStaking() { }
+    public UsedByStaking () {} 
 
   }
 
   public class UsedByMission
   {
     [JsonProperty("missionId")]
-    public string MissionId;
+    public string MissionId { get; set; }
 
     [JsonProperty("participationId")]
-    public string ParticipationId;
+    public string ParticipationId { get; set; }
 
     [JsonProperty("rewards")]
-    public List<EarnedRewards> Rewards;
+    public List<EarnedRewards> Rewards { get; set; }
 
     [JsonProperty("endTime")]
-    public int EndTime;
+    public int EndTime { get; set; }
 
-    public UsedByMission() { }
+    public UsedByMission () {} 
 
   }
 
   public class EarnedRewards
   {
     [JsonProperty("delta")]
-    public int Delta;
+    public int Delta { get; set; }
 
     [JsonProperty("rewardIdx")]
-    public int RewardIdx;
+    public int RewardIdx { get; set; }
 
     [JsonProperty("collected")]
-    public bool Collected;
+    public bool Collected { get; set; }
 
-    public EarnedRewards() { }
+    public EarnedRewards () {} 
 
   }
 
   public class UsedByGuild
   {
     [JsonProperty("id")]
-    public string Id;
+    public string Id { get; set; }
 
     [JsonProperty("role")]
-    public GuildRole Role;
+    public GuildRole Role { get; set; }
 
     [JsonProperty("order")]
-    public int Order;
+    public int Order { get; set; }
 
-    public UsedByGuild() { }
+    public UsedByGuild () {} 
 
   }
 
   public class GuildRole
   {
     [JsonProperty("kind")]
-    public string Kind;
+    public string Kind { get; set; }
 
-    public GuildRole() { }
+    public GuildRole () {} 
 
   }
 
   public class UsedByEjected
   {
     [JsonProperty("mint")]
-    public string Mint;
+    public string Mint { get; set; }
 
-    public UsedByEjected() { }
+    public UsedByEjected () {} 
 
   }
 
   public class UsedByCustom
   {
     [JsonProperty("user")]
-    public string User;
+    public string User { get; set; }
 
     [JsonProperty("data")]
-    public object Data;
+    public object Data { get; set; }
 
-    public UsedByCustom() { }
+    public UsedByCustom () {} 
 
   }
 
   public class Global
   {
     [JsonProperty("address")]
-    public string Address;
+    public string Address { get; set; }
 
     [JsonProperty("bump")]
-    public int Bump;
+    public int Bump { get; set; }
 
     [JsonProperty("config")]
-    public object Config;
+    public object Config { get; set; }
 
     [JsonProperty("userTrees")]
-    public ControlledMerkleTrees UserTrees;
+    public ControlledMerkleTrees UserTrees { get; set; }
 
     [JsonProperty("totalUsers")]
-    public int TotalUsers;
+    public int TotalUsers { get; set; }
 
-    public Global() { }
+    public Global () {} 
 
   }
 
   public class Project
   {
     [JsonProperty("address")]
-    public string Address;
+    public string Address { get; set; }
 
     [JsonProperty("bump")]
-    public int Bump;
+    public int Bump { get; set; }
 
     [JsonProperty("authority")]
-    public string Authority;
+    public string Authority { get; set; }
 
     [JsonProperty("key")]
-    public string Key;
+    public string Key { get; set; }
 
     [JsonProperty("driver")]
-    public string Driver;
+    public string Driver { get; set; }
 
     [JsonProperty("name")]
-    public string Name;
+    public string Name { get; set; }
 
     [JsonProperty("services")]
-    public List<Service> Services;
+    public List<Service> Services { get; set; }
 
     [JsonProperty("associatedPrograms")]
-    public List<AssociatedProgram> AssociatedPrograms;
+    public List<AssociatedProgram> AssociatedPrograms { get; set; }
 
     [JsonProperty("profileDataConfig")]
-    public ProfileDataConfig ProfileDataConfig;
+    public ProfileDataConfig ProfileDataConfig { get; set; }
 
     [JsonProperty("profileTrees")]
-    public ControlledMerkleTrees ProfileTrees;
+    public ControlledMerkleTrees ProfileTrees { get; set; }
 
     [JsonProperty("badgeCriteria")]
-    public List<BadgeCriteria> BadgeCriteria;
+    public List<BadgeCriteria> BadgeCriteria { get; set; }
 
     [JsonProperty("subsidyFees")]
-    public bool SubsidyFees;
+    public bool SubsidyFees { get; set; }
 
-    public Project() { }
+    public Project () {} 
 
   }
 
   public class DelegateAuthority
   {
     [JsonProperty("address")]
-    public string Address;
+    public string Address { get; set; }
 
     [JsonProperty("bump")]
-    public int Bump;
+    public int Bump { get; set; }
 
     [JsonProperty("project")]
-    public string Project;
+    public string Project { get; set; }
 
     [JsonProperty("authority")]
-    public string Authority;
+    public string Authority { get; set; }
 
     [JsonProperty("delegations")]
-    public List<ServiceDelegation> Delegations;
+    public List<ServiceDelegation> Delegations { get; set; }
 
-    public DelegateAuthority() { }
+    public DelegateAuthority () {} 
 
   }
 
   public class ServiceDelegation
   {
     [JsonProperty("kind")]
-    public string Kind;
+    public string Kind { get; set; }
 
     [JsonProperty("index")]
-    public int Index;
+    public int? Index { get; set; }
 
     [JsonProperty("permission")]
-    public string Permission;
+    public string Permission { get; set; }
 
-    public ServiceDelegation() { }
+    public ServiceDelegation () {} 
 
   }
 
   public class Service
   {
     [JsonProperty("kind")]
-    public string Kind;
+    public string Kind { get; set; }
 
     [JsonProperty("params")]
-    public ServiceParams Params;
+    public ServiceParams Params { get; set; }
 
-    public Service() { }
+    public Service () {} 
 
   }
 
   public class ServiceParamsAssembler
   {
     [JsonProperty("assemblerId")]
-    public string AssemblerId;
+    public string AssemblerId { get; set; }
 
-    public ServiceParamsAssembler() { }
+    public ServiceParamsAssembler () {} 
 
   }
 
   public class ServiceParamsAssetManager
   {
     [JsonProperty("assetManagerId")]
-    public string AssetManagerId;
+    public string AssetManagerId { get; set; }
 
-    public ServiceParamsAssetManager() { }
+    public ServiceParamsAssetManager () {} 
 
   }
 
   public class ServiceParamsStaking
   {
     [JsonProperty("poolId")]
-    public string PoolId;
+    public string PoolId { get; set; }
 
-    public ServiceParamsStaking() { }
+    public ServiceParamsStaking () {} 
 
   }
 
   public class ServiceParamsMissions
   {
     [JsonProperty("poolId")]
-    public string PoolId;
+    public string PoolId { get; set; }
 
-    public ServiceParamsMissions() { }
+    public ServiceParamsMissions () {} 
 
   }
 
   public class ServiceParamsRaffles
   {
     [JsonProperty("poolId")]
-    public string PoolId;
+    public string PoolId { get; set; }
 
-    public ServiceParamsRaffles() { }
+    public ServiceParamsRaffles () {} 
 
   }
 
   public class ServiceParamsGuildKit
   {
     [JsonProperty("kitId")]
-    public string KitId;
+    public string KitId { get; set; }
 
-    public ServiceParamsGuildKit() { }
+    public ServiceParamsGuildKit () {} 
 
   }
 
   public class AssociatedProgram
   {
     [JsonProperty("address")]
-    public string Address;
+    public string Address { get; set; }
 
     [JsonProperty("trustedActions")]
-    public List<SerializableActions> TrustedActions;
+    public List<SerializableActions> TrustedActions { get; set; }
 
-    public AssociatedProgram() { }
+    public AssociatedProgram () {} 
 
   }
 
   public class SerializableActions
   {
     [JsonProperty("kind")]
-    public string Kind;
+    public string Kind { get; set; }
 
-    public SerializableActions() { }
+    public SerializableActions () {} 
 
   }
 
   public class ProfileDataConfig
   {
     [JsonProperty("achievements")]
-    public List<string> Achievements;
+    public List<string> Achievements { get; set; }
 
     [JsonProperty("customDataFields")]
-    public List<string> CustomDataFields;
+    public List<string> CustomDataFields { get; set; }
 
-    public ProfileDataConfig() { }
+    public ProfileDataConfig () {} 
 
   }
 
   public class User
   {
     [JsonProperty("id")]
-    public int Id;
+    public int Id { get; set; }
 
     [JsonProperty("address")]
-    public string Address;
+    public string Address { get; set; }
 
     [JsonProperty("tree_id")]
-    public string Tree_id;
+    public string Tree_id { get; set; }
 
     [JsonProperty("leaf_idx")]
-    public string Leaf_idx;
+    public string Leaf_idx { get; set; }
 
     [JsonProperty("proof")]
-    public Proof Proof;
+    public Proof Proof { get; set; }
 
     [JsonProperty("info")]
-    public UserInfo Info;
+    public UserInfo Info { get; set; }
 
     [JsonProperty("socialInfo")]
-    public SocialInfo SocialInfo;
+    public SocialInfo SocialInfo { get; set; }
 
     [JsonProperty("wallets")]
-    public Wallets Wallets;
+    public Wallets Wallets { get; set; }
 
     [JsonProperty("profiles")]
-    public List<Profile> Profiles;
+    public List<Profile> Profiles { get; set; }
 
-    public User() { }
+    public User () {} 
 
   }
 
   public class UserInfo
   {
     [JsonProperty("username")]
-    public string Username;
+    public string Username { get; set; }
 
     [JsonProperty("name")]
-    public string Name;
+    public string Name { get; set; }
 
     [JsonProperty("bio")]
-    public string Bio;
+    public string Bio { get; set; }
 
     [JsonProperty("pfp")]
-    public string Pfp;
+    public string Pfp { get; set; }
 
-    public UserInfo() { }
+    public UserInfo () {} 
 
   }
 
   public class CivicInfo
   {
     [JsonProperty("gatekeeperNetwork")]
-    public CivicGateway GatekeeperNetwork;
+    public CivicGateway GatekeeperNetwork { get; set; }
 
     [JsonProperty("expiry")]
-    public string Expiry;
+    public string Expiry { get; set; }
 
     [JsonProperty("walletIndex")]
-    public int WalletIndex;
+    public int WalletIndex { get; set; }
 
-    public CivicInfo() { }
+    public CivicInfo () {} 
 
   }
 
   public class SocialInfo
   {
     [JsonProperty("twitter")]
-    public string Twitter;
+    public string Twitter { get; set; }
 
     [JsonProperty("discord")]
-    public string Discord;
+    public string Discord { get; set; }
 
     [JsonProperty("steam")]
-    public string Steam;
+    public string Steam { get; set; }
 
     [JsonProperty("civic")]
-    public List<CivicInfo> Civic;
+    public List<CivicInfo> Civic { get; set; }
 
-    public SocialInfo() { }
+    public SocialInfo () {} 
 
   }
 
   public class Wallets
   {
     [JsonProperty("shadow")]
-    public string Shadow;
+    public string Shadow { get; set; }
 
     [JsonProperty("wallets")]
-    public List<string> Wallets_;
+    public List<string> Wallets_ { get; set; }
 
-    public Wallets() { }
+    public Wallets () {} 
 
   }
 
   public class Profile
   {
     [JsonProperty("address")]
-    public string Address;
+    public string Address { get; set; }
 
     [JsonProperty("tree_id")]
-    public string Tree_id;
+    public string Tree_id { get; set; }
 
     [JsonProperty("leaf_idx")]
-    public string Leaf_idx;
+    public string Leaf_idx { get; set; }
 
     [JsonProperty("proof")]
-    public Proof Proof;
+    public Proof Proof { get; set; }
 
     [JsonProperty("project")]
-    public string Project;
+    public string Project { get; set; }
 
     [JsonProperty("userId")]
-    public int UserId;
+    public int UserId { get; set; }
 
     [JsonProperty("identity")]
-    public string Identity;
+    public string Identity { get; set; }
 
     [JsonProperty("info")]
-    public ProfileInfo Info;
+    public ProfileInfo Info { get; set; }
 
     [JsonProperty("platformData")]
-    public PlatformData PlatformData;
+    public PlatformData PlatformData { get; set; }
 
     [JsonProperty("customData")]
-    public object CustomData;
+    public object CustomData { get; set; }
 
     [JsonProperty("user")]
-    public User User;
+    public User User { get; set; }
 
-    public Profile() { }
+    public Profile () {} 
 
   }
 
   public class ProfileInfo
   {
     [JsonProperty("name")]
-    public string Name;
+    public string Name { get; set; }
 
     [JsonProperty("bio")]
-    public string Bio;
+    public string Bio { get; set; }
 
     [JsonProperty("pfp")]
-    public string Pfp;
+    public string Pfp { get; set; }
 
-    public ProfileInfo() { }
+    public ProfileInfo () {} 
 
   }
 
   public class PlatformData
   {
     [JsonProperty("custom")]
-    public object Custom;
+    public object Custom { get; set; }
 
     [JsonProperty("xp")]
-    public int Xp;
+    public int Xp { get; set; }
 
     [JsonProperty("achievements")]
-    public List<int> Achievements;
+    public List<int> Achievements { get; set; }
 
-    public PlatformData() { }
+    public PlatformData () {} 
 
   }
 
   public class BadgeCriteria
   {
     [JsonProperty("startTime")]
-    public string StartTime;
+    public string StartTime { get; set; }
 
     [JsonProperty("endTime")]
-    public string EndTime;
+    public string EndTime { get; set; }
 
     [JsonProperty("index")]
-    public int Index;
+    public int Index { get; set; }
 
     [JsonProperty("condition")]
-    public BadgesCondition Condition;
+    public BadgesCondition Condition { get; set; }
 
-    public BadgeCriteria() { }
+    public BadgeCriteria () {} 
 
   }
 
   public class Account
   {
     [JsonProperty("address")]
-    public string Address;
+    public string Address { get; set; }
 
     [JsonProperty("program_id")]
-    public string Program_id;
+    public string Program_id { get; set; }
 
     [JsonProperty("discriminator")]
-    public string Discriminator;
+    public string Discriminator { get; set; }
 
     [JsonProperty("parsed_data")]
-    public object Parsed_data;
+    public object Parsed_data { get; set; }
 
-    public Account() { }
+    public Account () {} 
 
   }
 
   public class CompressedAccount
   {
     [JsonProperty("tree_id")]
-    public string Tree_id;
+    public string Tree_id { get; set; }
 
     [JsonProperty("leaf_idx")]
-    public string Leaf_idx;
+    public string Leaf_idx { get; set; }
 
     [JsonProperty("schema_validated")]
-    public bool Schema_validated;
+    public bool? Schema_validated { get; set; }
 
     [JsonProperty("raw_data")]
-    public string Raw_data;
+    public string Raw_data { get; set; }
 
     [JsonProperty("parsed_data")]
-    public object Parsed_data;
+    public object Parsed_data { get; set; }
 
-    public CompressedAccount() { }
+    public CompressedAccount () {} 
 
   }
 
   public class Node
   {
     [JsonProperty("id")]
-    public string Id;
+    public string Id { get; set; }
 
     [JsonProperty("tree")]
-    public string Tree;
+    public string Tree { get; set; }
 
     [JsonProperty("node_idx")]
-    public string Node_idx;
+    public string Node_idx { get; set; }
 
     [JsonProperty("leaf_idx")]
-    public string Leaf_idx;
+    public string Leaf_idx { get; set; }
 
     [JsonProperty("seq")]
-    public string Seq;
+    public string Seq { get; set; }
 
     [JsonProperty("level")]
-    public string Level;
+    public string Level { get; set; }
 
     [JsonProperty("hash")]
-    public string Hash;
+    public string Hash { get; set; }
 
-    public Node() { }
+    public Node () {} 
 
   }
 
   public class Proof
   {
     [JsonProperty("root")]
-    public string Root;
+    public string Root { get; set; }
 
     [JsonProperty("proof")]
-    public List<string> Proof_;
+    public List<string> Proof_ { get; set; }
 
     [JsonProperty("node_index")]
-    public string Node_index;
+    public string Node_index { get; set; }
 
     [JsonProperty("leaf")]
-    public string Leaf;
+    public string Leaf { get; set; }
 
     [JsonProperty("maxDepth")]
-    public int MaxDepth;
+    public int MaxDepth { get; set; }
 
     [JsonProperty("leaf_index")]
-    public string Leaf_index;
+    public string Leaf_index { get; set; }
 
     [JsonProperty("tree_id")]
-    public string Tree_id;
+    public string Tree_id { get; set; }
 
     [JsonProperty("canopy_depth")]
-    public int Canopy_depth;
+    public int Canopy_depth { get; set; }
 
-    public Proof() { }
+    public Proof () {} 
 
   }
 
   public class ControlledMerkleTrees
   {
     [JsonProperty("active")]
-    public int Active;
+    public int Active { get; set; }
 
     [JsonProperty("schema")]
-    public object Schema;
+    public object Schema { get; set; }
 
     [JsonProperty("merkle_trees")]
-    public List<string> Merkle_trees;
+    public List<string> Merkle_trees { get; set; }
 
-    public ControlledMerkleTrees() { }
+    public ControlledMerkleTrees () {} 
 
   }
 
   public class MissionPool
   {
     [JsonProperty("address")]
-    public string Address;
+    public string Address { get; set; }
 
     [JsonProperty("program_id")]
-    public string Program_id;
+    public string Program_id { get; set; }
 
     [JsonProperty("discriminator")]
-    public string Discriminator;
+    public string Discriminator { get; set; }
 
     [JsonProperty("bump")]
-    public int Bump;
+    public int Bump { get; set; }
 
     [JsonProperty("project")]
-    public string Project;
+    public string Project { get; set; }
 
     [JsonProperty("name")]
-    public string Name;
+    public string Name { get; set; }
 
     [JsonProperty("factionsMerkleRoot")]
-    public string FactionsMerkleRoot;
+    public string FactionsMerkleRoot { get; set; }
 
     [JsonProperty("randomizerRound")]
-    public int RandomizerRound;
+    public int RandomizerRound { get; set; }
 
     [JsonProperty("characterModels")]
-    public List<string> CharacterModels;
+    public List<string> CharacterModels { get; set; }
 
     [JsonProperty("guildKits")]
-    public List<int> GuildKits;
+    public List<int> GuildKits { get; set; }
 
-    public MissionPool() { }
+    public MissionPool () {} 
 
   }
 
   public class Mission
   {
     [JsonProperty("address")]
-    public string Address;
+    public string Address { get; set; }
 
     [JsonProperty("program_id")]
-    public string Program_id;
+    public string Program_id { get; set; }
 
     [JsonProperty("discriminator")]
-    public string Discriminator;
+    public string Discriminator { get; set; }
 
     [JsonProperty("bump")]
-    public int Bump;
+    public int Bump { get; set; }
 
     [JsonProperty("project")]
-    public string Project;
+    public string Project { get; set; }
 
     [JsonProperty("missionPool")]
-    public string MissionPool;
+    public string MissionPool { get; set; }
 
     [JsonProperty("name")]
-    public string Name;
+    public string Name { get; set; }
 
     [JsonProperty("minXp")]
-    public string MinXp;
+    public string MinXp { get; set; }
 
     [JsonProperty("cost")]
-    public MissionCost Cost;
+    public MissionCost Cost { get; set; }
 
     [JsonProperty("requirement")]
-    public MissionRequirement Requirement;
+    public MissionRequirement Requirement { get; set; }
 
     [JsonProperty("rewards")]
-    public List<Reward> Rewards;
+    public List<Reward> Rewards { get; set; }
 
-    public Mission() { }
+    public Mission () {} 
 
   }
 
   public class MissionCost
   {
     [JsonProperty("amount")]
-    public string Amount;
+    public string Amount { get; set; }
 
     [JsonProperty("resource_address")]
-    public string Resource_address;
+    public string Resource_address { get; set; }
 
-    public MissionCost() { }
+    public MissionCost () {} 
 
   }
 
   public class TimeRequirement
   {
     [JsonProperty("kind")]
-    public string Kind;
+    public string Kind { get; set; }
 
     [JsonProperty("params")]
-    public TimeRequirementParams Params;
+    public TimeRequirementParams Params { get; set; }
 
-    public TimeRequirement() { }
+    public TimeRequirement () {} 
 
   }
 
   public class TimeRequirementParams
   {
     [JsonProperty("duration")]
-    public string Duration;
+    public string Duration { get; set; }
 
-    public TimeRequirementParams() { }
+    public TimeRequirementParams () {} 
 
   }
 
   public class Reward
   {
     [JsonProperty("min")]
-    public string Min;
+    public string Min { get; set; }
 
     [JsonProperty("max")]
-    public string Max;
+    public string Max { get; set; }
 
     [JsonProperty("rewardType")]
-    public RewardType RewardType;
+    public RewardType RewardType { get; set; }
 
-    public Reward() { }
+    public Reward () {} 
 
   }
 
   public class XpRewardType
   {
     [JsonProperty("kind")]
-    public string Kind;
+    public string Kind { get; set; }
 
-    public XpRewardType() { }
+    public XpRewardType () {} 
 
   }
 
   public class ResourceRewardType
   {
     [JsonProperty("kind")]
-    public string Kind;
+    public string Kind { get; set; }
 
     [JsonProperty("params")]
-    public ResourceRewardTypeParams Params;
+    public ResourceRewardTypeParams Params { get; set; }
 
-    public ResourceRewardType() { }
+    public ResourceRewardType () {} 
 
   }
 
   public class ResourceRewardTypeParams
   {
     [JsonProperty("address")]
-    public string Address;
+    public string Address { get; set; }
 
-    public ResourceRewardTypeParams() { }
+    public ResourceRewardTypeParams () {} 
 
   }
 
   public class StakingPool
   {
     [JsonProperty("address")]
-    public string Address;
+    public string Address { get; set; }
 
     [JsonProperty("bump")]
-    public int Bump;
+    public int Bump { get; set; }
 
     [JsonProperty("project")]
-    public string Project;
+    public string Project { get; set; }
 
     [JsonProperty("key")]
-    public string Key;
+    public string Key { get; set; }
 
     [JsonProperty("resource")]
-    public string Resource;
+    public string Resource { get; set; }
 
     [JsonProperty("lockType")]
-    public LockType LockType;
+    public LockType LockType { get; set; }
 
     [JsonProperty("name")]
-    public string Name;
+    public string Name { get; set; }
 
     [JsonProperty("rewardsPerDuration")]
-    public string RewardsPerDuration;
+    public string RewardsPerDuration { get; set; }
 
     [JsonProperty("rewardsDuration")]
-    public string RewardsDuration;
+    public string RewardsDuration { get; set; }
 
     [JsonProperty("maxRewardsDuration")]
-    public string MaxRewardsDuration;
+    public string MaxRewardsDuration { get; set; }
 
     [JsonProperty("minStakeDuration")]
-    public string MinStakeDuration;
+    public string MinStakeDuration { get; set; }
 
     [JsonProperty("cooldownDuration")]
-    public string CooldownDuration;
+    public string CooldownDuration { get; set; }
 
     [JsonProperty("resetStakeDuration")]
-    public bool ResetStakeDuration;
+    public bool ResetStakeDuration { get; set; }
 
     [JsonProperty("allowedMints")]
-    public bool AllowedMints;
+    public bool AllowedMints { get; set; }
 
     [JsonProperty("totalStaked")]
-    public string TotalStaked;
+    public string TotalStaked { get; set; }
 
     [JsonProperty("startTime")]
-    public string StartTime;
+    public string StartTime { get; set; }
 
     [JsonProperty("endTime")]
-    public string EndTime;
+    public string EndTime { get; set; }
 
     [JsonProperty("characterModels")]
-    public List<string> CharacterModels;
+    public List<string> CharacterModels { get; set; }
 
-    public StakingPool() { }
+    public StakingPool () {} 
 
   }
 
   public class LockType
   {
     [JsonProperty("kind")]
-    public string Kind;
+    public string Kind { get; set; }
 
-    public LockType() { }
+    public LockType () {} 
 
   }
 
   public class Multipliers
   {
     [JsonProperty("address")]
-    public string Address;
+    public string Address { get; set; }
 
     [JsonProperty("bump")]
-    public int Bump;
+    public int Bump { get; set; }
 
     [JsonProperty("stakingPool")]
-    public string StakingPool;
+    public string StakingPool { get; set; }
 
     [JsonProperty("decimals")]
-    public int Decimals;
+    public int Decimals { get; set; }
 
     [JsonProperty("durationMultipliers")]
-    public List<Multiplier> DurationMultipliers;
+    public List<Multiplier> DurationMultipliers { get; set; }
 
     [JsonProperty("countMultipliers")]
-    public List<Multiplier> CountMultipliers;
+    public List<Multiplier> CountMultipliers { get; set; }
 
     [JsonProperty("creatorMultipliers")]
-    public List<Multiplier> CreatorMultipliers;
+    public List<Multiplier> CreatorMultipliers { get; set; }
 
     [JsonProperty("collectionMultipliers")]
-    public List<Multiplier> CollectionMultipliers;
+    public List<Multiplier> CollectionMultipliers { get; set; }
 
-    public Multipliers() { }
+    public Multipliers () {} 
 
   }
 
   public class Multiplier
   {
     [JsonProperty("value")]
-    public string Value;
+    public string Value { get; set; }
 
     [JsonProperty("multiplierType")]
-    public MultiplierType MultiplierType;
+    public MultiplierType MultiplierType { get; set; }
 
-    public Multiplier() { }
+    public Multiplier () {} 
 
   }
 
   public class MultiplierType
   {
     [JsonProperty("kind")]
-    public string Kind;
+    public string Kind { get; set; }
 
     [JsonProperty("params")]
-    public MultiplierTypeParams Params;
+    public MultiplierTypeParams Params { get; set; }
 
-    public MultiplierType() { }
+    public MultiplierType () {} 
 
   }
 
   public class MultiplierTypeParamsStakeDuration
   {
     [JsonProperty("minDuration")]
-    public string MinDuration;
+    public string MinDuration { get; set; }
 
-    public MultiplierTypeParamsStakeDuration() { }
+    public MultiplierTypeParamsStakeDuration () {} 
 
   }
 
   public class MultiplierTypeParamsNFTCount
   {
     [JsonProperty("minCount")]
-    public string MinCount;
+    public string MinCount { get; set; }
 
-    public MultiplierTypeParamsNFTCount() { }
+    public MultiplierTypeParamsNFTCount () {} 
 
   }
 
   public class MultiplierTypeParamsCreator
   {
     [JsonProperty("creator")]
-    public string Creator;
+    public string Creator { get; set; }
 
-    public MultiplierTypeParamsCreator() { }
+    public MultiplierTypeParamsCreator () {} 
 
   }
 
   public class MultiplierTypeParamsCollection
   {
     [JsonProperty("collection")]
-    public string Collection;
+    public string Collection { get; set; }
 
-    public MultiplierTypeParamsCollection() { }
+    public MultiplierTypeParamsCollection () {} 
 
   }
 
   public class Staker
   {
     [JsonProperty("address")]
-    public string Address;
+    public string Address { get; set; }
 
     [JsonProperty("bump")]
-    public int Bump;
+    public int Bump { get; set; }
 
     [JsonProperty("stakingPool")]
-    public string StakingPool;
+    public string StakingPool { get; set; }
 
     [JsonProperty("wallet")]
-    public string Wallet;
+    public string Wallet { get; set; }
 
     [JsonProperty("totalStaked")]
-    public string TotalStaked;
+    public string TotalStaked { get; set; }
 
-    public Staker() { }
+    public Staker () {} 
 
   }
 
   public class Transaction
   {
     [JsonProperty("transaction")]
-    public string Transaction_;
+    public string Transaction_ { get; set; }
 
     [JsonProperty("blockhash")]
-    public string Blockhash;
+    public string Blockhash { get; set; }
 
     [JsonProperty("lastValidBlockHeight")]
-    public int LastValidBlockHeight;
+    public int LastValidBlockHeight { get; set; }
 
-    public Transaction() { }
+    public Transaction () {} 
 
   }
 
   public class CreateCreateProjectTransactionResponse
   {
     [JsonProperty("tx")]
-    public Transaction Tx;
+    public Transaction Tx { get; set; }
 
     [JsonProperty("project")]
-    public string Project;
+    public string Project { get; set; }
 
-    public CreateCreateProjectTransactionResponse() { }
+    public CreateCreateProjectTransactionResponse () {} 
 
   }
 
   public class CreateAssemblerConfigTransactionResponse
   {
     [JsonProperty("tx")]
-    public Transaction Tx;
+    public Transaction Tx { get; set; }
 
     [JsonProperty("assemblerConfig")]
-    public string AssemblerConfig;
+    public string AssemblerConfig { get; set; }
 
     [JsonProperty("treeAddress")]
-    public string TreeAddress;
+    public string TreeAddress { get; set; }
 
     [JsonProperty("proofBytes")]
-    public int ProofBytes;
+    public int ProofBytes { get; set; }
 
     [JsonProperty("space")]
-    public int Space;
+    public int Space { get; set; }
 
     [JsonProperty("cost")]
-    public float Cost;
+    public float? Cost { get; set; }
 
     [JsonProperty("maxTreeCapacity")]
-    public int MaxTreeCapacity;
+    public int MaxTreeCapacity { get; set; }
 
-    public CreateAssemblerConfigTransactionResponse() { }
+    public CreateAssemblerConfigTransactionResponse () {} 
 
   }
 
   public class CreateCharacterModelTransactionResponse
   {
     [JsonProperty("tx")]
-    public Transaction Tx;
+    public Transaction Tx { get; set; }
 
     [JsonProperty("characterModel")]
-    public string CharacterModel;
+    public string CharacterModel { get; set; }
 
-    public CreateCharacterModelTransactionResponse() { }
+    public CreateCharacterModelTransactionResponse () {} 
 
   }
 
   public class CreateInitResourceTransactionResponse
   {
     [JsonProperty("tx")]
-    public Transaction Tx;
+    public Transaction Tx { get; set; }
 
     [JsonProperty("resource")]
-    public string Resource;
+    public string Resource { get; set; }
 
-    public CreateInitResourceTransactionResponse() { }
+    public CreateInitResourceTransactionResponse () {} 
 
   }
 
   public class CreateCreateNewResourceTreeTransactionResponse
   {
     [JsonProperty("tx")]
-    public Transaction Tx;
+    public Transaction Tx { get; set; }
 
     [JsonProperty("tree")]
-    public string Tree;
+    public string Tree { get; set; }
 
-    public CreateCreateNewResourceTreeTransactionResponse() { }
+    public CreateCreateNewResourceTreeTransactionResponse () {} 
 
   }
 
   public class CreateInitializeRecipeTransactionResponse
   {
     [JsonProperty("transactions")]
-    public Transactions Transactions;
+    public Transactions Transactions { get; set; }
 
     [JsonProperty("recipe")]
-    public string Recipe;
+    public string Recipe { get; set; }
 
-    public CreateInitializeRecipeTransactionResponse() { }
+    public CreateInitializeRecipeTransactionResponse () {} 
 
   }
 
   public class CreateBeginCookingTransactionResponse
   {
     [JsonProperty("transaction")]
-    public Transaction Transaction;
+    public Transaction Transaction { get; set; }
 
     [JsonProperty("cooking")]
-    public string Cooking;
+    public string Cooking { get; set; }
 
-    public CreateBeginCookingTransactionResponse() { }
+    public CreateBeginCookingTransactionResponse () {} 
 
   }
 
   public class Transactions
   {
     [JsonProperty("transactions")]
-    public List<string> Transactions_;
+    public List<string> Transactions_ { get; set; }
 
     [JsonProperty("blockhash")]
-    public string Blockhash;
+    public string Blockhash { get; set; }
 
     [JsonProperty("lastValidBlockHeight")]
-    public int LastValidBlockHeight;
+    public int LastValidBlockHeight { get; set; }
 
-    public Transactions() { }
+    public Transactions () {} 
 
   }
 
   public class TransactionResponse
   {
     [JsonProperty("signature")]
-    public string Signature;
+    public string Signature { get; set; }
 
     [JsonProperty("error")]
-    public object Error;
+    public object Error { get; set; }
 
     [JsonProperty("status")]
-    public string Status;
+    public string Status { get; set; }
 
-    public TransactionResponse() { }
+    public TransactionResponse () {} 
 
   }
 
   public class TransactionBundleResponse
   {
     [JsonProperty("bundleId")]
-    public int BundleId;
+    public int BundleId { get; set; }
 
     [JsonProperty("responses")]
-    public List<TransactionResponse> Responses;
+    public List<TransactionResponse> Responses { get; set; }
 
-    public TransactionBundleResponse() { }
+    public TransactionBundleResponse () {} 
 
   }
 
   public class AuthResponse
   {
     [JsonProperty("message")]
-    public string Message;
+    public string Message { get; set; }
 
     [JsonProperty("tx")]
-    public string Tx;
+    public string Tx { get; set; }
 
-    public AuthResponse() { }
+    public AuthResponse () {} 
 
   }
 
   public class AuthConfirmed
   {
     [JsonProperty("accessToken")]
-    public string AccessToken;
+    public string AccessToken { get; set; }
 
     [JsonProperty("user")]
-    public User User;
+    public User User { get; set; }
 
-    public AuthConfirmed() { }
+    public AuthConfirmed () {} 
 
   }
 
   public class OutputHoldingTree
   {
     [JsonProperty("tree")]
-    public string Tree;
+    public string Tree { get; set; }
 
-    public OutputHoldingTree() { }
+    public OutputHoldingTree () {} 
 
   }
 
   public class CreateCreateHolderAccountTransactionResponse
   {
     [JsonProperty("tx")]
-    public Transaction Tx;
+    public Transaction Tx { get; set; }
 
     [JsonProperty("holderAccount")]
-    public string HolderAccount;
+    public string HolderAccount { get; set; }
 
-    public CreateCreateHolderAccountTransactionResponse() { }
+    public CreateCreateHolderAccountTransactionResponse () {} 
 
   }
 
   public class CreateInitMultipliersTransactionResponse
   {
     [JsonProperty("tx")]
-    public Transaction Tx;
+    public Transaction Tx { get; set; }
 
     [JsonProperty("multipliersAddress")]
-    public string MultipliersAddress;
+    public string MultipliersAddress { get; set; }
 
-    public CreateInitMultipliersTransactionResponse() { }
+    public CreateInitMultipliersTransactionResponse () {} 
 
   }
 
   public class CreateCreateStakingPoolTransactionResponse
   {
     [JsonProperty("transactions")]
-    public Transactions Transactions;
+    public Transactions Transactions { get; set; }
 
     [JsonProperty("stakingPoolAddress")]
-    public string StakingPoolAddress;
+    public string StakingPoolAddress { get; set; }
 
     [JsonProperty("multipliersAddress")]
-    public string MultipliersAddress;
+    public string MultipliersAddress { get; set; }
 
-    public CreateCreateStakingPoolTransactionResponse() { }
+    public CreateCreateStakingPoolTransactionResponse () {} 
 
   }
 
   public class CreateCreateMissionPoolTransactionResponse
   {
     [JsonProperty("tx")]
-    public Transaction Tx;
+    public Transaction Tx { get; set; }
 
     [JsonProperty("missionPoolAddress")]
-    public string MissionPoolAddress;
+    public string MissionPoolAddress { get; set; }
 
-    public CreateCreateMissionPoolTransactionResponse() { }
+    public CreateCreateMissionPoolTransactionResponse () {} 
 
   }
 
   public class CreateUpdateMissionPoolTransactionResponse
   {
     [JsonProperty("tx")]
-    public Transaction Tx;
+    public Transaction Tx { get; set; }
 
-    public CreateUpdateMissionPoolTransactionResponse() { }
+    public CreateUpdateMissionPoolTransactionResponse () {} 
 
   }
 
   public class CreateCreateMissionTransactionResponse
   {
     [JsonProperty("tx")]
-    public Transaction Tx;
+    public Transaction Tx { get; set; }
 
     [JsonProperty("missionAddress")]
-    public string MissionAddress;
+    public string MissionAddress { get; set; }
 
-    public CreateCreateMissionTransactionResponse() { }
+    public CreateCreateMissionTransactionResponse () {} 
 
   }
 
   public class CreateUpdateMissionTransactionResponse
   {
     [JsonProperty("tx")]
-    public Transaction Tx;
+    public Transaction Tx { get; set; }
 
-    public CreateUpdateMissionTransactionResponse() { }
+    public CreateUpdateMissionTransactionResponse () {} 
 
   }
 
   public class CreateInitializeFaucetTransactionResponse
   {
     [JsonProperty("tx")]
-    public Transaction Tx;
+    public Transaction Tx { get; set; }
 
     [JsonProperty("faucet")]
-    public string Faucet;
+    public string Faucet { get; set; }
 
-    public CreateInitializeFaucetTransactionResponse() { }
+    public CreateInitializeFaucetTransactionResponse () {} 
 
   }
 
   public class TreeSetupResponse
   {
     [JsonProperty("tx")]
-    public Transaction Tx;
+    public Transaction Tx { get; set; }
 
     [JsonProperty("treeAddress")]
-    public string TreeAddress;
+    public string TreeAddress { get; set; }
 
     [JsonProperty("proofBytes")]
-    public int ProofBytes;
+    public int ProofBytes { get; set; }
 
     [JsonProperty("space")]
-    public int Space;
+    public int Space { get; set; }
 
     [JsonProperty("cost")]
-    public float Cost;
+    public float? Cost { get; set; }
 
     [JsonProperty("maxTreeCapacity")]
-    public int MaxTreeCapacity;
+    public int MaxTreeCapacity { get; set; }
 
-    public TreeSetupResponse() { }
+    public TreeSetupResponse () {} 
 
   }
 
   public class Resource
   {
     [JsonProperty("address")]
-    public string Address;
+    public string Address { get; set; }
 
     [JsonProperty("bump")]
-    public int Bump;
+    public int Bump { get; set; }
 
     [JsonProperty("project")]
-    public string Project;
+    public string Project { get; set; }
 
     [JsonProperty("mint")]
-    public string Mint;
+    public string Mint { get; set; }
 
     [JsonProperty("storage")]
-    public ResourceStorage Storage;
+    public ResourceStorage Storage { get; set; }
 
     [JsonProperty("kind")]
-    public ResourceKind Kind;
+    public ResourceKind Kind { get; set; }
 
-    public Resource() { }
+    public Resource () {} 
 
   }
 
   public class ResourceBalance
   {
     [JsonProperty("address")]
-    public string Address;
+    public string Address { get; set; }
 
     [JsonProperty("amount")]
-    public string Amount;
+    public string Amount { get; set; }
 
     [JsonProperty("mint")]
-    public string Mint;
+    public string Mint { get; set; }
 
     [JsonProperty("wallet")]
-    public string Wallet;
+    public string Wallet { get; set; }
 
     [JsonProperty("resourceStorage")]
-    public ResourceStorageEnum ResourceStorage;
+    public ResourceStorageEnum ResourceStorage { get; set; }
 
-    public ResourceBalance() { }
+    public ResourceBalance () {} 
 
   }
 
   public class ResourceStorage
   {
     [JsonProperty("kind")]
-    public ResourceStorageEnum Kind;
+    public ResourceStorageEnum Kind { get; set; }
 
     [JsonProperty("params")]
-    public ResourceStorageParams Params;
+    public ResourceStorageParams Params { get; set; }
 
-    public ResourceStorage() { }
+    public ResourceStorage () {} 
 
   }
 
   public class ResourceStorageParams
   {
     [JsonProperty("merkle_trees")]
-    public ControlledMerkleTrees Merkle_trees;
+    public ControlledMerkleTrees Merkle_trees { get; set; }
 
     [JsonProperty("promiseSupply")]
-    public string PromiseSupply;
+    public string PromiseSupply { get; set; }
 
-    public ResourceStorageParams() { }
+    public ResourceStorageParams () {} 
 
   }
 
   public class ResourceKind
   {
     [JsonProperty("kind")]
-    public string Kind;
+    public string Kind { get; set; }
 
     [JsonProperty("params")]
-    public ResourceKindParams Params;
+    public ResourceKindParams Params { get; set; }
 
-    public ResourceKind() { }
+    public ResourceKind () {} 
 
   }
 
   public class ResourceKindParamsHplFungible
   {
     [JsonProperty("decimals")]
-    public int Decimals;
+    public int Decimals { get; set; }
 
-    public ResourceKindParamsHplFungible() { }
+    public ResourceKindParamsHplFungible () {} 
 
   }
 
   public class ResourceKindParamsWrappedFungible
   {
     [JsonProperty("decimals")]
-    public int Decimals;
+    public int Decimals { get; set; }
 
     [JsonProperty("custody")]
-    public ResourceCustody Custody;
+    public ResourceCustody Custody { get; set; }
 
-    public ResourceKindParamsWrappedFungible() { }
+    public ResourceKindParamsWrappedFungible () {} 
 
   }
 
   public class ResourceCustody
   {
     [JsonProperty("kind")]
-    public ResourceCustodyEnum Kind;
+    public ResourceCustodyEnum Kind { get; set; }
 
     [JsonProperty("params")]
-    public ResourceCustodyParams Params;
+    public ResourceCustodyParams Params { get; set; }
 
-    public ResourceCustody() { }
+    public ResourceCustody () {} 
 
   }
 
   public class ResourceCustodyParams
   {
     [JsonProperty("burnerDestination")]
-    public string BurnerDestination;
+    public string BurnerDestination { get; set; }
 
-    public ResourceCustodyParams() { }
+    public ResourceCustodyParams () {} 
 
   }
 
   public class ResourceKindParamsHplNonFungible
   {
     [JsonProperty("characteristics")]
-    public List<string> Characteristics;
+    public List<string> Characteristics { get; set; }
 
-    public ResourceKindParamsHplNonFungible() { }
+    public ResourceKindParamsHplNonFungible () {} 
 
   }
 
   public class ResourceKindParamsWrappedMplCore
   {
     [JsonProperty("characteristics")]
-    public List<string> Characteristics;
+    public List<string> Characteristics { get; set; }
 
-    public ResourceKindParamsWrappedMplCore() { }
+    public ResourceKindParamsWrappedMplCore () {} 
 
   }
 
   public class Recipe
   {
     [JsonProperty("address")]
-    public string Address;
+    public string Address { get; set; }
 
     [JsonProperty("bump")]
-    public int Bump;
+    public int Bump { get; set; }
 
     [JsonProperty("project")]
-    public string Project;
+    public string Project { get; set; }
 
     [JsonProperty("key")]
-    public string Key;
+    public string Key { get; set; }
 
     [JsonProperty("xp")]
-    public string Xp;
+    public string Xp { get; set; }
 
     [JsonProperty("ingredients")]
-    public List<Ingredient> Ingredients;
+    public List<Ingredient> Ingredients { get; set; }
 
     [JsonProperty("meal")]
-    public Meal Meal;
+    public Meal Meal { get; set; }
 
-    public Recipe() { }
+    public Recipe () {} 
 
   }
 
   public class Ingredient
   {
     [JsonProperty("resourceAddress")]
-    public string ResourceAddress;
+    public string ResourceAddress { get; set; }
 
     [JsonProperty("amount")]
-    public string Amount;
+    public string Amount { get; set; }
 
-    public Ingredient() { }
+    public Ingredient () {} 
 
   }
 
   public class Meal
   {
     [JsonProperty("resourceAddress")]
-    public string ResourceAddress;
+    public string ResourceAddress { get; set; }
 
     [JsonProperty("amount")]
-    public string Amount;
+    public string Amount { get; set; }
 
-    public Meal() { }
+    public Meal () {} 
 
   }
 
   public class Faucet
   {
     [JsonProperty("address")]
-    public string Address;
+    public string Address { get; set; }
 
     [JsonProperty("project")]
-    public string Project;
+    public string Project { get; set; }
 
     [JsonProperty("resource")]
-    public string Resource;
+    public string Resource { get; set; }
 
     [JsonProperty("amount")]
-    public string Amount;
+    public string Amount { get; set; }
 
     [JsonProperty("repeatInterval")]
-    public string RepeatInterval;
+    public string RepeatInterval { get; set; }
 
     [JsonProperty("lastClaimed")]
-    public string LastClaimed;
+    public string LastClaimed { get; set; }
 
-    public Faucet() { }
+    public Faucet () {} 
 
   }
 
   public class Holding
   {
     [JsonProperty("address")]
-    public string Address;
+    public string Address { get; set; }
 
     [JsonProperty("tree_id")]
-    public string Tree_id;
+    public string Tree_id { get; set; }
 
     [JsonProperty("leaf_idx")]
-    public string Leaf_idx;
+    public string Leaf_idx { get; set; }
 
     [JsonProperty("holder")]
-    public string Holder;
+    public string Holder { get; set; }
 
     [JsonProperty("balance")]
-    public string Balance;
+    public string Balance { get; set; }
 
     [JsonProperty("characteristics")]
-    public object Characteristics;
+    public object Characteristics { get; set; }
 
     [JsonProperty("proof")]
-    public Proof Proof;
+    public Proof Proof { get; set; }
 
-    public Holding() { }
+    public Holding () {} 
 
   }
 
