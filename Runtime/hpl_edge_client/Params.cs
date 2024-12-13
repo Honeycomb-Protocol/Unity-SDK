@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using HplEdgeClient.Enums;
 using HplEdgeClient.Inputs;
 
-namespace HplEdgeClient.Params {
+namespace HplEdgeClient.Params
+{
   public class FindCompressedAccountsParams
   {
     [JsonProperty("addresses")]
@@ -18,7 +19,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("parsedData")]
     public object ParsedData { get; set; }
 
-    public FindCompressedAccountsParams () {} 
+    public FindCompressedAccountsParams() { }
 
   }
 
@@ -27,7 +28,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("leaves")]
     public List<TreeLeaf> Leaves { get; set; }
 
-    public FetchProofsParams () {} 
+    public FetchProofsParams() { }
 
   }
 
@@ -42,7 +43,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("parsedData")]
     public object ParsedData { get; set; }
 
-    public FindAccountsParams () {} 
+    public FindAccountsParams() { }
 
   }
 
@@ -60,7 +61,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("options")]
     public SendTransactionBundlesOptions Options { get; set; }
 
-    public SendTransactionBundlesParams () {} 
+    public SendTransactionBundlesParams() { }
 
   }
 
@@ -81,7 +82,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("options")]
     public SendTransactionBundlesOptions Options { get; set; }
 
-    public SignWithShadowSignerAndSendTransactionBundlesParams () {} 
+    public SignWithShadowSignerAndSendTransactionBundlesParams() { }
 
   }
 
@@ -99,7 +100,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("options")]
     public SendTransactionBundlesOptions Options { get; set; }
 
-    public SendBulkTransactionsParams () {} 
+    public SendBulkTransactionsParams() { }
 
   }
 
@@ -117,7 +118,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("options")]
     public SendTransactionBundlesOptions Options { get; set; }
 
-    public SignWithShadowSignerAndSendBulkTransactionsParams () {} 
+    public SignWithShadowSignerAndSendBulkTransactionsParams() { }
 
   }
 
@@ -132,7 +133,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("useRpc")]
     public string UseRpc { get; set; }
 
-    public AuthRequestParams () {} 
+    public AuthRequestParams() { }
 
   }
 
@@ -144,7 +145,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("signature")]
     public string Signature { get; set; }
 
-    public AuthConfirmParams () {} 
+    public AuthConfirmParams() { }
 
   }
 
@@ -153,7 +154,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("env")]
     public string Env { get; set; }
 
-    public FindGlobalParams () {} 
+    public FindGlobalParams() { }
 
   }
 
@@ -168,7 +169,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("authorities")]
     public List<string> Authorities { get; set; }
 
-    public FindProjectsParams () {} 
+    public FindProjectsParams() { }
 
   }
 
@@ -183,7 +184,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("projects")]
     public List<string> Projects { get; set; }
 
-    public FindDelegateAuthorityParams () {} 
+    public FindDelegateAuthorityParams() { }
 
   }
 
@@ -204,7 +205,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("includeProjectProfiles")]
     public List<string> IncludeProjectProfiles { get; set; }
 
-    public FindUsersParams () {} 
+    public FindUsersParams() { }
 
   }
 
@@ -228,7 +229,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("includeUsers")]
     public bool? IncludeUsers { get; set; }
 
-    public FindProfilesParams () {} 
+    public FindProfilesParams() { }
 
   }
 
@@ -249,7 +250,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("computeUnitPrice")]
     public int? ComputeUnitPrice { get; set; }
 
-    public CreateNewUserTransactionParams () {} 
+    public CreateNewUserTransactionParams() { }
 
   }
 
@@ -270,7 +271,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("computeUnitPrice")]
     public int? ComputeUnitPrice { get; set; }
 
-    public CreateNewUserBulkTransactionParams () {} 
+    public CreateNewUserBulkTransactionParams() { }
 
   }
 
@@ -297,7 +298,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("computeUnitPrice")]
     public int? ComputeUnitPrice { get; set; }
 
-    public CreateUpdateUserTransactionParams () {} 
+    public CreateUpdateUserTransactionParams() { }
 
   }
 
@@ -330,7 +331,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("computeUnitPrice")]
     public int? ComputeUnitPrice { get; set; }
 
-    public CreateCreateProjectTransactionParams () {} 
+    public CreateCreateProjectTransactionParams() { }
 
   }
 
@@ -354,7 +355,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("computeUnitPrice")]
     public int? ComputeUnitPrice { get; set; }
 
-    public CreateChangeProjectDriverTransactionParams () {} 
+    public CreateChangeProjectDriverTransactionParams() { }
 
   }
 
@@ -381,7 +382,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("computeUnitPrice")]
     public int? ComputeUnitPrice { get; set; }
 
-    public CreateCreateDelegateAuthorityTransactionParams () {} 
+    public CreateCreateDelegateAuthorityTransactionParams() { }
 
   }
 
@@ -408,7 +409,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("computeUnitPrice")]
     public int? ComputeUnitPrice { get; set; }
 
-    public CreateModifyDelegationTransactionParams () {} 
+    public CreateModifyDelegationTransactionParams() { }
 
   }
 
@@ -429,7 +430,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("computeUnitPrice")]
     public int? ComputeUnitPrice { get; set; }
 
-    public CreateCreateProfilesTreeTransactionParams () {} 
+    public CreateCreateProfilesTreeTransactionParams() { }
 
   }
 
@@ -453,7 +454,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("computeUnitPrice")]
     public int? ComputeUnitPrice { get; set; }
 
-    public CreateNewProfileTransactionParams () {} 
+    public CreateNewProfileTransactionParams() { }
 
   }
 
@@ -477,7 +478,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("computeUnitPrice")]
     public int? ComputeUnitPrice { get; set; }
 
-    public CreateUpdateProfileTransactionParams () {} 
+    public CreateUpdateProfileTransactionParams() { }
 
   }
 
@@ -504,7 +505,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("computeUnitPrice")]
     public int? ComputeUnitPrice { get; set; }
 
-    public CreateUpdatePlatformDataTransactionParams () {} 
+    public CreateUpdatePlatformDataTransactionParams() { }
 
   }
 
@@ -531,7 +532,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("computeUnitPrice")]
     public int? ComputeUnitPrice { get; set; }
 
-    public CreateNewUserWithProfileTransactionParams () {} 
+    public CreateNewUserWithProfileTransactionParams() { }
 
   }
 
@@ -549,7 +550,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("project")]
     public List<string> Project { get; set; }
 
-    public FindAssemblerConfigParams () {} 
+    public FindAssemblerConfigParams() { }
 
   }
 
@@ -564,7 +565,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("includeProof")]
     public bool? IncludeProof { get; set; }
 
-    public FindCharacterTraitsParams () {} 
+    public FindCharacterTraitsParams() { }
 
   }
 
@@ -579,7 +580,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("assemblerConfigs")]
     public List<string> AssemblerConfigs { get; set; }
 
-    public FindCharacterModelsParams () {} 
+    public FindCharacterModelsParams() { }
 
   }
 
@@ -606,7 +607,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("attributeHashes")]
     public List<string> AttributeHashes { get; set; }
 
-    public FindCharactersParams () {} 
+    public FindCharactersParams() { }
 
   }
 
@@ -618,7 +619,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("event")]
     public List<string> Event { get; set; }
 
-    public FetchCharacterHistoryParams () {} 
+    public FetchCharacterHistoryParams() { }
 
   }
 
@@ -648,7 +649,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("computeUnitPrice")]
     public int? ComputeUnitPrice { get; set; }
 
-    public CreateCreateAssemblerConfigTransactionParams () {} 
+    public CreateCreateAssemblerConfigTransactionParams() { }
 
   }
 
@@ -672,7 +673,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("computeUnitPrice")]
     public int? ComputeUnitPrice { get; set; }
 
-    public CreateAddCharacterTraitsTransactionsParams () {} 
+    public CreateAddCharacterTraitsTransactionsParams() { }
 
   }
 
@@ -696,7 +697,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("computeUnitPrice")]
     public int? ComputeUnitPrice { get; set; }
 
-    public CreateRemoveCharacterTraitsTransactionsParams () {} 
+    public CreateRemoveCharacterTraitsTransactionsParams() { }
 
   }
 
@@ -717,6 +718,12 @@ namespace HplEdgeClient.Params {
     [JsonProperty("mintAs")]
     public MintAsInput MintAs { get; set; }
 
+    [JsonProperty("cooldown")]
+    public CharacterCooldownInput Cooldown { get; set; }
+
+    [JsonProperty("equipableCriteria")]
+    public List<string> EquipableCriteria { get; set; }
+
     [JsonProperty("payer")]
     public string Payer { get; set; }
 
@@ -726,7 +733,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("computeUnitPrice")]
     public int? ComputeUnitPrice { get; set; }
 
-    public CreateCreateCharacterModelTransactionParams () {} 
+    public CreateCreateCharacterModelTransactionParams() { }
 
   }
 
@@ -753,7 +760,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("computeUnitPrice")]
     public int? ComputeUnitPrice { get; set; }
 
-    public CreateCreateCharactersTreeTransactionParams () {} 
+    public CreateCreateCharactersTreeTransactionParams() { }
 
   }
 
@@ -786,7 +793,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("computeUnitPrice")]
     public int? ComputeUnitPrice { get; set; }
 
-    public CreateAssembleCharacterTransactionParams () {} 
+    public CreateAssembleCharacterTransactionParams() { }
 
   }
 
@@ -819,7 +826,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("computeUnitPrice")]
     public int? ComputeUnitPrice { get; set; }
 
-    public CreateUpdateCharacterTraitsTransactionParams () {} 
+    public CreateUpdateCharacterTraitsTransactionParams() { }
 
   }
 
@@ -855,7 +862,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("computeUnitPrice")]
     public int? ComputeUnitPrice { get; set; }
 
-    public CreatePopulateCharacterTransactionParams () {} 
+    public CreatePopulateCharacterTransactionParams() { }
 
   }
 
@@ -882,7 +889,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("computeUnitPrice")]
     public int? ComputeUnitPrice { get; set; }
 
-    public CreateWrapAssetsToCharacterTransactionsParams () {} 
+    public CreateWrapAssetsToCharacterTransactionsParams() { }
 
   }
 
@@ -909,7 +916,67 @@ namespace HplEdgeClient.Params {
     [JsonProperty("computeUnitPrice")]
     public int? ComputeUnitPrice { get; set; }
 
-    public CreateUnwrapAssetsFromCharacterTransactionsParams () {} 
+    public CreateUnwrapAssetsFromCharacterTransactionsParams() { }
+
+  }
+
+  public class CreateEquipResourceOnCharacterTransactionParams
+  {
+    [JsonProperty("characterModel")]
+    public string CharacterModel { get; set; }
+
+    [JsonProperty("characterAddress")]
+    public string CharacterAddress { get; set; }
+
+    [JsonProperty("resource")]
+    public string Resource { get; set; }
+
+    [JsonProperty("amount")]
+    public string Amount { get; set; }
+
+    [JsonProperty("owner")]
+    public string Owner { get; set; }
+
+    [JsonProperty("payer")]
+    public string Payer { get; set; }
+
+    [JsonProperty("lutAddresses")]
+    public List<string> LutAddresses { get; set; }
+
+    [JsonProperty("computeUnitPrice")]
+    public int? ComputeUnitPrice { get; set; }
+
+    public CreateEquipResourceOnCharacterTransactionParams() { }
+
+  }
+
+  public class CreateDismountResourceOnCharacterTransactionParams
+  {
+    [JsonProperty("characterModel")]
+    public string CharacterModel { get; set; }
+
+    [JsonProperty("characterAddress")]
+    public string CharacterAddress { get; set; }
+
+    [JsonProperty("resource")]
+    public string Resource { get; set; }
+
+    [JsonProperty("amount")]
+    public string Amount { get; set; }
+
+    [JsonProperty("owner")]
+    public string Owner { get; set; }
+
+    [JsonProperty("payer")]
+    public string Payer { get; set; }
+
+    [JsonProperty("lutAddresses")]
+    public List<string> LutAddresses { get; set; }
+
+    [JsonProperty("computeUnitPrice")]
+    public int? ComputeUnitPrice { get; set; }
+
+    public CreateDismountResourceOnCharacterTransactionParams() { }
 
   }
 
@@ -924,7 +991,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("names")]
     public List<string> Names { get; set; }
 
-    public FindStakingPoolsParams () {} 
+    public FindStakingPoolsParams() { }
 
   }
 
@@ -939,7 +1006,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("wallets")]
     public List<string> Wallets { get; set; }
 
-    public FindStakersParams () {} 
+    public FindStakersParams() { }
 
   }
 
@@ -951,7 +1018,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("stakingPools")]
     public List<string> StakingPools { get; set; }
 
-    public FindMultipliersParams () {} 
+    public FindMultipliersParams() { }
 
   }
 
@@ -984,7 +1051,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("computeUnitPrice")]
     public int? ComputeUnitPrice { get; set; }
 
-    public CreateCreateStakingPoolTransactionParams () {} 
+    public CreateCreateStakingPoolTransactionParams() { }
 
   }
 
@@ -1020,7 +1087,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("computeUnitPrice")]
     public int? ComputeUnitPrice { get; set; }
 
-    public CreateUpdateStakingPoolTransactionParams () {} 
+    public CreateUpdateStakingPoolTransactionParams() { }
 
   }
 
@@ -1053,7 +1120,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("computeUnitPrice")]
     public int? ComputeUnitPrice { get; set; }
 
-    public CreateInitMultipliersTransactionParams () {} 
+    public CreateInitMultipliersTransactionParams() { }
 
   }
 
@@ -1083,7 +1150,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("computeUnitPrice")]
     public int? ComputeUnitPrice { get; set; }
 
-    public CreateAddMultiplierTransactionParams () {} 
+    public CreateAddMultiplierTransactionParams() { }
 
   }
 
@@ -1110,7 +1177,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("computeUnitPrice")]
     public int? ComputeUnitPrice { get; set; }
 
-    public CreateStakeCharactersTransactionsParams () {} 
+    public CreateStakeCharactersTransactionsParams() { }
 
   }
 
@@ -1131,7 +1198,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("computeUnitPrice")]
     public int? ComputeUnitPrice { get; set; }
 
-    public CreateClaimStakingRewardsTransactionsParams () {} 
+    public CreateClaimStakingRewardsTransactionsParams() { }
 
   }
 
@@ -1152,7 +1219,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("computeUnitPrice")]
     public int? ComputeUnitPrice { get; set; }
 
-    public CreateUnstakeCharactersTransactionsParams () {} 
+    public CreateUnstakeCharactersTransactionsParams() { }
 
   }
 
@@ -1164,7 +1231,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("missionPools")]
     public List<string> MissionPools { get; set; }
 
-    public FindMissionsParams () {} 
+    public FindMissionsParams() { }
 
   }
 
@@ -1176,7 +1243,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("project")]
     public string Project { get; set; }
 
-    public FindMissionPoolsParams () {} 
+    public FindMissionPoolsParams() { }
 
   }
 
@@ -1191,7 +1258,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("computeUnitPrice")]
     public int? ComputeUnitPrice { get; set; }
 
-    public CreateCreateMissionPoolTransactionParams () {} 
+    public CreateCreateMissionPoolTransactionParams() { }
 
   }
 
@@ -1206,7 +1273,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("computeUnitPrice")]
     public int? ComputeUnitPrice { get; set; }
 
-    public CreateUpdateMissionPoolTransactionParams () {} 
+    public CreateUpdateMissionPoolTransactionParams() { }
 
   }
 
@@ -1221,7 +1288,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("computeUnitPrice")]
     public int? ComputeUnitPrice { get; set; }
 
-    public CreateCreateMissionTransactionParams () {} 
+    public CreateCreateMissionTransactionParams() { }
 
   }
 
@@ -1248,7 +1315,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("computeUnitPrice")]
     public int? ComputeUnitPrice { get; set; }
 
-    public CreateUpdateMissionTransactionParams () {} 
+    public CreateUpdateMissionTransactionParams() { }
 
   }
 
@@ -1263,7 +1330,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("computeUnitPrice")]
     public int? ComputeUnitPrice { get; set; }
 
-    public CreateSendCharactersOnMissionTransactionParams () {} 
+    public CreateSendCharactersOnMissionTransactionParams() { }
 
   }
 
@@ -1278,7 +1345,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("computeUnitPrice")]
     public int? ComputeUnitPrice { get; set; }
 
-    public CreateRecallCharactersTransactionParams () {} 
+    public CreateRecallCharactersTransactionParams() { }
 
   }
 
@@ -1293,7 +1360,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("mints")]
     public List<string> Mints { get; set; }
 
-    public FindResourcesParams () {} 
+    public FindResourcesParams() { }
 
   }
 
@@ -1311,7 +1378,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("wallets")]
     public List<string> Wallets { get; set; }
 
-    public FindResourcesBalanceParams () {} 
+    public FindResourcesBalanceParams() { }
 
   }
 
@@ -1326,7 +1393,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("resources")]
     public List<string> Resources { get; set; }
 
-    public FindFaucetsParams () {} 
+    public FindFaucetsParams() { }
 
   }
 
@@ -1338,7 +1405,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("projects")]
     public List<string> Projects { get; set; }
 
-    public FindRecipesParams () {} 
+    public FindRecipesParams() { }
 
   }
 
@@ -1356,7 +1423,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("includeProof")]
     public bool? IncludeProof { get; set; }
 
-    public FindHoldingsParams () {} 
+    public FindHoldingsParams() { }
 
   }
 
@@ -1383,7 +1450,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("computeUnitPrice")]
     public int? ComputeUnitPrice { get; set; }
 
-    public CreateCreateNewResourceTransactionParams () {} 
+    public CreateCreateNewResourceTransactionParams() { }
 
   }
 
@@ -1398,7 +1465,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("computeUnitPrice")]
     public int? ComputeUnitPrice { get; set; }
 
-    public CreateImportFungibleResourceTransactionParams () {} 
+    public CreateImportFungibleResourceTransactionParams() { }
 
   }
 
@@ -1419,7 +1486,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("computeUnitPrice")]
     public int? ComputeUnitPrice { get; set; }
 
-    public CreateExportFungibleResourceTransactionParams () {} 
+    public CreateExportFungibleResourceTransactionParams() { }
 
   }
 
@@ -1449,7 +1516,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("computeUnitPrice")]
     public int? ComputeUnitPrice { get; set; }
 
-    public CreateCreateNewResourceTreeTransactionParams () {} 
+    public CreateCreateNewResourceTreeTransactionParams() { }
 
   }
 
@@ -1479,7 +1546,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("computeUnitPrice")]
     public int? ComputeUnitPrice { get; set; }
 
-    public CreateMintResourceTransactionParams () {} 
+    public CreateMintResourceTransactionParams() { }
 
   }
 
@@ -1509,7 +1576,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("computeUnitPrice")]
     public int? ComputeUnitPrice { get; set; }
 
-    public CreateBurnResourceTransactionParams () {} 
+    public CreateBurnResourceTransactionParams() { }
 
   }
 
@@ -1536,7 +1603,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("computeUnitPrice")]
     public int? ComputeUnitPrice { get; set; }
 
-    public CreateTransferResourceTransactionParams () {} 
+    public CreateTransferResourceTransactionParams() { }
 
   }
 
@@ -1560,7 +1627,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("computeUnitPrice")]
     public int? ComputeUnitPrice { get; set; }
 
-    public CreateCreateWrapHoldingTransactionParams () {} 
+    public CreateCreateWrapHoldingTransactionParams() { }
 
   }
 
@@ -1584,7 +1651,58 @@ namespace HplEdgeClient.Params {
     [JsonProperty("computeUnitPrice")]
     public int? ComputeUnitPrice { get; set; }
 
-    public CreateCreateUnwrapHoldingTransactionParams () {} 
+    public CreateCreateUnwrapHoldingTransactionParams() { }
+
+  }
+
+  public class CreateInitializeFaucetTransactionParams
+  {
+    [JsonProperty("resource")]
+    public string Resource { get; set; }
+
+    [JsonProperty("amount")]
+    public int Amount { get; set; }
+
+    [JsonProperty("repeatInterval")]
+    public int RepeatInterval { get; set; }
+
+    [JsonProperty("authority")]
+    public string Authority { get; set; }
+
+    [JsonProperty("delegateAuthority")]
+    public string DelegateAuthority { get; set; }
+
+    [JsonProperty("payer")]
+    public string Payer { get; set; }
+
+    [JsonProperty("lutAddresses")]
+    public List<string> LutAddresses { get; set; }
+
+    [JsonProperty("computeUnitPrice")]
+    public int? ComputeUnitPrice { get; set; }
+
+    public CreateInitializeFaucetTransactionParams() { }
+
+  }
+
+  public class CreateClaimFaucetTransactionParams
+  {
+    [JsonProperty("faucet")]
+    public string Faucet { get; set; }
+
+    [JsonProperty("owner")]
+    public string Owner { get; set; }
+
+    [JsonProperty("payer")]
+    public string Payer { get; set; }
+
+    [JsonProperty("lutAddresses")]
+    public List<string> LutAddresses { get; set; }
+
+    [JsonProperty("computeUnitPrice")]
+    public int? ComputeUnitPrice { get; set; }
+
+    public CreateClaimFaucetTransactionParams() { }
 
   }
 
@@ -1617,7 +1735,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("computeUnitPrice")]
     public int? ComputeUnitPrice { get; set; }
 
-    public CreateInitializeRecipeTransactionParams () {} 
+    public CreateInitializeRecipeTransactionParams() { }
 
   }
 
@@ -1644,7 +1762,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("computeUnitPrice")]
     public int? ComputeUnitPrice { get; set; }
 
-    public CreateAddIngredientsTransactionParams () {} 
+    public CreateAddIngredientsTransactionParams() { }
 
   }
 
@@ -1671,58 +1789,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("computeUnitPrice")]
     public int? ComputeUnitPrice { get; set; }
 
-    public CreateRemoveIngredientsTransactionParams () {} 
-
-  }
-
-  public class CreateInitializeFaucetTransactionParams
-  {
-    [JsonProperty("resource")]
-    public string Resource { get; set; }
-
-    [JsonProperty("amount")]
-    public int Amount { get; set; }
-
-    [JsonProperty("repeatInterval")]
-    public int RepeatInterval { get; set; }
-
-    [JsonProperty("authority")]
-    public string Authority { get; set; }
-
-    [JsonProperty("delegateAuthority")]
-    public string DelegateAuthority { get; set; }
-
-    [JsonProperty("payer")]
-    public string Payer { get; set; }
-
-    [JsonProperty("lutAddresses")]
-    public List<string> LutAddresses { get; set; }
-
-    [JsonProperty("computeUnitPrice")]
-    public int? ComputeUnitPrice { get; set; }
-
-    public CreateInitializeFaucetTransactionParams () {} 
-
-  }
-
-  public class CreateClaimFaucetTransactionParams
-  {
-    [JsonProperty("faucet")]
-    public string Faucet { get; set; }
-
-    [JsonProperty("owner")]
-    public string Owner { get; set; }
-
-    [JsonProperty("payer")]
-    public string Payer { get; set; }
-
-    [JsonProperty("lutAddresses")]
-    public List<string> LutAddresses { get; set; }
-
-    [JsonProperty("computeUnitPrice")]
-    public int? ComputeUnitPrice { get; set; }
-
-    public CreateClaimFaucetTransactionParams () {} 
+    public CreateRemoveIngredientsTransactionParams() { }
 
   }
 
@@ -1743,7 +1810,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("lutAddresses")]
     public List<string> LutAddresses { get; set; }
 
-    public CreateInitCookingProcessTransactionsParams () {} 
+    public CreateInitCookingProcessTransactionsParams() { }
 
   }
 
@@ -1758,7 +1825,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("computeUnitPrice")]
     public int? ComputeUnitPrice { get; set; }
 
-    public CreateInitializeBadgeCriteriaTransactionParams () {} 
+    public CreateInitializeBadgeCriteriaTransactionParams() { }
 
   }
 
@@ -1773,7 +1840,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("computeUnitPrice")]
     public int? ComputeUnitPrice { get; set; }
 
-    public CreateClaimBadgeCriteriaTransactionParams () {} 
+    public CreateClaimBadgeCriteriaTransactionParams() { }
 
   }
 
@@ -1788,7 +1855,7 @@ namespace HplEdgeClient.Params {
     [JsonProperty("computeUnitPrice")]
     public int? ComputeUnitPrice { get; set; }
 
-    public CreateUpdateBadgeCriteriaTransactionParams () {} 
+    public CreateUpdateBadgeCriteriaTransactionParams() { }
 
   }
 

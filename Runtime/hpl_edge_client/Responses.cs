@@ -3,13 +3,14 @@ using System.Collections.Generic;
 
 using HplEdgeClient.Types;
 
-namespace HplEdgeClient.Responses {
+namespace HplEdgeClient.Responses
+{
   public class FindCompressedAccountsReturn
   {
     [JsonProperty("compressedAccount")]
     public List<CompressedAccount> CompressedAccount { get; set; }
 
-    public FindCompressedAccountsReturn () {} 
+    public FindCompressedAccountsReturn() { }
 
   }
 
@@ -18,7 +19,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("proof")]
     public List<Proof> Proof { get; set; }
 
-    public FetchProofsReturn () {} 
+    public FetchProofsReturn() { }
 
   }
 
@@ -27,7 +28,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("account")]
     public List<Account> Account { get; set; }
 
-    public FindAccountsReturn () {} 
+    public FindAccountsReturn() { }
 
   }
 
@@ -36,7 +37,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("sendTransactionBundles")]
     public List<TransactionBundleResponse> SendTransactionBundles { get; set; }
 
-    public SendTransactionBundlesReturn () {} 
+    public SendTransactionBundlesReturn() { }
 
   }
 
@@ -45,7 +46,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("signWithShadowSignerAndSendTransactionBundles")]
     public List<TransactionBundleResponse> SignWithShadowSignerAndSendTransactionBundles { get; set; }
 
-    public SignWithShadowSignerAndSendTransactionBundlesReturn () {} 
+    public SignWithShadowSignerAndSendTransactionBundlesReturn() { }
 
   }
 
@@ -54,7 +55,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("sendBulkTransactions")]
     public List<TransactionResponse> SendBulkTransactions { get; set; }
 
-    public SendBulkTransactionsReturn () {} 
+    public SendBulkTransactionsReturn() { }
 
   }
 
@@ -63,7 +64,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("signWithShadowSignerAndSendBulkTransactions")]
     public List<TransactionResponse> SignWithShadowSignerAndSendBulkTransactions { get; set; }
 
-    public SignWithShadowSignerAndSendBulkTransactionsReturn () {} 
+    public SignWithShadowSignerAndSendBulkTransactionsReturn() { }
 
   }
 
@@ -72,7 +73,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("authRequest")]
     public AuthResponse AuthRequest { get; set; }
 
-    public AuthRequestReturn () {} 
+    public AuthRequestReturn() { }
 
   }
 
@@ -81,7 +82,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("authConfirm")]
     public AuthConfirmed AuthConfirm { get; set; }
 
-    public AuthConfirmReturn () {} 
+    public AuthConfirmReturn() { }
 
   }
 
@@ -90,7 +91,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("global")]
     public Global Global { get; set; }
 
-    public FindGlobalReturn () {} 
+    public FindGlobalReturn() { }
 
   }
 
@@ -99,7 +100,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("project")]
     public List<Project> Project { get; set; }
 
-    public FindProjectsReturn () {} 
+    public FindProjectsReturn() { }
 
   }
 
@@ -108,7 +109,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("delegateAuthority")]
     public List<DelegateAuthority> DelegateAuthority { get; set; }
 
-    public FindDelegateAuthorityReturn () {} 
+    public FindDelegateAuthorityReturn() { }
 
   }
 
@@ -117,7 +118,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("user")]
     public List<User> User { get; set; }
 
-    public FindUsersReturn () {} 
+    public FindUsersReturn() { }
 
   }
 
@@ -126,7 +127,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("profile")]
     public List<Profile> Profile { get; set; }
 
-    public FindProfilesReturn () {} 
+    public FindProfilesReturn() { }
 
   }
 
@@ -135,7 +136,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("createNewUserTransaction")]
     public Transaction CreateNewUserTransaction { get; set; }
 
-    public CreateNewUserTransactionReturn () {} 
+    public CreateNewUserTransactionReturn() { }
 
   }
 
@@ -144,7 +145,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("createNewUserBulkTransaction")]
     public Transactions CreateNewUserBulkTransaction { get; set; }
 
-    public CreateNewUserBulkTransactionReturn () {} 
+    public CreateNewUserBulkTransactionReturn() { }
 
   }
 
@@ -153,7 +154,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("createUpdateUserTransaction")]
     public Transaction CreateUpdateUserTransaction { get; set; }
 
-    public CreateUpdateUserTransactionReturn () {} 
+    public CreateUpdateUserTransactionReturn() { }
 
   }
 
@@ -162,7 +163,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("createCreateProjectTransaction")]
     public CreateCreateProjectTransactionResponse CreateCreateProjectTransaction { get; set; }
 
-    public CreateCreateProjectTransactionReturn () {} 
+    public CreateCreateProjectTransactionReturn() { }
 
   }
 
@@ -171,7 +172,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("createChangeProjectDriverTransaction")]
     public Transaction CreateChangeProjectDriverTransaction { get; set; }
 
-    public CreateChangeProjectDriverTransactionReturn () {} 
+    public CreateChangeProjectDriverTransactionReturn() { }
 
   }
 
@@ -180,7 +181,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("createCreateDelegateAuthorityTransaction")]
     public Transaction CreateCreateDelegateAuthorityTransaction { get; set; }
 
-    public CreateCreateDelegateAuthorityTransactionReturn () {} 
+    public CreateCreateDelegateAuthorityTransactionReturn() { }
 
   }
 
@@ -189,7 +190,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("createModifyDelegationTransaction")]
     public Transaction CreateModifyDelegationTransaction { get; set; }
 
-    public CreateModifyDelegationTransactionReturn () {} 
+    public CreateModifyDelegationTransactionReturn() { }
 
   }
 
@@ -198,7 +199,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("createCreateProfilesTreeTransaction")]
     public TreeSetupResponse CreateCreateProfilesTreeTransaction { get; set; }
 
-    public CreateCreateProfilesTreeTransactionReturn () {} 
+    public CreateCreateProfilesTreeTransactionReturn() { }
 
   }
 
@@ -207,7 +208,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("createNewProfileTransaction")]
     public Transaction CreateNewProfileTransaction { get; set; }
 
-    public CreateNewProfileTransactionReturn () {} 
+    public CreateNewProfileTransactionReturn() { }
 
   }
 
@@ -216,7 +217,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("createUpdateProfileTransaction")]
     public Transaction CreateUpdateProfileTransaction { get; set; }
 
-    public CreateUpdateProfileTransactionReturn () {} 
+    public CreateUpdateProfileTransactionReturn() { }
 
   }
 
@@ -225,7 +226,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("createUpdatePlatformDataTransaction")]
     public Transaction CreateUpdatePlatformDataTransaction { get; set; }
 
-    public CreateUpdatePlatformDataTransactionReturn () {} 
+    public CreateUpdatePlatformDataTransactionReturn() { }
 
   }
 
@@ -234,7 +235,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("createNewUserWithProfileTransaction")]
     public Transaction CreateNewUserWithProfileTransaction { get; set; }
 
-    public CreateNewUserWithProfileTransactionReturn () {} 
+    public CreateNewUserWithProfileTransactionReturn() { }
 
   }
 
@@ -243,7 +244,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("assemblerConfig")]
     public List<AssemblerConfig> AssemblerConfig { get; set; }
 
-    public FindAssemblerConfigReturn () {} 
+    public FindAssemblerConfigReturn() { }
 
   }
 
@@ -252,7 +253,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("characterTrait")]
     public List<CharacterTrait> CharacterTrait { get; set; }
 
-    public FindCharacterTraitsReturn () {} 
+    public FindCharacterTraitsReturn() { }
 
   }
 
@@ -261,7 +262,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("characterModel")]
     public List<CharacterModel> CharacterModel { get; set; }
 
-    public FindCharacterModelsReturn () {} 
+    public FindCharacterModelsReturn() { }
 
   }
 
@@ -270,7 +271,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("character")]
     public List<Character> Character { get; set; }
 
-    public FindCharactersReturn () {} 
+    public FindCharactersReturn() { }
 
   }
 
@@ -279,7 +280,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("characterHistory")]
     public List<CharacterHistory> CharacterHistory { get; set; }
 
-    public FetchCharacterHistoryReturn () {} 
+    public FetchCharacterHistoryReturn() { }
 
   }
 
@@ -288,7 +289,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("createCreateAssemblerConfigTransaction")]
     public CreateAssemblerConfigTransactionResponse CreateCreateAssemblerConfigTransaction { get; set; }
 
-    public CreateCreateAssemblerConfigTransactionReturn () {} 
+    public CreateCreateAssemblerConfigTransactionReturn() { }
 
   }
 
@@ -297,7 +298,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("createAddCharacterTraitsTransactions")]
     public Transactions CreateAddCharacterTraitsTransactions { get; set; }
 
-    public CreateAddCharacterTraitsTransactionsReturn () {} 
+    public CreateAddCharacterTraitsTransactionsReturn() { }
 
   }
 
@@ -306,7 +307,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("createRemoveCharacterTraitsTransactions")]
     public Transactions CreateRemoveCharacterTraitsTransactions { get; set; }
 
-    public CreateRemoveCharacterTraitsTransactionsReturn () {} 
+    public CreateRemoveCharacterTraitsTransactionsReturn() { }
 
   }
 
@@ -315,7 +316,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("createCreateCharacterModelTransaction")]
     public CreateCharacterModelTransactionResponse CreateCreateCharacterModelTransaction { get; set; }
 
-    public CreateCreateCharacterModelTransactionReturn () {} 
+    public CreateCreateCharacterModelTransactionReturn() { }
 
   }
 
@@ -324,7 +325,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("createCreateCharactersTreeTransaction")]
     public TreeSetupResponse CreateCreateCharactersTreeTransaction { get; set; }
 
-    public CreateCreateCharactersTreeTransactionReturn () {} 
+    public CreateCreateCharactersTreeTransactionReturn() { }
 
   }
 
@@ -333,7 +334,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("createAssembleCharacterTransaction")]
     public Transaction CreateAssembleCharacterTransaction { get; set; }
 
-    public CreateAssembleCharacterTransactionReturn () {} 
+    public CreateAssembleCharacterTransactionReturn() { }
 
   }
 
@@ -342,7 +343,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("createUpdateCharacterTraitsTransaction")]
     public Transaction CreateUpdateCharacterTraitsTransaction { get; set; }
 
-    public CreateUpdateCharacterTraitsTransactionReturn () {} 
+    public CreateUpdateCharacterTraitsTransactionReturn() { }
 
   }
 
@@ -351,7 +352,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("createPopulateCharacterTransaction")]
     public Transaction CreatePopulateCharacterTransaction { get; set; }
 
-    public CreatePopulateCharacterTransactionReturn () {} 
+    public CreatePopulateCharacterTransactionReturn() { }
 
   }
 
@@ -360,7 +361,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("createWrapAssetsToCharacterTransactions")]
     public Transactions CreateWrapAssetsToCharacterTransactions { get; set; }
 
-    public CreateWrapAssetsToCharacterTransactionsReturn () {} 
+    public CreateWrapAssetsToCharacterTransactionsReturn() { }
 
   }
 
@@ -369,7 +370,25 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("createUnwrapAssetsFromCharacterTransactions")]
     public Transactions CreateUnwrapAssetsFromCharacterTransactions { get; set; }
 
-    public CreateUnwrapAssetsFromCharacterTransactionsReturn () {} 
+    public CreateUnwrapAssetsFromCharacterTransactionsReturn() { }
+
+  }
+
+  public class CreateEquipResourceOnCharacterTransactionReturn
+  {
+    [JsonProperty("createEquipResourceOnCharacterTransaction")]
+    public Transaction CreateEquipResourceOnCharacterTransaction { get; set; }
+
+    public CreateEquipResourceOnCharacterTransactionReturn() { }
+
+  }
+
+  public class CreateDismountResourceOnCharacterTransactionReturn
+  {
+    [JsonProperty("createDismountResourceOnCharacterTransaction")]
+    public Transaction CreateDismountResourceOnCharacterTransaction { get; set; }
+
+    public CreateDismountResourceOnCharacterTransactionReturn() { }
 
   }
 
@@ -378,7 +397,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("stakingPools")]
     public List<StakingPool> StakingPools { get; set; }
 
-    public FindStakingPoolsReturn () {} 
+    public FindStakingPoolsReturn() { }
 
   }
 
@@ -387,7 +406,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("stakers")]
     public List<Staker> Stakers { get; set; }
 
-    public FindStakersReturn () {} 
+    public FindStakersReturn() { }
 
   }
 
@@ -396,7 +415,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("multipliers")]
     public List<Multipliers> Multipliers { get; set; }
 
-    public FindMultipliersReturn () {} 
+    public FindMultipliersReturn() { }
 
   }
 
@@ -405,7 +424,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("createCreateStakingPoolTransaction")]
     public CreateCreateStakingPoolTransactionResponse CreateCreateStakingPoolTransaction { get; set; }
 
-    public CreateCreateStakingPoolTransactionReturn () {} 
+    public CreateCreateStakingPoolTransactionReturn() { }
 
   }
 
@@ -414,7 +433,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("createUpdateStakingPoolTransaction")]
     public Transaction CreateUpdateStakingPoolTransaction { get; set; }
 
-    public CreateUpdateStakingPoolTransactionReturn () {} 
+    public CreateUpdateStakingPoolTransactionReturn() { }
 
   }
 
@@ -423,7 +442,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("createInitMultipliersTransaction")]
     public CreateInitMultipliersTransactionResponse CreateInitMultipliersTransaction { get; set; }
 
-    public CreateInitMultipliersTransactionReturn () {} 
+    public CreateInitMultipliersTransactionReturn() { }
 
   }
 
@@ -432,7 +451,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("createAddMultiplierTransaction")]
     public Transaction CreateAddMultiplierTransaction { get; set; }
 
-    public CreateAddMultiplierTransactionReturn () {} 
+    public CreateAddMultiplierTransactionReturn() { }
 
   }
 
@@ -441,7 +460,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("createStakeCharactersTransactions")]
     public Transactions CreateStakeCharactersTransactions { get; set; }
 
-    public CreateStakeCharactersTransactionsReturn () {} 
+    public CreateStakeCharactersTransactionsReturn() { }
 
   }
 
@@ -450,7 +469,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("createClaimStakingRewardsTransactions")]
     public Transactions CreateClaimStakingRewardsTransactions { get; set; }
 
-    public CreateClaimStakingRewardsTransactionsReturn () {} 
+    public CreateClaimStakingRewardsTransactionsReturn() { }
 
   }
 
@@ -459,7 +478,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("createUnstakeCharactersTransactions")]
     public Transactions CreateUnstakeCharactersTransactions { get; set; }
 
-    public CreateUnstakeCharactersTransactionsReturn () {} 
+    public CreateUnstakeCharactersTransactionsReturn() { }
 
   }
 
@@ -468,7 +487,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("mission")]
     public List<Mission> Mission { get; set; }
 
-    public FindMissionsReturn () {} 
+    public FindMissionsReturn() { }
 
   }
 
@@ -477,7 +496,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("missionPool")]
     public List<MissionPool> MissionPool { get; set; }
 
-    public FindMissionPoolsReturn () {} 
+    public FindMissionPoolsReturn() { }
 
   }
 
@@ -486,7 +505,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("createCreateMissionPoolTransaction")]
     public CreateCreateMissionPoolTransactionResponse CreateCreateMissionPoolTransaction { get; set; }
 
-    public CreateCreateMissionPoolTransactionReturn () {} 
+    public CreateCreateMissionPoolTransactionReturn() { }
 
   }
 
@@ -495,7 +514,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("createUpdateMissionPoolTransaction")]
     public CreateUpdateMissionPoolTransactionResponse CreateUpdateMissionPoolTransaction { get; set; }
 
-    public CreateUpdateMissionPoolTransactionReturn () {} 
+    public CreateUpdateMissionPoolTransactionReturn() { }
 
   }
 
@@ -504,7 +523,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("createCreateMissionTransaction")]
     public CreateCreateMissionTransactionResponse CreateCreateMissionTransaction { get; set; }
 
-    public CreateCreateMissionTransactionReturn () {} 
+    public CreateCreateMissionTransactionReturn() { }
 
   }
 
@@ -513,7 +532,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("createUpdateMissionTransaction")]
     public Transaction CreateUpdateMissionTransaction { get; set; }
 
-    public CreateUpdateMissionTransactionReturn () {} 
+    public CreateUpdateMissionTransactionReturn() { }
 
   }
 
@@ -522,7 +541,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("createSendCharactersOnMissionTransaction")]
     public Transactions CreateSendCharactersOnMissionTransaction { get; set; }
 
-    public CreateSendCharactersOnMissionTransactionReturn () {} 
+    public CreateSendCharactersOnMissionTransactionReturn() { }
 
   }
 
@@ -531,7 +550,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("createRecallCharactersTransaction")]
     public Transactions CreateRecallCharactersTransaction { get; set; }
 
-    public CreateRecallCharactersTransactionReturn () {} 
+    public CreateRecallCharactersTransactionReturn() { }
 
   }
 
@@ -540,7 +559,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("resources")]
     public List<Resource> Resources { get; set; }
 
-    public FindResourcesReturn () {} 
+    public FindResourcesReturn() { }
 
   }
 
@@ -549,7 +568,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("resourcesBalance")]
     public List<ResourceBalance> ResourcesBalance { get; set; }
 
-    public FindResourcesBalanceReturn () {} 
+    public FindResourcesBalanceReturn() { }
 
   }
 
@@ -558,7 +577,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("faucets")]
     public List<Faucet> Faucets { get; set; }
 
-    public FindFaucetsReturn () {} 
+    public FindFaucetsReturn() { }
 
   }
 
@@ -567,7 +586,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("recipes")]
     public List<Recipe> Recipes { get; set; }
 
-    public FindRecipesReturn () {} 
+    public FindRecipesReturn() { }
 
   }
 
@@ -576,7 +595,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("holdings")]
     public List<Holding> Holdings { get; set; }
 
-    public FindHoldingsReturn () {} 
+    public FindHoldingsReturn() { }
 
   }
 
@@ -585,7 +604,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("createCreateNewResourceTransaction")]
     public CreateInitResourceTransactionResponse CreateCreateNewResourceTransaction { get; set; }
 
-    public CreateCreateNewResourceTransactionReturn () {} 
+    public CreateCreateNewResourceTransactionReturn() { }
 
   }
 
@@ -594,7 +613,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("createImportFungibleResourceTransaction")]
     public CreateInitResourceTransactionResponse CreateImportFungibleResourceTransaction { get; set; }
 
-    public CreateImportFungibleResourceTransactionReturn () {} 
+    public CreateImportFungibleResourceTransactionReturn() { }
 
   }
 
@@ -603,7 +622,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("createExportFungibleResourceTransaction")]
     public Transaction CreateExportFungibleResourceTransaction { get; set; }
 
-    public CreateExportFungibleResourceTransactionReturn () {} 
+    public CreateExportFungibleResourceTransactionReturn() { }
 
   }
 
@@ -612,7 +631,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("createCreateNewResourceTreeTransaction")]
     public TreeSetupResponse CreateCreateNewResourceTreeTransaction { get; set; }
 
-    public CreateCreateNewResourceTreeTransactionReturn () {} 
+    public CreateCreateNewResourceTreeTransactionReturn() { }
 
   }
 
@@ -621,7 +640,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("createMintResourceTransaction")]
     public Transaction CreateMintResourceTransaction { get; set; }
 
-    public CreateMintResourceTransactionReturn () {} 
+    public CreateMintResourceTransactionReturn() { }
 
   }
 
@@ -630,7 +649,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("createBurnResourceTransaction")]
     public Transaction CreateBurnResourceTransaction { get; set; }
 
-    public CreateBurnResourceTransactionReturn () {} 
+    public CreateBurnResourceTransactionReturn() { }
 
   }
 
@@ -639,7 +658,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("createTransferResourceTransaction")]
     public Transaction CreateTransferResourceTransaction { get; set; }
 
-    public CreateTransferResourceTransactionReturn () {} 
+    public CreateTransferResourceTransactionReturn() { }
 
   }
 
@@ -648,7 +667,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("createCreateWrapHoldingTransaction")]
     public Transaction CreateCreateWrapHoldingTransaction { get; set; }
 
-    public CreateCreateWrapHoldingTransactionReturn () {} 
+    public CreateCreateWrapHoldingTransactionReturn() { }
 
   }
 
@@ -657,34 +676,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("createCreateUnwrapHoldingTransaction")]
     public Transaction CreateCreateUnwrapHoldingTransaction { get; set; }
 
-    public CreateCreateUnwrapHoldingTransactionReturn () {} 
-
-  }
-
-  public class CreateInitializeRecipeTransactionReturn
-  {
-    [JsonProperty("createInitializeRecipeTransaction")]
-    public CreateInitializeRecipeTransactionResponse CreateInitializeRecipeTransaction { get; set; }
-
-    public CreateInitializeRecipeTransactionReturn () {} 
-
-  }
-
-  public class CreateAddIngredientsTransactionReturn
-  {
-    [JsonProperty("createAddIngredientsTransaction")]
-    public Transactions CreateAddIngredientsTransaction { get; set; }
-
-    public CreateAddIngredientsTransactionReturn () {} 
-
-  }
-
-  public class CreateRemoveIngredientsTransactionReturn
-  {
-    [JsonProperty("createRemoveIngredientsTransaction")]
-    public Transactions CreateRemoveIngredientsTransaction { get; set; }
-
-    public CreateRemoveIngredientsTransactionReturn () {} 
+    public CreateCreateUnwrapHoldingTransactionReturn() { }
 
   }
 
@@ -693,7 +685,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("createInitializeFaucetTransaction")]
     public CreateInitializeFaucetTransactionResponse CreateInitializeFaucetTransaction { get; set; }
 
-    public CreateInitializeFaucetTransactionReturn () {} 
+    public CreateInitializeFaucetTransactionReturn() { }
 
   }
 
@@ -702,7 +694,34 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("createClaimFaucetTransaction")]
     public Transaction CreateClaimFaucetTransaction { get; set; }
 
-    public CreateClaimFaucetTransactionReturn () {} 
+    public CreateClaimFaucetTransactionReturn() { }
+
+  }
+
+  public class CreateInitializeRecipeTransactionReturn
+  {
+    [JsonProperty("createInitializeRecipeTransaction")]
+    public CreateInitializeRecipeTransactionResponse CreateInitializeRecipeTransaction { get; set; }
+
+    public CreateInitializeRecipeTransactionReturn() { }
+
+  }
+
+  public class CreateAddIngredientsTransactionReturn
+  {
+    [JsonProperty("createAddIngredientsTransaction")]
+    public Transactions CreateAddIngredientsTransaction { get; set; }
+
+    public CreateAddIngredientsTransactionReturn() { }
+
+  }
+
+  public class CreateRemoveIngredientsTransactionReturn
+  {
+    [JsonProperty("createRemoveIngredientsTransaction")]
+    public Transactions CreateRemoveIngredientsTransaction { get; set; }
+
+    public CreateRemoveIngredientsTransactionReturn() { }
 
   }
 
@@ -711,7 +730,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("createInitCookingProcessTransactions")]
     public Transactions CreateInitCookingProcessTransactions { get; set; }
 
-    public CreateInitCookingProcessTransactionsReturn () {} 
+    public CreateInitCookingProcessTransactionsReturn() { }
 
   }
 
@@ -720,7 +739,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("createInitializeBadgeCriteriaTransaction")]
     public Transaction CreateInitializeBadgeCriteriaTransaction { get; set; }
 
-    public CreateInitializeBadgeCriteriaTransactionReturn () {} 
+    public CreateInitializeBadgeCriteriaTransactionReturn() { }
 
   }
 
@@ -729,7 +748,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("createClaimBadgeCriteriaTransaction")]
     public Transaction CreateClaimBadgeCriteriaTransaction { get; set; }
 
-    public CreateClaimBadgeCriteriaTransactionReturn () {} 
+    public CreateClaimBadgeCriteriaTransactionReturn() { }
 
   }
 
@@ -738,7 +757,7 @@ namespace HplEdgeClient.Responses {
     [JsonProperty("createUpdateBadgeCriteriaTransaction")]
     public Transaction CreateUpdateBadgeCriteriaTransaction { get; set; }
 
-    public CreateUpdateBadgeCriteriaTransactionReturn () {} 
+    public CreateUpdateBadgeCriteriaTransactionReturn() { }
 
   }
 

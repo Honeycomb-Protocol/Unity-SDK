@@ -3,7 +3,8 @@ using System.Collections.Generic;
 
 using HplEdgeClient.Enums;
 
-namespace HplEdgeClient.Types {
+namespace HplEdgeClient.Types
+{
   public class CharacterConfig
   {
     [JsonProperty("kind")]
@@ -36,7 +37,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("mintAs")]
     public MintAs MintAs { get; set; }
 
-    public CharacterConfig () {} 
+    public CharacterConfig() { }
 
   }
 
@@ -45,7 +46,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("merkleTree")]
     public string MerkleTree { get; set; }
 
-    public MintAsParams () {} 
+    public MintAsParams() { }
 
   }
 
@@ -72,7 +73,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("assemblerConfig")]
     public string AssemblerConfig { get; set; }
 
-    public CharacterSourceParams () {} 
+    public CharacterSourceParams() { }
 
   }
 
@@ -120,7 +121,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("data")]
     public object Data { get; set; }
 
-    public CharacterUsedByParams () {} 
+    public CharacterUsedByParams() { }
 
   }
 
@@ -138,7 +139,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("kitId")]
     public string KitId { get; set; }
 
-    public ServiceParams () {} 
+    public ServiceParams() { }
 
   }
 
@@ -150,7 +151,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("params")]
     public TimeRequirementParams Params { get; set; }
 
-    public MissionRequirement () {} 
+    public MissionRequirement() { }
 
   }
 
@@ -162,7 +163,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("params")]
     public ResourceRewardTypeParams Params { get; set; }
 
-    public RewardType () {} 
+    public RewardType() { }
 
   }
 
@@ -180,7 +181,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("collection")]
     public string Collection { get; set; }
 
-    public MultiplierTypeParams () {} 
+    public MultiplierTypeParams() { }
 
   }
 
@@ -210,7 +211,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("tree")]
     public string Tree { get; set; }
 
-    public OutputHolding () {} 
+    public OutputHolding() { }
 
   }
 
@@ -225,7 +226,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("characteristics")]
     public List<string> Characteristics { get; set; }
 
-    public ResourceKindParams () {} 
+    public ResourceKindParams() { }
 
   }
 
@@ -243,7 +244,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("time")]
     public string Time { get; set; }
 
-    public CharacterHistory () {} 
+    public CharacterHistory() { }
 
   }
 
@@ -270,7 +271,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("merkle_trees")]
     public ControlledMerkleTrees Merkle_trees { get; set; }
 
-    public AssemblerConfig () {} 
+    public AssemblerConfig() { }
 
   }
 
@@ -285,8 +286,8 @@ namespace HplEdgeClient.Types {
     [JsonProperty("leaf_idx")]
     public string Leaf_idx { get; set; }
 
-    [JsonProperty("label")]
-    public string Label { get; set; }
+    [JsonProperty("layer")]
+    public string Layer { get; set; }
 
     [JsonProperty("name")]
     public string Name { get; set; }
@@ -297,7 +298,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("proof")]
     public Proof Proof { get; set; }
 
-    public CharacterTrait () {} 
+    public CharacterTrait() { }
 
   }
 
@@ -330,7 +331,13 @@ namespace HplEdgeClient.Types {
     [JsonProperty("merkle_trees")]
     public ControlledMerkleTrees Merkle_trees { get; set; }
 
-    public CharacterModel () {} 
+    [JsonProperty("cooldown")]
+    public CharacterCooldown Cooldown { get; set; }
+
+    [JsonProperty("equipableCriteria")]
+    public List<string> EquipableCriteria { get; set; }
+
+    public CharacterModel() { }
 
   }
 
@@ -342,7 +349,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("criterias")]
     public List<AssetCriteria> Criterias { get; set; }
 
-    public CharacterConfigWrapped () {} 
+    public CharacterConfigWrapped() { }
 
   }
 
@@ -375,7 +382,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("mintAs")]
     public MintAs MintAs { get; set; }
 
-    public CharacterConfigAssembled () {} 
+    public CharacterConfigAssembled() { }
 
   }
 
@@ -387,7 +394,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("share")]
     public int Share { get; set; }
 
-    public NftCreator () {} 
+    public NftCreator() { }
 
   }
 
@@ -399,7 +406,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("params")]
     public MintAsParams Params { get; set; }
 
-    public MintAs () {} 
+    public MintAs() { }
 
   }
 
@@ -408,7 +415,16 @@ namespace HplEdgeClient.Types {
     [JsonProperty("merkleTree")]
     public string MerkleTree { get; set; }
 
-    public MintAsParamsMplBubblegum () {} 
+    public MintAsParamsMplBubblegum() { }
+
+  }
+
+  public class CharacterCooldown
+  {
+    [JsonProperty("ejection")]
+    public int Ejection { get; set; }
+
+    public CharacterCooldown() { }
 
   }
 
@@ -432,13 +448,19 @@ namespace HplEdgeClient.Types {
     [JsonProperty("usedBy")]
     public CharacterUsedBy UsedBy { get; set; }
 
+    [JsonProperty("equipments")]
+    public object Equipments { get; set; }
+
     [JsonProperty("proof")]
     public Proof Proof { get; set; }
 
     [JsonProperty("asset")]
     public object Asset { get; set; }
 
-    public Character () {} 
+    [JsonProperty("cooldown")]
+    public CharacterCooldown Cooldown { get; set; }
+
+    public Character() { }
 
   }
 
@@ -450,7 +472,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("params")]
     public CharacterSourceParams Params { get; set; }
 
-    public CharacterSource () {} 
+    public CharacterSource() { }
 
   }
 
@@ -465,7 +487,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("kind")]
     public SourceKind Kind { get; set; }
 
-    public Wrapped () {} 
+    public Wrapped() { }
 
   }
 
@@ -477,7 +499,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("params")]
     public string Params { get; set; }
 
-    public AssetCriteria () {} 
+    public AssetCriteria() { }
 
   }
 
@@ -498,7 +520,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("assemblerConfig")]
     public string AssemblerConfig { get; set; }
 
-    public Assembled () {} 
+    public Assembled() { }
 
   }
 
@@ -510,7 +532,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("params")]
     public CharacterUsedByParams Params { get; set; }
 
-    public CharacterUsedBy () {} 
+    public CharacterUsedBy() { }
 
   }
 
@@ -528,7 +550,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("claimedAt")]
     public int ClaimedAt { get; set; }
 
-    public UsedByStaking () {} 
+    public UsedByStaking() { }
 
   }
 
@@ -546,7 +568,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("endTime")]
     public int EndTime { get; set; }
 
-    public UsedByMission () {} 
+    public UsedByMission() { }
 
   }
 
@@ -561,7 +583,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("collected")]
     public bool Collected { get; set; }
 
-    public EarnedRewards () {} 
+    public EarnedRewards() { }
 
   }
 
@@ -576,7 +598,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("order")]
     public int Order { get; set; }
 
-    public UsedByGuild () {} 
+    public UsedByGuild() { }
 
   }
 
@@ -585,7 +607,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("kind")]
     public string Kind { get; set; }
 
-    public GuildRole () {} 
+    public GuildRole() { }
 
   }
 
@@ -594,7 +616,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("mint")]
     public string Mint { get; set; }
 
-    public UsedByEjected () {} 
+    public UsedByEjected() { }
 
   }
 
@@ -606,7 +628,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("data")]
     public object Data { get; set; }
 
-    public UsedByCustom () {} 
+    public UsedByCustom() { }
 
   }
 
@@ -627,7 +649,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("totalUsers")]
     public int TotalUsers { get; set; }
 
-    public Global () {} 
+    public Global() { }
 
   }
 
@@ -669,7 +691,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("subsidyFees")]
     public bool SubsidyFees { get; set; }
 
-    public Project () {} 
+    public Project() { }
 
   }
 
@@ -690,7 +712,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("delegations")]
     public List<ServiceDelegation> Delegations { get; set; }
 
-    public DelegateAuthority () {} 
+    public DelegateAuthority() { }
 
   }
 
@@ -705,7 +727,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("permission")]
     public string Permission { get; set; }
 
-    public ServiceDelegation () {} 
+    public ServiceDelegation() { }
 
   }
 
@@ -717,7 +739,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("params")]
     public ServiceParams Params { get; set; }
 
-    public Service () {} 
+    public Service() { }
 
   }
 
@@ -726,7 +748,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("assemblerId")]
     public string AssemblerId { get; set; }
 
-    public ServiceParamsAssembler () {} 
+    public ServiceParamsAssembler() { }
 
   }
 
@@ -735,7 +757,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("assetManagerId")]
     public string AssetManagerId { get; set; }
 
-    public ServiceParamsAssetManager () {} 
+    public ServiceParamsAssetManager() { }
 
   }
 
@@ -744,7 +766,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("poolId")]
     public string PoolId { get; set; }
 
-    public ServiceParamsStaking () {} 
+    public ServiceParamsStaking() { }
 
   }
 
@@ -753,7 +775,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("poolId")]
     public string PoolId { get; set; }
 
-    public ServiceParamsMissions () {} 
+    public ServiceParamsMissions() { }
 
   }
 
@@ -762,7 +784,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("poolId")]
     public string PoolId { get; set; }
 
-    public ServiceParamsRaffles () {} 
+    public ServiceParamsRaffles() { }
 
   }
 
@@ -771,7 +793,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("kitId")]
     public string KitId { get; set; }
 
-    public ServiceParamsGuildKit () {} 
+    public ServiceParamsGuildKit() { }
 
   }
 
@@ -783,7 +805,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("trustedActions")]
     public List<SerializableActions> TrustedActions { get; set; }
 
-    public AssociatedProgram () {} 
+    public AssociatedProgram() { }
 
   }
 
@@ -792,7 +814,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("kind")]
     public string Kind { get; set; }
 
-    public SerializableActions () {} 
+    public SerializableActions() { }
 
   }
 
@@ -804,7 +826,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("customDataFields")]
     public List<string> CustomDataFields { get; set; }
 
-    public ProfileDataConfig () {} 
+    public ProfileDataConfig() { }
 
   }
 
@@ -837,7 +859,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("profiles")]
     public List<Profile> Profiles { get; set; }
 
-    public User () {} 
+    public User() { }
 
   }
 
@@ -855,7 +877,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("pfp")]
     public string Pfp { get; set; }
 
-    public UserInfo () {} 
+    public UserInfo() { }
 
   }
 
@@ -870,7 +892,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("walletIndex")]
     public int WalletIndex { get; set; }
 
-    public CivicInfo () {} 
+    public CivicInfo() { }
 
   }
 
@@ -888,7 +910,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("civic")]
     public List<CivicInfo> Civic { get; set; }
 
-    public SocialInfo () {} 
+    public SocialInfo() { }
 
   }
 
@@ -900,7 +922,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("wallets")]
     public List<string> Wallets_ { get; set; }
 
-    public Wallets () {} 
+    public Wallets() { }
 
   }
 
@@ -939,7 +961,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("user")]
     public User User { get; set; }
 
-    public Profile () {} 
+    public Profile() { }
 
   }
 
@@ -954,7 +976,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("pfp")]
     public string Pfp { get; set; }
 
-    public ProfileInfo () {} 
+    public ProfileInfo() { }
 
   }
 
@@ -964,12 +986,12 @@ namespace HplEdgeClient.Types {
     public object Custom { get; set; }
 
     [JsonProperty("xp")]
-    public int Xp { get; set; }
+    public string Xp { get; set; }
 
     [JsonProperty("achievements")]
     public List<int> Achievements { get; set; }
 
-    public PlatformData () {} 
+    public PlatformData() { }
 
   }
 
@@ -987,7 +1009,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("condition")]
     public BadgesCondition Condition { get; set; }
 
-    public BadgeCriteria () {} 
+    public BadgeCriteria() { }
 
   }
 
@@ -1005,7 +1027,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("parsed_data")]
     public object Parsed_data { get; set; }
 
-    public Account () {} 
+    public Account() { }
 
   }
 
@@ -1026,7 +1048,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("parsed_data")]
     public object Parsed_data { get; set; }
 
-    public CompressedAccount () {} 
+    public CompressedAccount() { }
 
   }
 
@@ -1053,7 +1075,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("hash")]
     public string Hash { get; set; }
 
-    public Node () {} 
+    public Node() { }
 
   }
 
@@ -1083,7 +1105,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("canopy_depth")]
     public int Canopy_depth { get; set; }
 
-    public Proof () {} 
+    public Proof() { }
 
   }
 
@@ -1098,7 +1120,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("merkle_trees")]
     public List<string> Merkle_trees { get; set; }
 
-    public ControlledMerkleTrees () {} 
+    public ControlledMerkleTrees() { }
 
   }
 
@@ -1134,7 +1156,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("guildKits")]
     public List<int> GuildKits { get; set; }
 
-    public MissionPool () {} 
+    public MissionPool() { }
 
   }
 
@@ -1173,7 +1195,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("rewards")]
     public List<Reward> Rewards { get; set; }
 
-    public Mission () {} 
+    public Mission() { }
 
   }
 
@@ -1185,7 +1207,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("resource_address")]
     public string Resource_address { get; set; }
 
-    public MissionCost () {} 
+    public MissionCost() { }
 
   }
 
@@ -1197,7 +1219,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("params")]
     public TimeRequirementParams Params { get; set; }
 
-    public TimeRequirement () {} 
+    public TimeRequirement() { }
 
   }
 
@@ -1206,7 +1228,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("duration")]
     public string Duration { get; set; }
 
-    public TimeRequirementParams () {} 
+    public TimeRequirementParams() { }
 
   }
 
@@ -1221,7 +1243,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("rewardType")]
     public RewardType RewardType { get; set; }
 
-    public Reward () {} 
+    public Reward() { }
 
   }
 
@@ -1230,7 +1252,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("kind")]
     public string Kind { get; set; }
 
-    public XpRewardType () {} 
+    public XpRewardType() { }
 
   }
 
@@ -1242,7 +1264,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("params")]
     public ResourceRewardTypeParams Params { get; set; }
 
-    public ResourceRewardType () {} 
+    public ResourceRewardType() { }
 
   }
 
@@ -1251,7 +1273,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("address")]
     public string Address { get; set; }
 
-    public ResourceRewardTypeParams () {} 
+    public ResourceRewardTypeParams() { }
 
   }
 
@@ -1311,7 +1333,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("characterModels")]
     public List<string> CharacterModels { get; set; }
 
-    public StakingPool () {} 
+    public StakingPool() { }
 
   }
 
@@ -1320,7 +1342,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("kind")]
     public string Kind { get; set; }
 
-    public LockType () {} 
+    public LockType() { }
 
   }
 
@@ -1350,7 +1372,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("collectionMultipliers")]
     public List<Multiplier> CollectionMultipliers { get; set; }
 
-    public Multipliers () {} 
+    public Multipliers() { }
 
   }
 
@@ -1362,7 +1384,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("multiplierType")]
     public MultiplierType MultiplierType { get; set; }
 
-    public Multiplier () {} 
+    public Multiplier() { }
 
   }
 
@@ -1374,7 +1396,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("params")]
     public MultiplierTypeParams Params { get; set; }
 
-    public MultiplierType () {} 
+    public MultiplierType() { }
 
   }
 
@@ -1383,7 +1405,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("minDuration")]
     public string MinDuration { get; set; }
 
-    public MultiplierTypeParamsStakeDuration () {} 
+    public MultiplierTypeParamsStakeDuration() { }
 
   }
 
@@ -1392,7 +1414,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("minCount")]
     public string MinCount { get; set; }
 
-    public MultiplierTypeParamsNFTCount () {} 
+    public MultiplierTypeParamsNFTCount() { }
 
   }
 
@@ -1401,7 +1423,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("creator")]
     public string Creator { get; set; }
 
-    public MultiplierTypeParamsCreator () {} 
+    public MultiplierTypeParamsCreator() { }
 
   }
 
@@ -1410,7 +1432,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("collection")]
     public string Collection { get; set; }
 
-    public MultiplierTypeParamsCollection () {} 
+    public MultiplierTypeParamsCollection() { }
 
   }
 
@@ -1431,7 +1453,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("totalStaked")]
     public string TotalStaked { get; set; }
 
-    public Staker () {} 
+    public Staker() { }
 
   }
 
@@ -1446,7 +1468,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("lastValidBlockHeight")]
     public int LastValidBlockHeight { get; set; }
 
-    public Transaction () {} 
+    public Transaction() { }
 
   }
 
@@ -1458,7 +1480,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("project")]
     public string Project { get; set; }
 
-    public CreateCreateProjectTransactionResponse () {} 
+    public CreateCreateProjectTransactionResponse() { }
 
   }
 
@@ -1485,7 +1507,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("maxTreeCapacity")]
     public int MaxTreeCapacity { get; set; }
 
-    public CreateAssemblerConfigTransactionResponse () {} 
+    public CreateAssemblerConfigTransactionResponse() { }
 
   }
 
@@ -1497,7 +1519,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("characterModel")]
     public string CharacterModel { get; set; }
 
-    public CreateCharacterModelTransactionResponse () {} 
+    public CreateCharacterModelTransactionResponse() { }
 
   }
 
@@ -1509,7 +1531,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("resource")]
     public string Resource { get; set; }
 
-    public CreateInitResourceTransactionResponse () {} 
+    public CreateInitResourceTransactionResponse() { }
 
   }
 
@@ -1521,7 +1543,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("tree")]
     public string Tree { get; set; }
 
-    public CreateCreateNewResourceTreeTransactionResponse () {} 
+    public CreateCreateNewResourceTreeTransactionResponse() { }
 
   }
 
@@ -1533,7 +1555,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("recipe")]
     public string Recipe { get; set; }
 
-    public CreateInitializeRecipeTransactionResponse () {} 
+    public CreateInitializeRecipeTransactionResponse() { }
 
   }
 
@@ -1545,7 +1567,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("cooking")]
     public string Cooking { get; set; }
 
-    public CreateBeginCookingTransactionResponse () {} 
+    public CreateBeginCookingTransactionResponse() { }
 
   }
 
@@ -1560,7 +1582,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("lastValidBlockHeight")]
     public int LastValidBlockHeight { get; set; }
 
-    public Transactions () {} 
+    public Transactions() { }
 
   }
 
@@ -1575,7 +1597,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("status")]
     public string Status { get; set; }
 
-    public TransactionResponse () {} 
+    public TransactionResponse() { }
 
   }
 
@@ -1587,7 +1609,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("responses")]
     public List<TransactionResponse> Responses { get; set; }
 
-    public TransactionBundleResponse () {} 
+    public TransactionBundleResponse() { }
 
   }
 
@@ -1599,7 +1621,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("tx")]
     public string Tx { get; set; }
 
-    public AuthResponse () {} 
+    public AuthResponse() { }
 
   }
 
@@ -1611,7 +1633,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("user")]
     public User User { get; set; }
 
-    public AuthConfirmed () {} 
+    public AuthConfirmed() { }
 
   }
 
@@ -1620,7 +1642,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("tree")]
     public string Tree { get; set; }
 
-    public OutputHoldingTree () {} 
+    public OutputHoldingTree() { }
 
   }
 
@@ -1632,7 +1654,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("holderAccount")]
     public string HolderAccount { get; set; }
 
-    public CreateCreateHolderAccountTransactionResponse () {} 
+    public CreateCreateHolderAccountTransactionResponse() { }
 
   }
 
@@ -1644,7 +1666,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("multipliersAddress")]
     public string MultipliersAddress { get; set; }
 
-    public CreateInitMultipliersTransactionResponse () {} 
+    public CreateInitMultipliersTransactionResponse() { }
 
   }
 
@@ -1659,7 +1681,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("multipliersAddress")]
     public string MultipliersAddress { get; set; }
 
-    public CreateCreateStakingPoolTransactionResponse () {} 
+    public CreateCreateStakingPoolTransactionResponse() { }
 
   }
 
@@ -1671,7 +1693,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("missionPoolAddress")]
     public string MissionPoolAddress { get; set; }
 
-    public CreateCreateMissionPoolTransactionResponse () {} 
+    public CreateCreateMissionPoolTransactionResponse() { }
 
   }
 
@@ -1680,7 +1702,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("tx")]
     public Transaction Tx { get; set; }
 
-    public CreateUpdateMissionPoolTransactionResponse () {} 
+    public CreateUpdateMissionPoolTransactionResponse() { }
 
   }
 
@@ -1692,7 +1714,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("missionAddress")]
     public string MissionAddress { get; set; }
 
-    public CreateCreateMissionTransactionResponse () {} 
+    public CreateCreateMissionTransactionResponse() { }
 
   }
 
@@ -1701,7 +1723,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("tx")]
     public Transaction Tx { get; set; }
 
-    public CreateUpdateMissionTransactionResponse () {} 
+    public CreateUpdateMissionTransactionResponse() { }
 
   }
 
@@ -1713,7 +1735,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("faucet")]
     public string Faucet { get; set; }
 
-    public CreateInitializeFaucetTransactionResponse () {} 
+    public CreateInitializeFaucetTransactionResponse() { }
 
   }
 
@@ -1737,7 +1759,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("maxTreeCapacity")]
     public int MaxTreeCapacity { get; set; }
 
-    public TreeSetupResponse () {} 
+    public TreeSetupResponse() { }
 
   }
 
@@ -1761,7 +1783,10 @@ namespace HplEdgeClient.Types {
     [JsonProperty("kind")]
     public ResourceKind Kind { get; set; }
 
-    public Resource () {} 
+    [JsonProperty("tags")]
+    public List<string> Tags { get; set; }
+
+    public Resource() { }
 
   }
 
@@ -1782,7 +1807,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("resourceStorage")]
     public ResourceStorageEnum ResourceStorage { get; set; }
 
-    public ResourceBalance () {} 
+    public ResourceBalance() { }
 
   }
 
@@ -1794,7 +1819,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("params")]
     public ResourceStorageParams Params { get; set; }
 
-    public ResourceStorage () {} 
+    public ResourceStorage() { }
 
   }
 
@@ -1806,7 +1831,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("promiseSupply")]
     public string PromiseSupply { get; set; }
 
-    public ResourceStorageParams () {} 
+    public ResourceStorageParams() { }
 
   }
 
@@ -1818,7 +1843,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("params")]
     public ResourceKindParams Params { get; set; }
 
-    public ResourceKind () {} 
+    public ResourceKind() { }
 
   }
 
@@ -1827,7 +1852,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("decimals")]
     public int Decimals { get; set; }
 
-    public ResourceKindParamsHplFungible () {} 
+    public ResourceKindParamsHplFungible() { }
 
   }
 
@@ -1839,7 +1864,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("custody")]
     public ResourceCustody Custody { get; set; }
 
-    public ResourceKindParamsWrappedFungible () {} 
+    public ResourceKindParamsWrappedFungible() { }
 
   }
 
@@ -1851,7 +1876,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("params")]
     public ResourceCustodyParams Params { get; set; }
 
-    public ResourceCustody () {} 
+    public ResourceCustody() { }
 
   }
 
@@ -1860,7 +1885,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("burnerDestination")]
     public string BurnerDestination { get; set; }
 
-    public ResourceCustodyParams () {} 
+    public ResourceCustodyParams() { }
 
   }
 
@@ -1869,7 +1894,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("characteristics")]
     public List<string> Characteristics { get; set; }
 
-    public ResourceKindParamsHplNonFungible () {} 
+    public ResourceKindParamsHplNonFungible() { }
 
   }
 
@@ -1878,7 +1903,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("characteristics")]
     public List<string> Characteristics { get; set; }
 
-    public ResourceKindParamsWrappedMplCore () {} 
+    public ResourceKindParamsWrappedMplCore() { }
 
   }
 
@@ -1905,7 +1930,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("meal")]
     public Meal Meal { get; set; }
 
-    public Recipe () {} 
+    public Recipe() { }
 
   }
 
@@ -1917,7 +1942,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("amount")]
     public string Amount { get; set; }
 
-    public Ingredient () {} 
+    public Ingredient() { }
 
   }
 
@@ -1929,7 +1954,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("amount")]
     public string Amount { get; set; }
 
-    public Meal () {} 
+    public Meal() { }
 
   }
 
@@ -1953,7 +1978,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("lastClaimed")]
     public string LastClaimed { get; set; }
 
-    public Faucet () {} 
+    public Faucet() { }
 
   }
 
@@ -1980,7 +2005,7 @@ namespace HplEdgeClient.Types {
     [JsonProperty("proof")]
     public Proof Proof { get; set; }
 
-    public Holding () {} 
+    public Holding() { }
 
   }
 
