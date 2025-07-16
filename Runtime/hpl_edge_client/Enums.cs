@@ -55,29 +55,24 @@ namespace HplEdgeClient.Enums
   {
     ManageCriterias,
     ManageServices,
-    ManageIndexing,
-    ManageProfiles
+    ManageProjectDriver,
+    UpdatePlatformData
   }
 
-  public enum AssetAssemblerPermissionInput
+  public enum CharacterManagerPermissionInput
   {
-    ManageAssembler,
-    UpdateBlock,
-    UpdateBlockDefinition,
-    UpdateNFT,
-    InitialArtGeneration
-  }
-
-  public enum AssetManagerPermissionInput
-  {
-    ManageAssets
+    ManageAssemblerConfig,
+    ManageCharacterModels,
+    AssignCharacterTraits
   }
 
   public enum ResourceManagerPermissionInput
   {
     CreateResources,
     MintResources,
-    BurnResources
+    BurnResources,
+    CreateFaucet,
+    CreateRecipe
   }
 
   public enum NectarStakingPermissionInput

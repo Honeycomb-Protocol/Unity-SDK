@@ -149,6 +149,39 @@ namespace HplEdgeClient.Params
 
   }
 
+  public class CreateTransferAssetsTransactionsParams
+  {
+    [JsonProperty("addresses")]
+    public List<string> Addresses { get; set; }
+
+    [JsonProperty("to")]
+    public string To { get; set; }
+
+    [JsonProperty("lutAddresses")]
+    public List<string> LutAddresses { get; set; }
+
+    [JsonProperty("computeUnitPrice")]
+    public int? ComputeUnitPrice { get; set; }
+
+    public CreateTransferAssetsTransactionsParams() { }
+
+  }
+
+  public class CreateBurnAssetsTransactionsParams
+  {
+    [JsonProperty("addresses")]
+    public List<string> Addresses { get; set; }
+
+    [JsonProperty("lutAddresses")]
+    public List<string> LutAddresses { get; set; }
+
+    [JsonProperty("computeUnitPrice")]
+    public int? ComputeUnitPrice { get; set; }
+
+    public CreateBurnAssetsTransactionsParams() { }
+
+  }
+
   public class FindGlobalParams
   {
     [JsonProperty("env")]
@@ -490,9 +523,6 @@ namespace HplEdgeClient.Params
     [JsonProperty("authority")]
     public string Authority { get; set; }
 
-    [JsonProperty("delegateAuthority")]
-    public string DelegateAuthority { get; set; }
-
     [JsonProperty("payer")]
     public string Payer { get; set; }
 
@@ -766,6 +796,9 @@ namespace HplEdgeClient.Params
 
   public class CreateAssembleCharacterTransactionParams
   {
+    [JsonProperty("uri")]
+    public string Uri { get; set; }
+
     [JsonProperty("attributes")]
     public object Attributes { get; set; }
 
@@ -801,6 +834,9 @@ namespace HplEdgeClient.Params
   {
     [JsonProperty("characterAddress")]
     public string CharacterAddress { get; set; }
+
+    [JsonProperty("uri")]
+    public string Uri { get; set; }
 
     [JsonProperty("attributes")]
     public object Attributes { get; set; }
@@ -980,6 +1016,39 @@ namespace HplEdgeClient.Params
 
   }
 
+  public class CreateUseCharacterTransactionParams
+  {
+    [JsonProperty("data")]
+    public object Data { get; set; }
+
+    [JsonProperty("unUse")]
+    public bool? UnUse { get; set; }
+
+    [JsonProperty("character")]
+    public string Character { get; set; }
+
+    [JsonProperty("project")]
+    public string Project { get; set; }
+
+    [JsonProperty("characterModel")]
+    public string CharacterModel { get; set; }
+
+    [JsonProperty("user")]
+    public string User { get; set; }
+
+    [JsonProperty("payer")]
+    public string Payer { get; set; }
+
+    [JsonProperty("lutAddresses")]
+    public List<string> LutAddresses { get; set; }
+
+    [JsonProperty("computeUnitPrice")]
+    public int? ComputeUnitPrice { get; set; }
+
+    public CreateUseCharacterTransactionParams() { }
+
+  }
+
   public class FindStakingPoolsParams
   {
     [JsonProperty("addresses")]
@@ -1039,9 +1108,6 @@ namespace HplEdgeClient.Params
     [JsonProperty("multiplier")]
     public InitStakingMultiplierMetadataInput Multiplier { get; set; }
 
-    [JsonProperty("delegateAuthority")]
-    public string DelegateAuthority { get; set; }
-
     [JsonProperty("payer")]
     public string Payer { get; set; }
 
@@ -1075,9 +1141,6 @@ namespace HplEdgeClient.Params
     [JsonProperty("resource")]
     public string Resource { get; set; }
 
-    [JsonProperty("delegateAuthority")]
-    public string DelegateAuthority { get; set; }
-
     [JsonProperty("payer")]
     public string Payer { get; set; }
 
@@ -1108,9 +1171,6 @@ namespace HplEdgeClient.Params
     [JsonProperty("authority")]
     public string Authority { get; set; }
 
-    [JsonProperty("delegateAuthority")]
-    public string DelegateAuthority { get; set; }
-
     [JsonProperty("payer")]
     public string Payer { get; set; }
 
@@ -1137,9 +1197,6 @@ namespace HplEdgeClient.Params
 
     [JsonProperty("authority")]
     public string Authority { get; set; }
-
-    [JsonProperty("delegateAuthority")]
-    public string DelegateAuthority { get; set; }
 
     [JsonProperty("payer")]
     public string Payer { get; set; }
@@ -1178,6 +1235,306 @@ namespace HplEdgeClient.Params
     public int? ComputeUnitPrice { get; set; }
 
     public CreateStakeCharactersTransactionsParams() { }
+
+  }
+
+  public class FindSplStakingPoolsParams
+  {
+    [JsonProperty("addresses")]
+    public List<string> Addresses { get; set; }
+
+    [JsonProperty("projects")]
+    public List<string> Projects { get; set; }
+
+    [JsonProperty("names")]
+    public List<string> Names { get; set; }
+
+    [JsonProperty("stakeTokenMints")]
+    public List<string> StakeTokenMints { get; set; }
+
+    public FindSplStakingPoolsParams() { }
+
+  }
+
+  public class FindSplStakingRecipientsParams
+  {
+    [JsonProperty("addresses")]
+    public List<string> Addresses { get; set; }
+
+    [JsonProperty("trees")]
+    public List<string> Trees { get; set; }
+
+    [JsonProperty("stakers")]
+    public List<string> Stakers { get; set; }
+
+    [JsonProperty("projects")]
+    public List<string> Projects { get; set; }
+
+    [JsonProperty("splStakingPools")]
+    public List<string> SplStakingPools { get; set; }
+
+    [JsonProperty("includeProof")]
+    public bool? IncludeProof { get; set; }
+
+    public FindSplStakingRecipientsParams() { }
+
+  }
+
+  public class CreateCreateSplStakingPoolTransactionParams
+  {
+    [JsonProperty("project")]
+    public string Project { get; set; }
+
+    [JsonProperty("stakeTokenMint")]
+    public string StakeTokenMint { get; set; }
+
+    [JsonProperty("metadata")]
+    public CreateSplStakingPoolMetadataInput Metadata { get; set; }
+
+    [JsonProperty("multipliers")]
+    public List<AddSplMultiplierMetadataInput> Multipliers { get; set; }
+
+    [JsonProperty("authority")]
+    public string Authority { get; set; }
+
+    [JsonProperty("payer")]
+    public string Payer { get; set; }
+
+    [JsonProperty("lutAddresses")]
+    public List<string> LutAddresses { get; set; }
+
+    [JsonProperty("computeUnitPrice")]
+    public int? ComputeUnitPrice { get; set; }
+
+    public CreateCreateSplStakingPoolTransactionParams() { }
+
+  }
+
+  public class CreateUpdateSplStakingPoolTransactionParams
+  {
+    [JsonProperty("project")]
+    public string Project { get; set; }
+
+    [JsonProperty("splStakingPool")]
+    public string SplStakingPool { get; set; }
+
+    [JsonProperty("metadata")]
+    public UpdateSplStakingPoolMetadataInput Metadata { get; set; }
+
+    [JsonProperty("authority")]
+    public string Authority { get; set; }
+
+    [JsonProperty("payer")]
+    public string Payer { get; set; }
+
+    [JsonProperty("lutAddresses")]
+    public List<string> LutAddresses { get; set; }
+
+    [JsonProperty("computeUnitPrice")]
+    public int? ComputeUnitPrice { get; set; }
+
+    public CreateUpdateSplStakingPoolTransactionParams() { }
+
+  }
+
+  public class CreateCreateNewSplStakingPoolTreeTransactionParams
+  {
+    [JsonProperty("treeConfig")]
+    public TreeSetupConfig TreeConfig { get; set; }
+
+    [JsonProperty("project")]
+    public string Project { get; set; }
+
+    [JsonProperty("splStakingPool")]
+    public string SplStakingPool { get; set; }
+
+    [JsonProperty("authority")]
+    public string Authority { get; set; }
+
+    [JsonProperty("payer")]
+    public string Payer { get; set; }
+
+    [JsonProperty("lutAddresses")]
+    public List<string> LutAddresses { get; set; }
+
+    [JsonProperty("computeUnitPrice")]
+    public int? ComputeUnitPrice { get; set; }
+
+    public CreateCreateNewSplStakingPoolTreeTransactionParams() { }
+
+  }
+
+  public class CreateAddRemoveSplMultipliersTransactionParams
+  {
+    [JsonProperty("project")]
+    public string Project { get; set; }
+
+    [JsonProperty("splStakingPool")]
+    public string SplStakingPool { get; set; }
+
+    [JsonProperty("add")]
+    public List<AddSplMultiplierMetadataInput> Add { get; set; }
+
+    [JsonProperty("remove")]
+    public List<int> Remove { get; set; }
+
+    [JsonProperty("authority")]
+    public string Authority { get; set; }
+
+    [JsonProperty("payer")]
+    public string Payer { get; set; }
+
+    [JsonProperty("lutAddresses")]
+    public List<string> LutAddresses { get; set; }
+
+    [JsonProperty("computeUnitPrice")]
+    public int? ComputeUnitPrice { get; set; }
+
+    public CreateAddRemoveSplMultipliersTransactionParams() { }
+
+  }
+
+  public class CreateSplRewardPoolTransactionParams
+  {
+    [JsonProperty("project")]
+    public string Project { get; set; }
+
+    [JsonProperty("splStakingPool")]
+    public string SplStakingPool { get; set; }
+
+    [JsonProperty("rewardTokenMint")]
+    public string RewardTokenMint { get; set; }
+
+    [JsonProperty("rewardConfig")]
+    public CreateSplRewardPoolArgsInput RewardConfig { get; set; }
+
+    [JsonProperty("authority")]
+    public string Authority { get; set; }
+
+    [JsonProperty("payer")]
+    public string Payer { get; set; }
+
+    [JsonProperty("lutAddresses")]
+    public List<string> LutAddresses { get; set; }
+
+    [JsonProperty("computeUnitPrice")]
+    public int? ComputeUnitPrice { get; set; }
+
+    public CreateSplRewardPoolTransactionParams() { }
+
+  }
+
+  public class CreateAddRemoveRewardsFromRewardPoolTransactionParams
+  {
+    [JsonProperty("project")]
+    public string Project { get; set; }
+
+    [JsonProperty("splStakingPool")]
+    public string SplStakingPool { get; set; }
+
+    [JsonProperty("rewardTokenMint")]
+    public string RewardTokenMint { get; set; }
+
+    [JsonProperty("action")]
+    public AddRemoveRewardsFromRewardPoolActionInput Action { get; set; }
+
+    [JsonProperty("authority")]
+    public string Authority { get; set; }
+
+    [JsonProperty("payer")]
+    public string Payer { get; set; }
+
+    [JsonProperty("lutAddresses")]
+    public List<string> LutAddresses { get; set; }
+
+    [JsonProperty("computeUnitPrice")]
+    public int? ComputeUnitPrice { get; set; }
+
+    public CreateAddRemoveRewardsFromRewardPoolTransactionParams() { }
+
+  }
+
+  public class CreateStakeSplTokensTransactionParams
+  {
+    [JsonProperty("project")]
+    public string Project { get; set; }
+
+    [JsonProperty("splStakingPool")]
+    public string SplStakingPool { get; set; }
+
+    [JsonProperty("amount")]
+    public string Amount { get; set; }
+
+    [JsonProperty("lockPeriodSecs")]
+    public string LockPeriodSecs { get; set; }
+
+    [JsonProperty("staker")]
+    public string Staker { get; set; }
+
+    [JsonProperty("payer")]
+    public string Payer { get; set; }
+
+    [JsonProperty("lutAddresses")]
+    public List<string> LutAddresses { get; set; }
+
+    [JsonProperty("computeUnitPrice")]
+    public int? ComputeUnitPrice { get; set; }
+
+    public CreateStakeSplTokensTransactionParams() { }
+
+  }
+
+  public class CreateClaimSplRewardsTransactionParams
+  {
+    [JsonProperty("project")]
+    public string Project { get; set; }
+
+    [JsonProperty("splStakingPool")]
+    public string SplStakingPool { get; set; }
+
+    [JsonProperty("staker")]
+    public string Staker { get; set; }
+
+    [JsonProperty("stakingReciept")]
+    public string StakingReciept { get; set; }
+
+    [JsonProperty("payer")]
+    public string Payer { get; set; }
+
+    [JsonProperty("lutAddresses")]
+    public List<string> LutAddresses { get; set; }
+
+    [JsonProperty("computeUnitPrice")]
+    public int? ComputeUnitPrice { get; set; }
+
+    public CreateClaimSplRewardsTransactionParams() { }
+
+  }
+
+  public class CreateUnstakeSplTokensTransactionParams
+  {
+    [JsonProperty("project")]
+    public string Project { get; set; }
+
+    [JsonProperty("splStakingPool")]
+    public string SplStakingPool { get; set; }
+
+    [JsonProperty("staker")]
+    public string Staker { get; set; }
+
+    [JsonProperty("stakingReciept")]
+    public string StakingReciept { get; set; }
+
+    [JsonProperty("payer")]
+    public string Payer { get; set; }
+
+    [JsonProperty("lutAddresses")]
+    public List<string> LutAddresses { get; set; }
+
+    [JsonProperty("computeUnitPrice")]
+    public int? ComputeUnitPrice { get; set; }
+
+    public CreateUnstakeSplTokensTransactionParams() { }
 
   }
 
@@ -1305,9 +1662,6 @@ namespace HplEdgeClient.Params
 
     [JsonProperty("payer")]
     public string Payer { get; set; }
-
-    [JsonProperty("delegateAuthority")]
-    public string DelegateAuthority { get; set; }
 
     [JsonProperty("lutAddresses")]
     public List<string> LutAddresses { get; set; }
@@ -1438,9 +1792,6 @@ namespace HplEdgeClient.Params
     [JsonProperty("params")]
     public InitResourceInput Params { get; set; }
 
-    [JsonProperty("delegateAuthority")]
-    public string DelegateAuthority { get; set; }
-
     [JsonProperty("payer")]
     public string Payer { get; set; }
 
@@ -1477,9 +1828,6 @@ namespace HplEdgeClient.Params
     [JsonProperty("authority")]
     public string Authority { get; set; }
 
-    [JsonProperty("delegateAuthority")]
-    public string DelegateAuthority { get; set; }
-
     [JsonProperty("lutAddresses")]
     public List<string> LutAddresses { get; set; }
 
@@ -1503,9 +1851,6 @@ namespace HplEdgeClient.Params
 
     [JsonProperty("treeConfig")]
     public TreeSetupConfig TreeConfig { get; set; }
-
-    [JsonProperty("delegateAuthority")]
-    public string DelegateAuthority { get; set; }
 
     [JsonProperty("payer")]
     public string Payer { get; set; }
@@ -1534,9 +1879,6 @@ namespace HplEdgeClient.Params
     [JsonProperty("amount")]
     public string Amount { get; set; }
 
-    [JsonProperty("delegateAuthority")]
-    public string DelegateAuthority { get; set; }
-
     [JsonProperty("payer")]
     public string Payer { get; set; }
 
@@ -1563,9 +1905,6 @@ namespace HplEdgeClient.Params
 
     [JsonProperty("owner")]
     public string Owner { get; set; }
-
-    [JsonProperty("delegateAuthority")]
-    public string DelegateAuthority { get; set; }
 
     [JsonProperty("payer")]
     public string Payer { get; set; }
@@ -1669,9 +2008,6 @@ namespace HplEdgeClient.Params
     [JsonProperty("authority")]
     public string Authority { get; set; }
 
-    [JsonProperty("delegateAuthority")]
-    public string DelegateAuthority { get; set; }
-
     [JsonProperty("payer")]
     public string Payer { get; set; }
 
@@ -1723,9 +2059,6 @@ namespace HplEdgeClient.Params
     [JsonProperty("authority")]
     public string Authority { get; set; }
 
-    [JsonProperty("delegateAuthority")]
-    public string DelegateAuthority { get; set; }
-
     [JsonProperty("payer")]
     public string Payer { get; set; }
 
@@ -1750,9 +2083,6 @@ namespace HplEdgeClient.Params
     [JsonProperty("authority")]
     public string Authority { get; set; }
 
-    [JsonProperty("delegateAuthority")]
-    public string DelegateAuthority { get; set; }
-
     [JsonProperty("payer")]
     public string Payer { get; set; }
 
@@ -1776,9 +2106,6 @@ namespace HplEdgeClient.Params
 
     [JsonProperty("authority")]
     public string Authority { get; set; }
-
-    [JsonProperty("delegateAuthority")]
-    public string DelegateAuthority { get; set; }
 
     [JsonProperty("payer")]
     public string Payer { get; set; }

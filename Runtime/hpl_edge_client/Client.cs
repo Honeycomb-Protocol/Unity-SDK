@@ -77,6 +77,20 @@ namespace HplEdgeClient.Client
             return response.GetData();
         }
 
+        public async Task<CreateTransferAssetsTransactionsReturn> CreateTransferAssetsTransactions(CreateTransferAssetsTransactionsParams parameters, string authToken = null)
+        {
+            string query = @"query createTransferAssetsTransactions(  $addresses: [String!]!  $to: String!  $lutAddresses: [String!]  $computeUnitPrice: Int) {  createTransferAssetsTransactions(    addresses: $addresses    to: $to    computeUnitPrice: $computeUnitPrice    lutAddresses: $lutAddresses  ) {    blockhash    lastValidBlockHeight    transactions  }}";
+            var response = await graphQLClient.Query<CreateTransferAssetsTransactionsReturn, CreateTransferAssetsTransactionsParams>(query, parameters, authToken);
+            return response.GetData();
+        }
+
+        public async Task<CreateBurnAssetsTransactionsReturn> CreateBurnAssetsTransactions(CreateBurnAssetsTransactionsParams parameters, string authToken = null)
+        {
+            string query = @"query createBurnAssetsTransactions(  $addresses: [String!]!  $lutAddresses: [String!]  $computeUnitPrice: Int) {  createBurnAssetsTransactions(    addresses: $addresses    computeUnitPrice: $computeUnitPrice    lutAddresses: $lutAddresses  ) {    blockhash    lastValidBlockHeight    transactions  }}";
+            var response = await graphQLClient.Query<CreateBurnAssetsTransactionsReturn, CreateBurnAssetsTransactionsParams>(query, parameters, authToken);
+            return response.GetData();
+        }
+
         public async Task<FindGlobalReturn> FindGlobal(FindGlobalParams parameters, string authToken = null)
         {
             string query = @"query findGlobal($env: String) {  global(env: $env) {    address    bump    config    userTrees {      active      merkle_trees      schema    }    totalUsers  }}";
@@ -184,7 +198,7 @@ namespace HplEdgeClient.Client
 
         public async Task<CreateUpdatePlatformDataTransactionReturn> CreateUpdatePlatformDataTransaction(CreateUpdatePlatformDataTransactionParams parameters, string authToken = null)
         {
-            string query = @"query createUpdatePlatformDataTransaction(  $profile: String!  $authority: String!  $delegateAuthority: String  $payer: String  $platformData: PlatformDataInput  $lutAddresses: [String!]  $computeUnitPrice: Int) {  createUpdatePlatformDataTransaction(    profile: $profile    authority: $authority    delegateAuthority: $delegateAuthority    payer: $payer    platformData: $platformData    lutAddresses: $lutAddresses    computeUnitPrice: $computeUnitPrice  ) {    blockhash    lastValidBlockHeight    transaction  }}";
+            string query = @"query createUpdatePlatformDataTransaction(  $profile: String!  $authority: String!  $payer: String  $platformData: PlatformDataInput  $lutAddresses: [String!]  $computeUnitPrice: Int) {  createUpdatePlatformDataTransaction(    profile: $profile    authority: $authority    payer: $payer    platformData: $platformData    lutAddresses: $lutAddresses    computeUnitPrice: $computeUnitPrice  ) {    blockhash    lastValidBlockHeight    transaction  }}";
             var response = await graphQLClient.Query<CreateUpdatePlatformDataTransactionReturn, CreateUpdatePlatformDataTransactionParams>(query, parameters, authToken);
             return response.GetData();
         }
@@ -212,7 +226,7 @@ namespace HplEdgeClient.Client
 
         public async Task<FindCharacterModelsReturn> FindCharacterModels(FindCharacterModelsParams parameters, string authToken = null)
         {
-            string query = @"query findCharacterModels(  $addresses: [Bytes!]  $project: Pubkey  $assemblerConfigs: [Pubkey!]) {  characterModel(    addresses: $addresses    project: $project    assemblerConfigs: $assemblerConfigs  ) {    address    program_id    discriminator    bump    key    equipableCriteria    project    attributes    merkle_trees {      active      merkle_trees      schema    }    cooldown{      ejection    }    config {      ... on CharacterConfigWrapped {        criterias {          kind          params        }        kind      }      ... on CharacterConfigAssembled {        kind        assemblerConfig        name        symbol        description        creators {          address          share        }        sellerFeeBasisPoints        collectionName        mintAs {          kind          params {            ... on MintAsParamsMplBubblegum {              merkleTree            }          }        }      }    }  }}";
+            string query = @"query findCharacterModels(  $addresses: [Bytes!]  $project: Pubkey  $assemblerConfigs: [Pubkey!]) {  characterModel(    addresses: $addresses    project: $project    assemblerConfigs: $assemblerConfigs  ) {    address    program_id    discriminator    bump    key    equipableCriteria    project    attributes    merkle_trees {      active      merkle_trees      schema    }    cooldown {      ejection    }    config {      ... on CharacterConfigWrapped {        criterias {          kind          params        }        kind      }      ... on CharacterConfigAssembled {        kind        assemblerConfig        name        symbol        description        creators {          address          share        }        sellerFeeBasisPoints        collectionName        mintAs {          kind          params {            ... on MintAsParamsMplBubblegum {              merkleTree            }          }        }      }    }  }}";
             var response = await graphQLClient.Query<FindCharacterModelsReturn, FindCharacterModelsParams>(query, parameters, authToken);
             return response.GetData();
         }
@@ -233,7 +247,7 @@ namespace HplEdgeClient.Client
 
         public async Task<CreateCreateAssemblerConfigTransactionReturn> CreateCreateAssemblerConfigTransaction(CreateCreateAssemblerConfigTransactionParams parameters, string authToken = null)
         {
-            string query = @"query createCreateAssemblerConfigTransaction(  $treeConfig: TreeSetupConfig!  $ticker: String!  $order: [String!]!  $project: String!  $authority: String!  $payer: String  $lutAddresses: [String!]  $computeUnitPrice: Int) {  createCreateAssemblerConfigTransaction(    treeConfig: $treeConfig    ticker: $ticker    order: $order    project: $project    authority: $authority    payer: $payer    lutAddresses: $lutAddresses    computeUnitPrice: $computeUnitPrice  ) {    tx {      blockhash      lastValidBlockHeight      transaction    }    assemblerConfig    treeAddress    proofBytes    space    cost    maxTreeCapacity  }}";
+            string query = @"query createCreateAssemblerConfigTransaction(  $treeConfig: TreeSetupConfig  $ticker: String!  $order: [String!]  $project: String!  $authority: String!  $payer: String  $lutAddresses: [String!]  $computeUnitPrice: Int) {  createCreateAssemblerConfigTransaction(    treeConfig: $treeConfig    ticker: $ticker    order: $order    project: $project    authority: $authority    payer: $payer    lutAddresses: $lutAddresses    computeUnitPrice: $computeUnitPrice  ) {    tx {      blockhash      lastValidBlockHeight      transaction    }    assemblerConfig    treeAddress    proofBytes    space    cost    maxTreeCapacity  }}";
             var response = await graphQLClient.Query<CreateCreateAssemblerConfigTransactionReturn, CreateCreateAssemblerConfigTransactionParams>(query, parameters, authToken);
             return response.GetData();
         }
@@ -268,14 +282,14 @@ namespace HplEdgeClient.Client
 
         public async Task<CreateAssembleCharacterTransactionReturn> CreateAssembleCharacterTransaction(CreateAssembleCharacterTransactionParams parameters, string authToken = null)
         {
-            string query = @"query createAssembleCharacterTransaction(  $attributes: VecMapGeneric!  $project: String!  $assemblerConfig: String!  $characterModel: String!  $owner: String!  $authority: String!  $payer: String  $lutAddresses: [String!]  $computeUnitPrice: Int) {  createAssembleCharacterTransaction(    attributes: $attributes    project: $project    assemblerConfig: $assemblerConfig    characterModel: $characterModel    owner: $owner    authority: $authority    payer: $payer    lutAddresses: $lutAddresses    computeUnitPrice: $computeUnitPrice  ) {    blockhash    lastValidBlockHeight    transaction  }}";
+            string query = @"query createAssembleCharacterTransaction(  $uri: String  $attributes: VecMapGeneric  $project: String!  $assemblerConfig: String!  $characterModel: String!  $owner: String!  $authority: String!  $payer: String  $lutAddresses: [String!]  $computeUnitPrice: Int) {  createAssembleCharacterTransaction(    uri: $uri    attributes: $attributes    project: $project    assemblerConfig: $assemblerConfig    characterModel: $characterModel    owner: $owner    authority: $authority    payer: $payer    lutAddresses: $lutAddresses    computeUnitPrice: $computeUnitPrice  ) {    blockhash    lastValidBlockHeight    transaction  }}";
             var response = await graphQLClient.Query<CreateAssembleCharacterTransactionReturn, CreateAssembleCharacterTransactionParams>(query, parameters, authToken);
             return response.GetData();
         }
 
         public async Task<CreateUpdateCharacterTraitsTransactionReturn> CreateUpdateCharacterTraitsTransaction(CreateUpdateCharacterTraitsTransactionParams parameters, string authToken = null)
         {
-            string query = @"query createUpdateCharacterTraitsTransaction(  $characterAddress: String!  $attributes: VecMapGeneric!  $project: String!  $assemblerConfig: String!  $characterModel: String!  $authority: String!  $payer: String  $lutAddresses: [String!]  $computeUnitPrice: Int) {  createUpdateCharacterTraitsTransaction(    characterAddress: $characterAddress    attributes: $attributes    project: $project    assemblerConfig: $assemblerConfig    characterModel: $characterModel    authority: $authority    payer: $payer    lutAddresses: $lutAddresses    computeUnitPrice: $computeUnitPrice  ) {    blockhash    lastValidBlockHeight    transaction  }}";
+            string query = @"query createUpdateCharacterTraitsTransaction(  $characterAddress: String!  $uri: String  $attributes: VecMapGeneric  $project: String!  $assemblerConfig: String!  $characterModel: String!  $authority: String!  $payer: String  $lutAddresses: [String!]  $computeUnitPrice: Int) {  createUpdateCharacterTraitsTransaction(    characterAddress: $characterAddress    uri: $uri    attributes: $attributes    project: $project    assemblerConfig: $assemblerConfig    characterModel: $characterModel    authority: $authority    payer: $payer    lutAddresses: $lutAddresses    computeUnitPrice: $computeUnitPrice  ) {    blockhash    lastValidBlockHeight    transaction  }}";
             var response = await graphQLClient.Query<CreateUpdateCharacterTraitsTransactionReturn, CreateUpdateCharacterTraitsTransactionParams>(query, parameters, authToken);
             return response.GetData();
         }
@@ -315,6 +329,13 @@ namespace HplEdgeClient.Client
             return response.GetData();
         }
 
+        public async Task<CreateUseCharacterTransactionReturn> CreateUseCharacterTransaction(CreateUseCharacterTransactionParams parameters, string authToken = null)
+        {
+            string query = @"query createUseCharacterTransaction(  $data: JSON  $unUse: Boolean  $character: String!  $project: String!  $characterModel: String!  $user: String!  $payer: String  $lutAddresses: [String!]  $computeUnitPrice: Int) {  createUseCharacterTransaction(    data: $data    unUse: $unUse    character: $character    project: $project    characterModel: $characterModel    user: $user    payer: $payer    lutAddresses: $lutAddresses    computeUnitPrice: $computeUnitPrice  ) {    blockhash    lastValidBlockHeight    transaction  }}";
+            var response = await graphQLClient.Query<CreateUseCharacterTransactionReturn, CreateUseCharacterTransactionParams>(query, parameters, authToken);
+            return response.GetData();
+        }
+
         public async Task<FindStakingPoolsReturn> FindStakingPools(FindStakingPoolsParams parameters, string authToken = null)
         {
             string query = @"query findStakingPools(  $addresses: [Bytes!]  $projects: [Pubkey!]  $names: [String!]) {  stakingPools(addresses: $addresses, projects: $projects, names: $names) {    allowedMints    bump    characterModels    cooldownDuration    resource    endTime    key    lockType {      kind    }    maxRewardsDuration    minStakeDuration    name    project    resetStakeDuration    rewardsDuration    rewardsPerDuration    startTime    totalStaked    address  }}";
@@ -338,28 +359,28 @@ namespace HplEdgeClient.Client
 
         public async Task<CreateCreateStakingPoolTransactionReturn> CreateCreateStakingPoolTransaction(CreateCreateStakingPoolTransactionParams parameters, string authToken = null)
         {
-            string query = @"query createCreateStakingPoolTransaction(  $project: String!  $resource: String!  $metadata: CreateStakingPoolMetadataInput!  $authority: String!  $multiplier: InitStakingMultiplierMetadataInput  $delegateAuthority: String  $payer: String  $lutAddresses: [String!]  $computeUnitPrice: Int) {  createCreateStakingPoolTransaction(    project: $project    resource: $resource    metadata: $metadata    authority: $authority    multiplier: $multiplier    delegateAuthority: $delegateAuthority    payer: $payer    lutAddresses: $lutAddresses    computeUnitPrice: $computeUnitPrice  ) {    transactions {      transactions      blockhash      lastValidBlockHeight    }    stakingPoolAddress    multipliersAddress  }}";
+            string query = @"query createCreateStakingPoolTransaction(  $project: String!  $resource: String!  $metadata: CreateStakingPoolMetadataInput!  $authority: String!  $multiplier: InitStakingMultiplierMetadataInput  $payer: String  $lutAddresses: [String!]  $computeUnitPrice: Int) {  createCreateStakingPoolTransaction(    project: $project    resource: $resource    metadata: $metadata    authority: $authority    multiplier: $multiplier    payer: $payer    lutAddresses: $lutAddresses    computeUnitPrice: $computeUnitPrice  ) {    transactions {      transactions      blockhash      lastValidBlockHeight    }    stakingPoolAddress    multipliersAddress  }}";
             var response = await graphQLClient.Query<CreateCreateStakingPoolTransactionReturn, CreateCreateStakingPoolTransactionParams>(query, parameters, authToken);
             return response.GetData();
         }
 
         public async Task<CreateUpdateStakingPoolTransactionReturn> CreateUpdateStakingPoolTransaction(CreateUpdateStakingPoolTransactionParams parameters, string authToken = null)
         {
-            string query = @"query createUpdateStakingPoolTransaction(  $project: String!  $stakingPool: String!  $metadata: UpdateStakingPoolMetadataInput  $authority: String!  $characterModel: String  $resource: String  $delegateAuthority: String  $payer: String  $lutAddresses: [String!]  $computeUnitPrice: Int) {  createUpdateStakingPoolTransaction(    project: $project    stakingPool: $stakingPool    metadata: $metadata    authority: $authority    characterModel: $characterModel    resource: $resource    delegateAuthority: $delegateAuthority    payer: $payer    lutAddresses: $lutAddresses    computeUnitPrice: $computeUnitPrice  ) {    transaction    blockhash    lastValidBlockHeight  }}";
+            string query = @"query createUpdateStakingPoolTransaction(  $project: String!  $stakingPool: String!  $metadata: UpdateStakingPoolMetadataInput  $authority: String!  $characterModel: String  $resource: String  $payer: String  $lutAddresses: [String!]  $computeUnitPrice: Int) {  createUpdateStakingPoolTransaction(    project: $project    stakingPool: $stakingPool    metadata: $metadata    authority: $authority    characterModel: $characterModel    resource: $resource    payer: $payer    lutAddresses: $lutAddresses    computeUnitPrice: $computeUnitPrice  ) {    transaction    blockhash    lastValidBlockHeight  }}";
             var response = await graphQLClient.Query<CreateUpdateStakingPoolTransactionReturn, CreateUpdateStakingPoolTransactionParams>(query, parameters, authToken);
             return response.GetData();
         }
 
         public async Task<CreateInitMultipliersTransactionReturn> CreateInitMultipliersTransaction(CreateInitMultipliersTransactionParams parameters, string authToken = null)
         {
-            string query = @"query createInitMultipliersTransaction(  $project: String!  $stakingPool: String!  $decimals: Int!  $multipliers: [AddMultiplierMetadataInput]!  $authority: String!  $delegateAuthority: String  $payer: String  $lutAddresses: [String!]  $computeUnitPrice: Int) {  createInitMultipliersTransaction(    project: $project    stakingPool: $stakingPool    decimals: $decimals    multipliers: $multipliers    authority: $authority    delegateAuthority: $delegateAuthority    payer: $payer    lutAddresses: $lutAddresses    computeUnitPrice: $computeUnitPrice  ) {    tx {      transaction      blockhash      lastValidBlockHeight    }    multipliersAddress  }}";
+            string query = @"query createInitMultipliersTransaction(  $project: String!  $stakingPool: String!  $decimals: Int!  $multipliers: [AddMultiplierMetadataInput]!  $authority: String!  $payer: String  $lutAddresses: [String!]  $computeUnitPrice: Int) {  createInitMultipliersTransaction(    project: $project    stakingPool: $stakingPool    decimals: $decimals    multipliers: $multipliers    authority: $authority    payer: $payer    lutAddresses: $lutAddresses    computeUnitPrice: $computeUnitPrice  ) {    tx {      transaction      blockhash      lastValidBlockHeight    }    multipliersAddress  }}";
             var response = await graphQLClient.Query<CreateInitMultipliersTransactionReturn, CreateInitMultipliersTransactionParams>(query, parameters, authToken);
             return response.GetData();
         }
 
         public async Task<CreateAddMultiplierTransactionReturn> CreateAddMultiplierTransaction(CreateAddMultiplierTransactionParams parameters, string authToken = null)
         {
-            string query = @"query createAddMultiplierTransaction(  $project: String!  $multiplier: String!  $metadata: AddMultiplierMetadataInput!  $authority: String!  $delegateAuthority: String  $payer: String  $lutAddresses: [String!]  $computeUnitPrice: Int) {  createAddMultiplierTransaction(    project: $project    multiplier: $multiplier    metadata: $metadata    authority: $authority    delegateAuthority: $delegateAuthority    payer: $payer    lutAddresses: $lutAddresses    computeUnitPrice: $computeUnitPrice  ) {    transaction    blockhash    lastValidBlockHeight  }}";
+            string query = @"query createAddMultiplierTransaction(  $project: String!  $multiplier: String!  $metadata: AddMultiplierMetadataInput!  $authority: String!  $payer: String  $lutAddresses: [String!]  $computeUnitPrice: Int) {  createAddMultiplierTransaction(    project: $project    multiplier: $multiplier    metadata: $metadata    authority: $authority    payer: $payer    lutAddresses: $lutAddresses    computeUnitPrice: $computeUnitPrice  ) {    transaction    blockhash    lastValidBlockHeight  }}";
             var response = await graphQLClient.Query<CreateAddMultiplierTransactionReturn, CreateAddMultiplierTransactionParams>(query, parameters, authToken);
             return response.GetData();
         }
@@ -368,6 +389,83 @@ namespace HplEdgeClient.Client
         {
             string query = @"query createStakeCharactersTransactions(  $characterAddresses: [String!]!  $characterModel: String!  $stakingPool: String!  $project: String!  $feePayer: String  $lutAddresses: [String!]  $computeUnitPrice: Int) {  createStakeCharactersTransactions(    characterAddresses: $characterAddresses    characterModel: $characterModel    stakingPool: $stakingPool    project: $project    feePayer: $feePayer    lutAddresses: $lutAddresses    computeUnitPrice: $computeUnitPrice  ) {    blockhash    lastValidBlockHeight    transactions  }}";
             var response = await graphQLClient.Query<CreateStakeCharactersTransactionsReturn, CreateStakeCharactersTransactionsParams>(query, parameters, authToken);
+            return response.GetData();
+        }
+
+        public async Task<FindSplStakingPoolsReturn> FindSplStakingPools(FindSplStakingPoolsParams parameters, string authToken = null)
+        {
+            string query = @"query findSplStakingPools(  $addresses: [Bytes!]  $projects: [Pubkey!]  $names: [String!]  $stakeTokenMints: [Pubkey!]) {  splStakingPools(addresses: $addresses, projects: $projects, names: $names, stakeTokenMints: $stakeTokenMints) {    address    bump    nonce    endTime    maxStakeDurationSecs    merkleTrees {      active      merkle_trees      schema    }    minStakeDurationSecs    multipliers {      value      multiplierType {        kind        params {          ... on SplMultiplierTypeParamsStakeDuration {            __typename            minDuration          }          ... on SplMultiplierTypeParamsStakeAmount {            __typename            minAmount          }        }      }    }    name    project    rewardConfig {      kind      params {        ... on SplRewardConfigParamsApy {          rewardTokenMint          rewardVault          rewardsDuration          rewardsPerDuration          totalRewardAmount        }        ... on SplRewardConfigParamsStakeWeight {          __typename          pools {            weight          }        }      }    }    stake_token_mint    startTime    totalStakedAmount  }}";
+            var response = await graphQLClient.Query<FindSplStakingPoolsReturn, FindSplStakingPoolsParams>(query, parameters, authToken);
+            return response.GetData();
+        }
+
+        public async Task<FindSplStakingRecipientsReturn> FindSplStakingRecipients(FindSplStakingRecipientsParams parameters, string authToken = null)
+        {
+            string query = @"query findSplStakingRecipients(  $addresses: [Bytes!]  $trees: [Bytes!]  $stakers: [String!]  $projects: [String!]  $splStakingPools: [String!]  $includeProof: Boolean) {  splStakingRecipients(    addresses: $addresses    trees: $trees    stakers: $stakers    projects: $projects    splStakingPools: $splStakingPools    includeProof: $includeProof  ) {    address    leaf_idx    lokedTill    multiplier    proof {      canopy_depth      leaf      leaf_index      maxDepth      node_index      proof      root      tree_id    }    rewardsClaimed {      kind      params {        ... on StakerClaimedParamsApy {          __typename          lastRewardTime        }        ... on StakerClaimedParamsStakeWeight {          __typename          amounts        }      }    }    stakeStartTime    staker    stakedAmount    tree_id  }}";
+            var response = await graphQLClient.Query<FindSplStakingRecipientsReturn, FindSplStakingRecipientsParams>(query, parameters, authToken);
+            return response.GetData();
+        }
+
+        public async Task<CreateCreateSplStakingPoolTransactionReturn> CreateCreateSplStakingPoolTransaction(CreateCreateSplStakingPoolTransactionParams parameters, string authToken = null)
+        {
+            string query = @"query createCreateSplStakingPoolTransaction(  $project: String!  $stakeTokenMint: String!  $metadata: CreateSplStakingPoolMetadataInput!  $multipliers: [AddSplMultiplierMetadataInput!]  $authority: String!  $payer: String  $lutAddresses: [String!]  $computeUnitPrice: Int) {  createCreateSplStakingPoolTransaction(    project: $project    stakeTokenMint: $stakeTokenMint    multipliers: $multipliers    metadata: $metadata    authority: $authority    payer: $payer    lutAddresses: $lutAddresses    computeUnitPrice: $computeUnitPrice  ) {    tx {      blockhash      lastValidBlockHeight      transaction    }    splStakingPoolAddress  }}";
+            var response = await graphQLClient.Query<CreateCreateSplStakingPoolTransactionReturn, CreateCreateSplStakingPoolTransactionParams>(query, parameters, authToken);
+            return response.GetData();
+        }
+
+        public async Task<CreateUpdateSplStakingPoolTransactionReturn> CreateUpdateSplStakingPoolTransaction(CreateUpdateSplStakingPoolTransactionParams parameters, string authToken = null)
+        {
+            string query = @"query createUpdateSplStakingPoolTransaction(  $project: String!  $splStakingPool: String!  $metadata: UpdateSplStakingPoolMetadataInput!  $authority: String!  $payer: String  $lutAddresses: [String!]  $computeUnitPrice: Int) {  createUpdateSplStakingPoolTransaction(    project: $project    splStakingPool: $splStakingPool    metadata: $metadata    authority: $authority    payer: $payer    lutAddresses: $lutAddresses    computeUnitPrice: $computeUnitPrice  ) {    transaction    blockhash    lastValidBlockHeight  }}";
+            var response = await graphQLClient.Query<CreateUpdateSplStakingPoolTransactionReturn, CreateUpdateSplStakingPoolTransactionParams>(query, parameters, authToken);
+            return response.GetData();
+        }
+
+        public async Task<CreateCreateNewSplStakingPoolTreeTransactionReturn> CreateCreateNewSplStakingPoolTreeTransaction(CreateCreateNewSplStakingPoolTreeTransactionParams parameters, string authToken = null)
+        {
+            string query = @"query createCreateNewSplStakingPoolTreeTransaction(  $treeConfig: TreeSetupConfig!  $project: String!  $splStakingPool: String!  $authority: String!  $payer: String  $lutAddresses: [String!]  $computeUnitPrice: Int) {  createCreateNewSplStakingPoolTreeTransaction(    treeConfig: $treeConfig    project: $project    splStakingPool: $splStakingPool    authority: $authority    payer: $payer    lutAddresses: $lutAddresses    computeUnitPrice: $computeUnitPrice  ) {    tx {      blockhash      lastValidBlockHeight      transaction    }    treeAddress    proofBytes    space    cost    maxTreeCapacity  }}";
+            var response = await graphQLClient.Query<CreateCreateNewSplStakingPoolTreeTransactionReturn, CreateCreateNewSplStakingPoolTreeTransactionParams>(query, parameters, authToken);
+            return response.GetData();
+        }
+
+        public async Task<CreateAddRemoveSplMultipliersTransactionReturn> CreateAddRemoveSplMultipliersTransaction(CreateAddRemoveSplMultipliersTransactionParams parameters, string authToken = null)
+        {
+            string query = @"query createAddRemoveSplMultipliersTransaction(  $project: String!  $splStakingPool: String!  $add: [AddSplMultiplierMetadataInput!]  $remove: [Int!]  $authority: String!  $payer: String  $lutAddresses: [String!]  $computeUnitPrice: Int) {  createAddRemoveSplMultipliersTransaction(    project: $project    splStakingPool: $splStakingPool    add: $add    remove: $remove    authority: $authority    payer: $payer    lutAddresses: $lutAddresses    computeUnitPrice: $computeUnitPrice  ) {    transaction    blockhash    lastValidBlockHeight  }}";
+            var response = await graphQLClient.Query<CreateAddRemoveSplMultipliersTransactionReturn, CreateAddRemoveSplMultipliersTransactionParams>(query, parameters, authToken);
+            return response.GetData();
+        }
+
+        public async Task<CreateSplRewardPoolTransactionReturn> CreateSplRewardPoolTransaction(CreateSplRewardPoolTransactionParams parameters, string authToken = null)
+        {
+            string query = @"query createSplRewardPoolTransaction(  $project: String!  $splStakingPool: String!  $rewardTokenMint: String!  $rewardConfig: CreateSplRewardPoolArgsInput!  $authority: String!  $payer: String  $lutAddresses: [String!]  $computeUnitPrice: Int) {  createSplRewardPoolTransaction(    project: $project    splStakingPool: $splStakingPool    rewardTokenMint: $rewardTokenMint    rewardConfig: $rewardConfig    authority: $authority    payer: $payer    lutAddresses: $lutAddresses    computeUnitPrice: $computeUnitPrice  ) {    transaction    blockhash    lastValidBlockHeight  }}";
+            var response = await graphQLClient.Query<CreateSplRewardPoolTransactionReturn, CreateSplRewardPoolTransactionParams>(query, parameters, authToken);
+            return response.GetData();
+        }
+
+        public async Task<CreateAddRemoveRewardsFromRewardPoolTransactionReturn> CreateAddRemoveRewardsFromRewardPoolTransaction(CreateAddRemoveRewardsFromRewardPoolTransactionParams parameters, string authToken = null)
+        {
+            string query = @"query createAddRemoveRewardsFromRewardPoolTransaction(  $project: String!  $splStakingPool: String!  $rewardTokenMint: String!  $action: AddRemoveRewardsFromRewardPoolActionInput!  $authority: String!  $payer: String  $lutAddresses: [String!]  $computeUnitPrice: Int) {  createAddRemoveRewardsFromRewardPoolTransaction(    project: $project    splStakingPool: $splStakingPool    rewardTokenMint: $rewardTokenMint    action: $action    authority: $authority    payer: $payer    lutAddresses: $lutAddresses    computeUnitPrice: $computeUnitPrice  ) {    transaction    blockhash    lastValidBlockHeight  }}";
+            var response = await graphQLClient.Query<CreateAddRemoveRewardsFromRewardPoolTransactionReturn, CreateAddRemoveRewardsFromRewardPoolTransactionParams>(query, parameters, authToken);
+            return response.GetData();
+        }
+
+        public async Task<CreateStakeSplTokensTransactionReturn> CreateStakeSplTokensTransaction(CreateStakeSplTokensTransactionParams parameters, string authToken = null)
+        {
+            string query = @"query createStakeSplTokensTransaction(  $project: String!  $splStakingPool: String!  $amount: BigInt!  $lockPeriodSecs: BigInt!  $staker: String!  $payer: String!  $lutAddresses: [String!]  $computeUnitPrice: Int) {  createStakeSplTokensTransaction(    project: $project    splStakingPool: $splStakingPool    amount: $amount    lockPeriodSecs: $lockPeriodSecs    staker: $staker    payer: $payer    lutAddresses: $lutAddresses    computeUnitPrice: $computeUnitPrice  ) {    transaction    blockhash    lastValidBlockHeight  }}";
+            var response = await graphQLClient.Query<CreateStakeSplTokensTransactionReturn, CreateStakeSplTokensTransactionParams>(query, parameters, authToken);
+            return response.GetData();
+        }
+
+        public async Task<CreateClaimSplRewardsTransactionReturn> CreateClaimSplRewardsTransaction(CreateClaimSplRewardsTransactionParams parameters, string authToken = null)
+        {
+            string query = @"query createClaimSplRewardsTransaction(  $project: String!  $splStakingPool: String!  $staker: String!  $stakingReciept: String!  $payer: String!  $lutAddresses: [String!]  $computeUnitPrice: Int) {  createClaimSplRewardsTransaction(    project: $project    splStakingPool: $splStakingPool    stakingReciept: $stakingReciept    staker: $staker    payer: $payer    lutAddresses: $lutAddresses    computeUnitPrice: $computeUnitPrice  ) {    transaction    blockhash    lastValidBlockHeight  }}";
+            var response = await graphQLClient.Query<CreateClaimSplRewardsTransactionReturn, CreateClaimSplRewardsTransactionParams>(query, parameters, authToken);
+            return response.GetData();
+        }
+
+        public async Task<CreateUnstakeSplTokensTransactionReturn> CreateUnstakeSplTokensTransaction(CreateUnstakeSplTokensTransactionParams parameters, string authToken = null)
+        {
+            string query = @"query createUnstakeSplTokensTransaction(  $project: String!  $splStakingPool: String!  $staker: String!  $stakingReciept: String!  $payer: String!  $lutAddresses: [String!]  $computeUnitPrice: Int) {  createUnstakeSplTokensTransaction(    project: $project    splStakingPool: $splStakingPool    stakingReciept: $stakingReciept    staker: $staker    payer: $payer    lutAddresses: $lutAddresses    computeUnitPrice: $computeUnitPrice  ) {    transaction    blockhash    lastValidBlockHeight  }}";
+            var response = await graphQLClient.Query<CreateUnstakeSplTokensTransactionReturn, CreateUnstakeSplTokensTransactionParams>(query, parameters, authToken);
             return response.GetData();
         }
 
@@ -422,7 +520,7 @@ namespace HplEdgeClient.Client
 
         public async Task<CreateUpdateMissionTransactionReturn> CreateUpdateMissionTransaction(CreateUpdateMissionTransactionParams parameters, string authToken = null)
         {
-            string query = @"query createUpdateMissionTransaction(  $missionAddress: String!  $authority: String!  $params: UpdateMissionInput!  $payer: String  $delegateAuthority: String  $lutAddresses: [String!]  $computeUnitPrice: Int) {  createUpdateMissionTransaction(    missionAddress: $missionAddress    authority: $authority    params: $params    payer: $payer    delegateAuthority: $delegateAuthority    lutAddresses: $lutAddresses    computeUnitPrice: $computeUnitPrice  ) {    transaction    blockhash    lastValidBlockHeight  }}";
+            string query = @"query createUpdateMissionTransaction(  $missionAddress: String!  $authority: String!  $params: UpdateMissionInput!  $payer: String  $lutAddresses: [String!]  $computeUnitPrice: Int) {  createUpdateMissionTransaction(    missionAddress: $missionAddress    authority: $authority    params: $params    payer: $payer    lutAddresses: $lutAddresses    computeUnitPrice: $computeUnitPrice  ) {    transaction    blockhash    lastValidBlockHeight  }}";
             var response = await graphQLClient.Query<CreateUpdateMissionTransactionReturn, CreateUpdateMissionTransactionParams>(query, parameters, authToken);
             return response.GetData();
         }
@@ -478,7 +576,7 @@ namespace HplEdgeClient.Client
 
         public async Task<CreateCreateNewResourceTransactionReturn> CreateCreateNewResourceTransaction(CreateCreateNewResourceTransactionParams parameters, string authToken = null)
         {
-            string query = @"query createCreateNewResourceTransaction(  $project: String!  $authority: String!  $params: InitResourceInput!  $delegateAuthority: String  $payer: String  $lutAddresses: [String!]  $computeUnitPrice: Int) {  createCreateNewResourceTransaction(    project: $project    authority: $authority    params: $params    delegateAuthority: $delegateAuthority    payer: $payer    lutAddresses: $lutAddresses    computeUnitPrice: $computeUnitPrice  ) {    tx {      transaction      blockhash      lastValidBlockHeight    }    resource  }}";
+            string query = @"query createCreateNewResourceTransaction(  $project: String!  $authority: String!  $params: InitResourceInput!  $payer: String  $lutAddresses: [String!]  $computeUnitPrice: Int) {  createCreateNewResourceTransaction(    project: $project    authority: $authority    params: $params    payer: $payer    lutAddresses: $lutAddresses    computeUnitPrice: $computeUnitPrice  ) {    tx {      transaction      blockhash      lastValidBlockHeight    }    resource  }}";
             var response = await graphQLClient.Query<CreateCreateNewResourceTransactionReturn, CreateCreateNewResourceTransactionParams>(query, parameters, authToken);
             return response.GetData();
         }
@@ -492,28 +590,28 @@ namespace HplEdgeClient.Client
 
         public async Task<CreateExportFungibleResourceTransactionReturn> CreateExportFungibleResourceTransaction(CreateExportFungibleResourceTransactionParams parameters, string authToken = null)
         {
-            string query = @"query createExportFungibleResourceTransaction(  $resource: String!  $authority: String!  $delegateAuthority: String  $lutAddresses: [String!]  $computeUnitPrice: Int) {  createExportFungibleResourceTransaction(    resource: $resource    authority: $authority    delegateAuthority: $delegateAuthority    lutAddresses: $lutAddresses    computeUnitPrice: $computeUnitPrice  ) {    blockhash    lastValidBlockHeight    transaction  }}";
+            string query = @"query createExportFungibleResourceTransaction(  $resource: String!  $authority: String!  $lutAddresses: [String!]  $computeUnitPrice: Int) {  createExportFungibleResourceTransaction(    resource: $resource    authority: $authority    lutAddresses: $lutAddresses    computeUnitPrice: $computeUnitPrice  ) {    blockhash    lastValidBlockHeight    transaction  }}";
             var response = await graphQLClient.Query<CreateExportFungibleResourceTransactionReturn, CreateExportFungibleResourceTransactionParams>(query, parameters, authToken);
             return response.GetData();
         }
 
         public async Task<CreateCreateNewResourceTreeTransactionReturn> CreateCreateNewResourceTreeTransaction(CreateCreateNewResourceTreeTransactionParams parameters, string authToken = null)
         {
-            string query = @"query createCreateNewResourceTreeTransaction(  $project: String!  $resource: String!  $authority: String!  $treeConfig: TreeSetupConfig!  $delegateAuthority: String  $payer: String  $lutAddresses: [String!]  $computeUnitPrice: Int) {  createCreateNewResourceTreeTransaction(    project: $project    resource: $resource    authority: $authority    treeConfig: $treeConfig    delegateAuthority: $delegateAuthority    payer: $payer    lutAddresses: $lutAddresses    computeUnitPrice: $computeUnitPrice  ) {    tx {      blockhash      lastValidBlockHeight      transaction    }    treeAddress    proofBytes    space    cost    maxTreeCapacity  }}";
+            string query = @"query createCreateNewResourceTreeTransaction(  $project: String!  $resource: String!  $authority: String!  $treeConfig: TreeSetupConfig!  $payer: String  $lutAddresses: [String!]  $computeUnitPrice: Int) {  createCreateNewResourceTreeTransaction(    project: $project    resource: $resource    authority: $authority    treeConfig: $treeConfig    payer: $payer    lutAddresses: $lutAddresses    computeUnitPrice: $computeUnitPrice  ) {    tx {      blockhash      lastValidBlockHeight      transaction    }    treeAddress    proofBytes    space    cost    maxTreeCapacity  }}";
             var response = await graphQLClient.Query<CreateCreateNewResourceTreeTransactionReturn, CreateCreateNewResourceTreeTransactionParams>(query, parameters, authToken);
             return response.GetData();
         }
 
         public async Task<CreateMintResourceTransactionReturn> CreateMintResourceTransaction(CreateMintResourceTransactionParams parameters, string authToken = null)
         {
-            string query = @"query createMintResourceTransaction(  $resource: String!  $owner: String!  $authority: String!  $amount: BigInt!  $delegateAuthority: String  $payer: String  $lutAddresses: [String!]  $computeUnitPrice: Int) {  createMintResourceTransaction(    resource: $resource    owner: $owner    authority: $authority    amount: $amount    delegateAuthority: $delegateAuthority    payer: $payer    lutAddresses: $lutAddresses    computeUnitPrice: $computeUnitPrice  ) {    transaction    blockhash    lastValidBlockHeight  }}";
+            string query = @"query createMintResourceTransaction(  $resource: String!  $owner: String!  $authority: String!  $amount: BigInt!  $payer: String  $lutAddresses: [String!]  $computeUnitPrice: Int) {  createMintResourceTransaction(    resource: $resource    owner: $owner    authority: $authority    amount: $amount    payer: $payer    lutAddresses: $lutAddresses    computeUnitPrice: $computeUnitPrice  ) {    transaction    blockhash    lastValidBlockHeight  }}";
             var response = await graphQLClient.Query<CreateMintResourceTransactionReturn, CreateMintResourceTransactionParams>(query, parameters, authToken);
             return response.GetData();
         }
 
         public async Task<CreateBurnResourceTransactionReturn> CreateBurnResourceTransaction(CreateBurnResourceTransactionParams parameters, string authToken = null)
         {
-            string query = @"query createBurnResourceTransaction(  $resource: String!  $amount: BigInt!  $authority: String!  $owner: String  $delegateAuthority: String  $payer: String  $lutAddresses: [String!]  $computeUnitPrice: Int) {  createBurnResourceTransaction(    resource: $resource    amount: $amount    authority: $authority    owner: $owner    payer: $payer    delegateAuthority: $delegateAuthority    lutAddresses: $lutAddresses    computeUnitPrice: $computeUnitPrice  ) {    transaction    blockhash    lastValidBlockHeight  }}";
+            string query = @"query createBurnResourceTransaction(  $resource: String!  $amount: BigInt!  $authority: String!  $owner: String  $payer: String  $lutAddresses: [String!]  $computeUnitPrice: Int) {  createBurnResourceTransaction(    resource: $resource    amount: $amount    authority: $authority    owner: $owner    payer: $payer    lutAddresses: $lutAddresses    computeUnitPrice: $computeUnitPrice  ) {    transaction    blockhash    lastValidBlockHeight  }}";
             var response = await graphQLClient.Query<CreateBurnResourceTransactionReturn, CreateBurnResourceTransactionParams>(query, parameters, authToken);
             return response.GetData();
         }
@@ -541,7 +639,7 @@ namespace HplEdgeClient.Client
 
         public async Task<CreateInitializeFaucetTransactionReturn> CreateInitializeFaucetTransaction(CreateInitializeFaucetTransactionParams parameters, string authToken = null)
         {
-            string query = @"query createInitializeFaucetTransaction(  $resource: String!  $amount: Int!  $repeatInterval: Int!  $authority: String!  $delegateAuthority: String  $payer: String  $lutAddresses: [String!]  $computeUnitPrice: Int) {  createInitializeFaucetTransaction(    resource: $resource    amount: $amount    repeatInterval: $repeatInterval    authority: $authority    delegateAuthority: $delegateAuthority    payer: $payer    lutAddresses: $lutAddresses    computeUnitPrice: $computeUnitPrice  ) {    tx {      transaction      blockhash      lastValidBlockHeight    }    faucet  }}";
+            string query = @"query createInitializeFaucetTransaction(  $resource: String!  $amount: Int!  $repeatInterval: Int!  $authority: String!  $payer: String  $lutAddresses: [String!]  $computeUnitPrice: Int) {  createInitializeFaucetTransaction(    resource: $resource    amount: $amount    repeatInterval: $repeatInterval    authority: $authority    payer: $payer    lutAddresses: $lutAddresses    computeUnitPrice: $computeUnitPrice  ) {    tx {      transaction      blockhash      lastValidBlockHeight    }    faucet  }}";
             var response = await graphQLClient.Query<CreateInitializeFaucetTransactionReturn, CreateInitializeFaucetTransactionParams>(query, parameters, authToken);
             return response.GetData();
         }
@@ -555,21 +653,21 @@ namespace HplEdgeClient.Client
 
         public async Task<CreateInitializeRecipeTransactionReturn> CreateInitializeRecipeTransaction(CreateInitializeRecipeTransactionParams parameters, string authToken = null)
         {
-            string query = @"query createInitializeRecipeTransaction(  $project: String!  $xp: BigInt!  $ingredients: [IngredientsInput!]!  $meal: MealInput!  $authority: String!  $delegateAuthority: String  $payer: String  $lutAddresses: [String!]  $computeUnitPrice: Int) {  createInitializeRecipeTransaction(    project: $project    xp: $xp    ingredients: $ingredients    meal: $meal    authority: $authority    delegateAuthority: $delegateAuthority    payer: $payer    lutAddresses: $lutAddresses    computeUnitPrice: $computeUnitPrice  ) {    recipe    transactions {      transactions      blockhash      lastValidBlockHeight    }  }}";
+            string query = @"query createInitializeRecipeTransaction(  $project: String!  $xp: BigInt!  $ingredients: [IngredientsInput!]!  $meal: MealInput!  $authority: String!  $payer: String  $lutAddresses: [String!]  $computeUnitPrice: Int) {  createInitializeRecipeTransaction(    project: $project    xp: $xp    ingredients: $ingredients    meal: $meal    authority: $authority    payer: $payer    lutAddresses: $lutAddresses    computeUnitPrice: $computeUnitPrice  ) {    recipe    transactions {      transactions      blockhash      lastValidBlockHeight    }  }}";
             var response = await graphQLClient.Query<CreateInitializeRecipeTransactionReturn, CreateInitializeRecipeTransactionParams>(query, parameters, authToken);
             return response.GetData();
         }
 
         public async Task<CreateAddIngredientsTransactionReturn> CreateAddIngredientsTransaction(CreateAddIngredientsTransactionParams parameters, string authToken = null)
         {
-            string query = @"query createAddIngredientsTransaction(  $recipe: String!  $ingredients: [IngredientsInput!]!  $authority: String!  $delegateAuthority: String  $payer: String  $lutAddresses: [String!]  $computeUnitPrice: Int) {  createAddIngredientsTransaction(    recipe: $recipe    ingredients: $ingredients    authority: $authority    delegateAuthority: $delegateAuthority    payer: $payer    lutAddresses: $lutAddresses    computeUnitPrice: $computeUnitPrice  ) {    transactions    blockhash    lastValidBlockHeight  }}";
+            string query = @"query createAddIngredientsTransaction(  $recipe: String!  $ingredients: [IngredientsInput!]!  $authority: String!  $payer: String  $lutAddresses: [String!]  $computeUnitPrice: Int) {  createAddIngredientsTransaction(    recipe: $recipe    ingredients: $ingredients    authority: $authority    payer: $payer    lutAddresses: $lutAddresses    computeUnitPrice: $computeUnitPrice  ) {    transactions    blockhash    lastValidBlockHeight  }}";
             var response = await graphQLClient.Query<CreateAddIngredientsTransactionReturn, CreateAddIngredientsTransactionParams>(query, parameters, authToken);
             return response.GetData();
         }
 
         public async Task<CreateRemoveIngredientsTransactionReturn> CreateRemoveIngredientsTransaction(CreateRemoveIngredientsTransactionParams parameters, string authToken = null)
         {
-            string query = @"query createRemoveIngredientsTransaction(  $recipe: String!  $ingredients: [String!]!  $authority: String!  $delegateAuthority: String  $payer: String  $lutAddresses: [String!]  $computeUnitPrice: Int) {  createRemoveIngredientsTransaction(    recipe: $recipe    ingredients: $ingredients    authority: $authority    delegateAuthority: $delegateAuthority    payer: $payer    lutAddresses: $lutAddresses    computeUnitPrice: $computeUnitPrice  ) {    transactions    blockhash    lastValidBlockHeight  }}";
+            string query = @"query createRemoveIngredientsTransaction(  $recipe: String!  $ingredients: [String!]!  $authority: String!  $payer: String  $lutAddresses: [String!]  $computeUnitPrice: Int) {  createRemoveIngredientsTransaction(    recipe: $recipe    ingredients: $ingredients    authority: $authority    payer: $payer    lutAddresses: $lutAddresses    computeUnitPrice: $computeUnitPrice  ) {    transactions    blockhash    lastValidBlockHeight  }}";
             var response = await graphQLClient.Query<CreateRemoveIngredientsTransactionReturn, CreateRemoveIngredientsTransactionParams>(query, parameters, authToken);
             return response.GetData();
         }

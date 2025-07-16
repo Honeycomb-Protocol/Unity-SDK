@@ -86,6 +86,24 @@ namespace HplEdgeClient.Responses
 
   }
 
+  public class CreateTransferAssetsTransactionsReturn
+  {
+    [JsonProperty("createTransferAssetsTransactions")]
+    public Transactions CreateTransferAssetsTransactions { get; set; }
+
+    public CreateTransferAssetsTransactionsReturn() { }
+
+  }
+
+  public class CreateBurnAssetsTransactionsReturn
+  {
+    [JsonProperty("createBurnAssetsTransactions")]
+    public Transactions CreateBurnAssetsTransactions { get; set; }
+
+    public CreateBurnAssetsTransactionsReturn() { }
+
+  }
+
   public class FindGlobalReturn
   {
     [JsonProperty("global")]
@@ -392,6 +410,15 @@ namespace HplEdgeClient.Responses
 
   }
 
+  public class CreateUseCharacterTransactionReturn
+  {
+    [JsonProperty("createUseCharacterTransaction")]
+    public Transaction CreateUseCharacterTransaction { get; set; }
+
+    public CreateUseCharacterTransactionReturn() { }
+
+  }
+
   public class FindStakingPoolsReturn
   {
     [JsonProperty("stakingPools")]
@@ -461,6 +488,105 @@ namespace HplEdgeClient.Responses
     public Transactions CreateStakeCharactersTransactions { get; set; }
 
     public CreateStakeCharactersTransactionsReturn() { }
+
+  }
+
+  public class FindSplStakingPoolsReturn
+  {
+    [JsonProperty("splStakingPools")]
+    public List<SplStakingPool> SplStakingPools { get; set; }
+
+    public FindSplStakingPoolsReturn() { }
+
+  }
+
+  public class FindSplStakingRecipientsReturn
+  {
+    [JsonProperty("splStakingRecipients")]
+    public List<StakingRecipient> SplStakingRecipients { get; set; }
+
+    public FindSplStakingRecipientsReturn() { }
+
+  }
+
+  public class CreateCreateSplStakingPoolTransactionReturn
+  {
+    [JsonProperty("createCreateSplStakingPoolTransaction")]
+    public CreateCreateSplStakingPoolTransactionResponse CreateCreateSplStakingPoolTransaction { get; set; }
+
+    public CreateCreateSplStakingPoolTransactionReturn() { }
+
+  }
+
+  public class CreateUpdateSplStakingPoolTransactionReturn
+  {
+    [JsonProperty("createUpdateSplStakingPoolTransaction")]
+    public Transaction CreateUpdateSplStakingPoolTransaction { get; set; }
+
+    public CreateUpdateSplStakingPoolTransactionReturn() { }
+
+  }
+
+  public class CreateCreateNewSplStakingPoolTreeTransactionReturn
+  {
+    [JsonProperty("createCreateNewSplStakingPoolTreeTransaction")]
+    public TreeSetupResponse CreateCreateNewSplStakingPoolTreeTransaction { get; set; }
+
+    public CreateCreateNewSplStakingPoolTreeTransactionReturn() { }
+
+  }
+
+  public class CreateAddRemoveSplMultipliersTransactionReturn
+  {
+    [JsonProperty("createAddRemoveSplMultipliersTransaction")]
+    public Transaction CreateAddRemoveSplMultipliersTransaction { get; set; }
+
+    public CreateAddRemoveSplMultipliersTransactionReturn() { }
+
+  }
+
+  public class CreateSplRewardPoolTransactionReturn
+  {
+    [JsonProperty("createSplRewardPoolTransaction")]
+    public Transaction CreateSplRewardPoolTransaction { get; set; }
+
+    public CreateSplRewardPoolTransactionReturn() { }
+
+  }
+
+  public class CreateAddRemoveRewardsFromRewardPoolTransactionReturn
+  {
+    [JsonProperty("createAddRemoveRewardsFromRewardPoolTransaction")]
+    public Transaction CreateAddRemoveRewardsFromRewardPoolTransaction { get; set; }
+
+    public CreateAddRemoveRewardsFromRewardPoolTransactionReturn() { }
+
+  }
+
+  public class CreateStakeSplTokensTransactionReturn
+  {
+    [JsonProperty("createStakeSplTokensTransaction")]
+    public Transaction CreateStakeSplTokensTransaction { get; set; }
+
+    public CreateStakeSplTokensTransactionReturn() { }
+
+  }
+
+  public class CreateClaimSplRewardsTransactionReturn
+  {
+    [JsonProperty("createClaimSplRewardsTransaction")]
+    public Transaction CreateClaimSplRewardsTransaction { get; set; }
+
+    public CreateClaimSplRewardsTransactionReturn() { }
+
+  }
+
+  public class CreateUnstakeSplTokensTransactionReturn
+  {
+    [JsonProperty("createUnstakeSplTokensTransaction")]
+    public Transaction CreateUnstakeSplTokensTransaction { get; set; }
+
+    public CreateUnstakeSplTokensTransactionReturn() { }
 
   }
 

@@ -185,6 +185,60 @@ namespace HplEdgeClient.Types
 
   }
 
+  public class SplMultiplierTypeParams
+  {
+    [JsonProperty("minDuration")]
+    public string MinDuration { get; set; }
+
+    [JsonProperty("minAmount")]
+    public string MinAmount { get; set; }
+
+    public SplMultiplierTypeParams() { }
+
+  }
+
+  public class SplRewardConfigParams
+  {
+    [JsonProperty("rewardTokenMint")]
+    public string RewardTokenMint { get; set; }
+
+    [JsonProperty("rewardVault")]
+    public string RewardVault { get; set; }
+
+    [JsonProperty("rewardsPerDuration")]
+    public string RewardsPerDuration { get; set; }
+
+    [JsonProperty("rewardsDuration")]
+    public string RewardsDuration { get; set; }
+
+    [JsonProperty("totalRewardAmount")]
+    public string TotalRewardAmount { get; set; }
+
+    [JsonProperty("pools")]
+    public List<SplStakeWeightConfig> Pools { get; set; }
+
+    [JsonProperty("notSet")]
+    public bool? NotSet { get; set; }
+
+    public SplRewardConfigParams() { }
+
+  }
+
+  public class StakerClaimedParams
+  {
+    [JsonProperty("lastRewardTime")]
+    public string LastRewardTime { get; set; }
+
+    [JsonProperty("amounts")]
+    public List<string> Amounts { get; set; }
+
+    [JsonProperty("none")]
+    public bool? None { get; set; }
+
+    public StakerClaimedParams() { }
+
+  }
+
   public class OutputHolding
   {
     [JsonProperty("address")]
@@ -1457,6 +1511,231 @@ namespace HplEdgeClient.Types
 
   }
 
+  public class SplStakingPool
+  {
+    [JsonProperty("address")]
+    public string Address { get; set; }
+
+    [JsonProperty("bump")]
+    public int Bump { get; set; }
+
+    [JsonProperty("nonce")]
+    public int? Nonce { get; set; }
+
+    [JsonProperty("project")]
+    public string Project { get; set; }
+
+    [JsonProperty("name")]
+    public string Name { get; set; }
+
+    [JsonProperty("stake_token_mint")]
+    public string Stake_token_mint { get; set; }
+
+    [JsonProperty("minStakeDurationSecs")]
+    public string MinStakeDurationSecs { get; set; }
+
+    [JsonProperty("maxStakeDurationSecs")]
+    public string MaxStakeDurationSecs { get; set; }
+
+    [JsonProperty("startTime")]
+    public string StartTime { get; set; }
+
+    [JsonProperty("endTime")]
+    public string EndTime { get; set; }
+
+    [JsonProperty("totalStakedAmount")]
+    public string TotalStakedAmount { get; set; }
+
+    [JsonProperty("multipliers")]
+    public List<SplMultiplier> Multipliers { get; set; }
+
+    [JsonProperty("rewardConfig")]
+    public SplRewardConfig RewardConfig { get; set; }
+
+    [JsonProperty("merkleTrees")]
+    public ControlledMerkleTrees MerkleTrees { get; set; }
+
+    public SplStakingPool() { }
+
+  }
+
+  public class SplMultiplier
+  {
+    [JsonProperty("value")]
+    public string Value { get; set; }
+
+    [JsonProperty("multiplierType")]
+    public SplMultiplierType MultiplierType { get; set; }
+
+    public SplMultiplier() { }
+
+  }
+
+  public class SplMultiplierType
+  {
+    [JsonProperty("kind")]
+    public string Kind { get; set; }
+
+    [JsonProperty("params")]
+    public SplMultiplierTypeParams Params { get; set; }
+
+    public SplMultiplierType() { }
+
+  }
+
+  public class SplMultiplierTypeParamsStakeDuration
+  {
+    [JsonProperty("minDuration")]
+    public string MinDuration { get; set; }
+
+    public SplMultiplierTypeParamsStakeDuration() { }
+
+  }
+
+  public class SplMultiplierTypeParamsStakeAmount
+  {
+    [JsonProperty("minAmount")]
+    public string MinAmount { get; set; }
+
+    public SplMultiplierTypeParamsStakeAmount() { }
+
+  }
+
+  public class SplRewardConfig
+  {
+    [JsonProperty("kind")]
+    public string Kind { get; set; }
+
+    [JsonProperty("params")]
+    public SplRewardConfigParams Params { get; set; }
+
+    public SplRewardConfig() { }
+
+  }
+
+  public class SplRewardConfigParamsApy
+  {
+    [JsonProperty("rewardTokenMint")]
+    public string RewardTokenMint { get; set; }
+
+    [JsonProperty("rewardVault")]
+    public string RewardVault { get; set; }
+
+    [JsonProperty("rewardsPerDuration")]
+    public string RewardsPerDuration { get; set; }
+
+    [JsonProperty("rewardsDuration")]
+    public string RewardsDuration { get; set; }
+
+    [JsonProperty("totalRewardAmount")]
+    public string TotalRewardAmount { get; set; }
+
+    public SplRewardConfigParamsApy() { }
+
+  }
+
+  public class SplRewardConfigParamsStakeWeight
+  {
+    [JsonProperty("pools")]
+    public List<SplStakeWeightConfig> Pools { get; set; }
+
+    public SplRewardConfigParamsStakeWeight() { }
+
+  }
+
+  public class SplRewardConfigParamsNotSet
+  {
+    [JsonProperty("notSet")]
+    public bool? NotSet { get; set; }
+
+    public SplRewardConfigParamsNotSet() { }
+
+  }
+
+  public class SplStakeWeightConfig
+  {
+    [JsonProperty("weight")]
+    public int Weight { get; set; }
+
+    public SplStakeWeightConfig() { }
+
+  }
+
+  public class StakingRecipient
+  {
+    [JsonProperty("address")]
+    public string Address { get; set; }
+
+    [JsonProperty("tree_id")]
+    public string Tree_id { get; set; }
+
+    [JsonProperty("leaf_idx")]
+    public string Leaf_idx { get; set; }
+
+    [JsonProperty("staker")]
+    public string Staker { get; set; }
+
+    [JsonProperty("stakedAmount")]
+    public string StakedAmount { get; set; }
+
+    [JsonProperty("rewardsClaimed")]
+    public StakerClaimed RewardsClaimed { get; set; }
+
+    [JsonProperty("multiplier")]
+    public int Multiplier { get; set; }
+
+    [JsonProperty("stakeStartTime")]
+    public string StakeStartTime { get; set; }
+
+    [JsonProperty("lokedTill")]
+    public string LokedTill { get; set; }
+
+    [JsonProperty("proof")]
+    public Proof Proof { get; set; }
+
+    public StakingRecipient() { }
+
+  }
+
+  public class StakerClaimed
+  {
+    [JsonProperty("kind")]
+    public string Kind { get; set; }
+
+    [JsonProperty("params")]
+    public StakerClaimedParams Params { get; set; }
+
+    public StakerClaimed() { }
+
+  }
+
+  public class StakerClaimedParamsApy
+  {
+    [JsonProperty("lastRewardTime")]
+    public string LastRewardTime { get; set; }
+
+    public StakerClaimedParamsApy() { }
+
+  }
+
+  public class StakerClaimedParamsStakeWeight
+  {
+    [JsonProperty("amounts")]
+    public List<string> Amounts { get; set; }
+
+    public StakerClaimedParamsStakeWeight() { }
+
+  }
+
+  public class StakerClaimedParamsNone
+  {
+    [JsonProperty("none")]
+    public bool? None { get; set; }
+
+    public StakerClaimedParamsNone() { }
+
+  }
+
   public class Transaction
   {
     [JsonProperty("transaction")]
@@ -1496,16 +1775,16 @@ namespace HplEdgeClient.Types
     public string TreeAddress { get; set; }
 
     [JsonProperty("proofBytes")]
-    public int ProofBytes { get; set; }
+    public int? ProofBytes { get; set; }
 
     [JsonProperty("space")]
-    public int Space { get; set; }
+    public int? Space { get; set; }
 
     [JsonProperty("cost")]
     public float? Cost { get; set; }
 
     [JsonProperty("maxTreeCapacity")]
-    public int MaxTreeCapacity { get; set; }
+    public int? MaxTreeCapacity { get; set; }
 
     public CreateAssemblerConfigTransactionResponse() { }
 
@@ -1682,6 +1961,18 @@ namespace HplEdgeClient.Types
     public string MultipliersAddress { get; set; }
 
     public CreateCreateStakingPoolTransactionResponse() { }
+
+  }
+
+  public class CreateCreateSplStakingPoolTransactionResponse
+  {
+    [JsonProperty("tx")]
+    public Transaction Tx { get; set; }
+
+    [JsonProperty("splStakingPoolAddress")]
+    public string SplStakingPoolAddress { get; set; }
+
+    public CreateCreateSplStakingPoolTransactionResponse() { }
 
   }
 

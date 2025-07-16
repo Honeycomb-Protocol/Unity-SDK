@@ -397,11 +397,8 @@ namespace HplEdgeClient.Inputs
     [JsonProperty("HiveControl")]
     public List<ServiceDelegationHiveControl> HiveControl { get; set; }
 
-    [JsonProperty("AssetAssembler")]
-    public List<ServiceDelegationAssetAssembler> AssetAssembler { get; set; }
-
-    [JsonProperty("AssetManager")]
-    public List<ServiceDelegationAssetManager> AssetManager { get; set; }
+    [JsonProperty("CharacterManager")]
+    public List<ServiceDelegationCharacterManager> CharacterManager { get; set; }
 
     [JsonProperty("ResourceManager")]
     public List<ServiceDelegationResourceManager> ResourceManager { get; set; }
@@ -428,27 +425,15 @@ namespace HplEdgeClient.Inputs
 
   }
 
-  public class ServiceDelegationAssetAssembler
+  public class ServiceDelegationCharacterManager
   {
     [JsonProperty("index")]
     public int Index { get; set; }
 
     [JsonProperty("permission")]
-    public AssetAssemblerPermissionInput Permission { get; set; }
+    public CharacterManagerPermissionInput Permission { get; set; }
 
-    public ServiceDelegationAssetAssembler() { }
-
-  }
-
-  public class ServiceDelegationAssetManager
-  {
-    [JsonProperty("index")]
-    public int Index { get; set; }
-
-    [JsonProperty("permission")]
-    public AssetManagerPermissionInput Permission { get; set; }
-
-    public ServiceDelegationAssetManager() { }
+    public ServiceDelegationCharacterManager() { }
 
   }
 
@@ -502,11 +487,8 @@ namespace HplEdgeClient.Inputs
     [JsonProperty("HiveControl")]
     public ServiceDelegationHiveControl HiveControl { get; set; }
 
-    [JsonProperty("AssetAssembler")]
-    public ServiceDelegationAssetAssembler AssetAssembler { get; set; }
-
-    [JsonProperty("AssetManager")]
-    public ServiceDelegationAssetManager AssetManager { get; set; }
+    [JsonProperty("CharacterManager")]
+    public ServiceDelegationCharacterManager CharacterManager { get; set; }
 
     [JsonProperty("ResourceManager")]
     public ServiceDelegationResourceManager ResourceManager { get; set; }
@@ -671,6 +653,105 @@ namespace HplEdgeClient.Inputs
 
   }
 
+  public class CreateSplStakingPoolMetadataInput
+  {
+    [JsonProperty("name")]
+    public string Name { get; set; }
+
+    [JsonProperty("minStakeDurationSecs")]
+    public string MinStakeDurationSecs { get; set; }
+
+    [JsonProperty("maxStakeDurationSecs")]
+    public string MaxStakeDurationSecs { get; set; }
+
+    [JsonProperty("startTime")]
+    public string StartTime { get; set; }
+
+    [JsonProperty("endTime")]
+    public string EndTime { get; set; }
+
+    public CreateSplStakingPoolMetadataInput() { }
+
+  }
+
+  public class UpdateSplStakingPoolMetadataInput
+  {
+    [JsonProperty("name")]
+    public string Name { get; set; }
+
+    [JsonProperty("minStakeDurationSecs")]
+    public string MinStakeDurationSecs { get; set; }
+
+    [JsonProperty("maxStakeDurationSecs")]
+    public string MaxStakeDurationSecs { get; set; }
+
+    [JsonProperty("startTime")]
+    public string StartTime { get; set; }
+
+    [JsonProperty("endTime")]
+    public string EndTime { get; set; }
+
+    public UpdateSplStakingPoolMetadataInput() { }
+
+  }
+
+  public class AddRemoveRewardsFromRewardPoolActionInput
+  {
+    [JsonProperty("add")]
+    public string Add { get; set; }
+
+    [JsonProperty("remove")]
+    public string Remove { get; set; }
+
+    public AddRemoveRewardsFromRewardPoolActionInput() { }
+
+  }
+
+  public class CreateSplRewardPoolArgsInput
+  {
+    [JsonProperty("ApyConfig")]
+    public RewardPoolConfigApyInput ApyConfig { get; set; }
+
+    public CreateSplRewardPoolArgsInput() { }
+
+  }
+
+  public class RewardPoolConfigApyInput
+  {
+    [JsonProperty("rewardsPerDuration")]
+    public string RewardsPerDuration { get; set; }
+
+    [JsonProperty("rewardsDuration")]
+    public string RewardsDuration { get; set; }
+
+    public RewardPoolConfigApyInput() { }
+
+  }
+
+  public class SplMultiplierInput
+  {
+    [JsonProperty("minDuration")]
+    public string MinDuration { get; set; }
+
+    [JsonProperty("minAmount")]
+    public string MinAmount { get; set; }
+
+    public SplMultiplierInput() { }
+
+  }
+
+  public class AddSplMultiplierMetadataInput
+  {
+    [JsonProperty("value")]
+    public string Value { get; set; }
+
+    [JsonProperty("type")]
+    public SplMultiplierInput Type { get; set; }
+
+    public AddSplMultiplierMetadataInput() { }
+
+  }
+
   public class DisrcriminatorFilter
   {
     [JsonProperty("programId")]
@@ -796,9 +877,6 @@ namespace HplEdgeClient.Inputs
     [JsonProperty("authority")]
     public string Authority { get; set; }
 
-    [JsonProperty("delegateAuthority")]
-    public string DelegateAuthority { get; set; }
-
     [JsonProperty("payer")]
     public string Payer { get; set; }
 
@@ -825,9 +903,6 @@ namespace HplEdgeClient.Inputs
 
     [JsonProperty("authority")]
     public string Authority { get; set; }
-
-    [JsonProperty("delegateAuthority")]
-    public string DelegateAuthority { get; set; }
 
     [JsonProperty("payer")]
     public string Payer { get; set; }
@@ -877,9 +952,6 @@ namespace HplEdgeClient.Inputs
     [JsonProperty("authority")]
     public string Authority { get; set; }
 
-    [JsonProperty("delegateAuthority")]
-    public string DelegateAuthority { get; set; }
-
     [JsonProperty("payer")]
     public string Payer { get; set; }
 
@@ -909,9 +981,6 @@ namespace HplEdgeClient.Inputs
 
     [JsonProperty("authority")]
     public string Authority { get; set; }
-
-    [JsonProperty("delegateAuthority")]
-    public string DelegateAuthority { get; set; }
 
     [JsonProperty("payer")]
     public string Payer { get; set; }
@@ -1173,9 +1242,6 @@ namespace HplEdgeClient.Inputs
 
     [JsonProperty("payer")]
     public string Payer { get; set; }
-
-    [JsonProperty("delegateAuthority")]
-    public string DelegateAuthority { get; set; }
 
     public ImportResourceInput() { }
 
